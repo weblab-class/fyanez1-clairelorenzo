@@ -1,0 +1,11 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
+
+.NavBar-container {
+  padding: 8px 16px;
+  background-color: #ffe4c4;
+}
+
+.NavBar-title {
+  color: black;
+  font-size: 20px;
+}
