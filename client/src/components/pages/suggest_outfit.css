@@ -1,0 +1,29 @@
+.main-text {
+  text-align: center;
+  color: rgb(44, 99, 236);
+  font-size: 40px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+.filter-box {
+  /* border: 1px solid black;
+  border-width: 2px; */
+  background-color: rgb(47, 136, 231);
+  padding: 100px;
+  width: 50px;
+  border-radius: 50px;
+  height: 370px;
+  margin-top: 0px;
+  margin-left: 10px;
+  opacity: 0.8;
+}
+
+.buttons {
+  background-color: bisque;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  border-radius: 10px;
+}
+
+.background {
+  background-image: url("https://img.freepik.com/free-vector/vintage-ornamental-flowers-background_52683-28040.jpg?w=2000");
+}
