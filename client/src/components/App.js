@@ -9,6 +9,7 @@ import Skeleton from "./pages/Skeleton.js";
 import "../utilities.css";
 import Navbar from './pages/NavBar.js'
 import './pages/NavBar.css'
+import ImageRotator from './pages/ImageRotator.js'
 
 import { socket } from "../client-socket.js";
 
@@ -52,6 +53,7 @@ const App = () => {
          */}
       </Router>
       <Navbar/>
+      <ImageRotator/>
       
     </>
   );

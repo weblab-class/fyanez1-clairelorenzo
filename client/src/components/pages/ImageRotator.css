@@ -1,0 +1,17 @@
+.ImageRotator {
+  width: 300px;
+  position: absolute;
+  -webkit-animation: ImageRotator 15s linear infinite;
+  -moz-animation: ImageRotator 15s linear infinite;
+  -ms-animation: ImageRotator 15s linear infinite;
+  -o-animation: ImageRotator 15s linear infinite;
+}
+
+@-webkit-keyframes ImageRotator {
+  from {
+    left: -15%;
+  }
+  to {
+    left: 100%;
+  }
+}
