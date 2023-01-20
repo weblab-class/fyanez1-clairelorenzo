@@ -1,10 +1,10 @@
 import React from "react";
 import "./ImageRotator.css";
 import {Link} from '@reach/router';
-
+import lol from '../../public/yomama.png'
 const ImageRotator = () => {
     return (
-        <img className='ImageRotator' src="https://www.w3schools.com/images/picture.jpg" alt="Mountain"></img>
+        <img className='ImageRotator' src={lol} alt="Outfit"/>
     )
 }
 export default ImageRotator

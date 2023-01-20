@@ -2,14 +2,8 @@ import React from "react";
 import "./NavBar.css";
 import {Link} from '@reach/router';
 
-import {
-    Nav,
-    // NavLink,
-    Bars,
-    NavMenu,
-    NavBtn,
-    NavBtnLink,
-  } from './NavbarElements.js';
+
+
     
 const Navbar = () => {
     return (
@@ -26,25 +20,25 @@ const Navbar = () => {
               Home
             </Link>
             
-            <Link to='./MakeMyFit.js'>
+            <Link to='/suggest_outfit'>
               Make My Fit!
             </Link>
-            <Link to='./MyItems.js'>
+            <Link to='/MyItems'>
               My Items
             </Link>
-            <Link to='./MyPastOutfits.js'>
+            <Link to='/MyPastOutfits'>
               My past Outfits
             </Link>
-            <Link to='./Weather.js'>
+            <Link to='/weather'>
               Weather
             </Link>
-            <Link to='./RandomShuffler.js'>
+            <Link to='/RandomShuffler'>
               Random Shuffler
             </Link>
-            <Link to='./Inspo.js'>
+            <Link to='/Inspo'>
               Inspo
             </Link>
-            <Link to='./Login.js'>
+            <Link to='/Login'>
               Login
             </Link>
             </nav>

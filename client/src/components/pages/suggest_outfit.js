@@ -1,4 +1,4 @@
-import "./suggest_outfits.css";
+import "./suggest_outfit.css";
 
 const Suggest_Outfits_Page = () => {
   return (
