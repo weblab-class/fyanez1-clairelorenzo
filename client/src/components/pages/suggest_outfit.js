@@ -22,11 +22,32 @@ const Suggest_Outfits_Page = () => {
 
             <div class="middle-area">
               <div class="filters">
-                <div class="filter-text">Filters</div>
-                <button class="filter">Weather</button>
-                <button class="filter">Material</button>
-                <button class="filter">Style</button>
-                <button class="filter">*filter</button>
+                <div class="filters-title">Filters</div>
+                <div class="filter_labels" id="weather-title">
+                  Weather
+                </div>
+                <input id="Weather" class="filter" type="number" placeholder="None"></input>
+                <div class="filter_labels">Material</div>
+                <select name="Material" class="filter">
+                  <option>None</option>
+                  <option>test</option>
+                  <option>test</option>
+                  <option>test</option>
+                </select>
+                <div class="filter_labels">Style</div>
+                <select name="Style" class="filter">
+                  <option>None</option>
+                  <option>test</option>
+                  <option>test</option>
+                  <option>test</option>
+                </select>
+                <div class="filter_labels">Filter</div>
+                <select name="* filter *" class="filter">
+                  <option>None</option>
+                  <option>test</option>
+                  <option>test</option>
+                  <option>test</option>
+                </select>
               </div>
 
               <div class="clothes-and-button">
