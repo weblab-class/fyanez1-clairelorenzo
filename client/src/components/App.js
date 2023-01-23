@@ -15,7 +15,11 @@ import "../utilities.css";
 import Navbar from './pages/NavBar.js'
 import './pages/NavBar.css'
 import ImageRotator from './pages/ImageRotator.js'
-
+import ImageRotator2 from './pages/ImageRot2.js'
+import ImageRotator3 from './pages/ImageRot3.js'
+import ImageRotator4 from './pages/ImageRot4.js'
+import image1 from './../public/logo.png'
+import Home from './pages/Home.js'
 import { socket } from "../client-socket.js";
 
 import { get, post } from "../utilities";
@@ -49,13 +53,14 @@ const App = () => {
     setUserId(undefined);
     post("/api/logout");
   };
-
+  
   return (
     <>
+    <Navbar/>
       <Router>
-
-        {/* <Skeleton path="/" handleLogin={handleLogin} handleLogout={handleLogout} userId={userId} />
-        <NotFound default /> */}
+        <Home path='/'></Home>
+        {/* <Skeleton path="/" handleLogin={handleLogin} handleLogout={handleLogout} userId={userId} /> */}
+        <NotFound default />
         <Weather path='/weather'/> 
         <MakeMyFit path='/MakeMyFit'/>
         <MyItems path='/MyItems'/>
@@ -64,12 +69,23 @@ const App = () => {
         <RandomShuffler path='/RandomShuffler'/>
         
       </Router>
-      <Navbar/>
-      <ImageRotator/>
+      
+      {/* <img src={image1}/>
+      <div/>
+      <ImageRotator4/>
+      <ImageRotator3/>
+      <ImageRotator2/>
+      <ImageRotator/> */}
+      
+      
+        
       
     </>
+
   );
 };
+
+
 
 export default App;
 

@@ -1,5 +1,6 @@
 .ImageRotator {
-  width: 300px;
+  width: 400px;
+  height: 400px;
   position: absolute;
   -webkit-animation: ImageRotator 15s linear infinite;
   -moz-animation: ImageRotator 15s linear infinite;
@@ -9,9 +10,65 @@
 
 @-webkit-keyframes ImageRotator {
   from {
+    left: -50%;
+  }
+  to {
+    left: 100%;
+  }
+}
+
+/* .ImageRotator2 {
+  width: 300px;
+  position: absolute;
+  -webkit-animation: ImageRotator 15s linear infinite;
+  -moz-animation: ImageRotator 15s linear infinite;
+  -ms-animation: ImageRotator 15s linear infinite;
+  -o-animation: ImageRotator 15s linear infinite;
+  animation-delay: 5s;
+}
+@-webkit-keyframes ImageRotator2 {
+  from {
     left: -15%;
   }
   to {
     left: 100%;
   }
 }
+
+.ImageRotator3 {
+  width: 300px;
+  height: 400px;
+  position: absolute;
+  -webkit-animation: ImageRotator 15s linear infinite;
+  -moz-animation: ImageRotator 15s linear infinite;
+  -ms-animation: ImageRotator 15s linear infinite;
+  -o-animation: ImageRotator 15s linear infinite;
+  animation-delay: 10s;
+}
+@-webkit-keyframes ImageRotator3 {
+  from {
+    left: 50%;
+  }
+  to {
+    left: 100%;
+  }
+}
+
+.ImageRotator4 {
+  width: 300px;
+  height: 400px;
+  position: absolute;
+  -webkit-animation: ImageRotator 15s linear infinite;
+  -moz-animation: ImageRotator 15s linear infinite;
+  -ms-animation: ImageRotator 15s linear infinite;
+  -o-animation: ImageRotator 15s linear infinite;
+  animation-delay: 15s;
+}
+@-webkit-keyframes ImageRotator4 {
+  from {
+    left: -50%;
+  }
+  to {
+    left: 100%;
+  }
+} */

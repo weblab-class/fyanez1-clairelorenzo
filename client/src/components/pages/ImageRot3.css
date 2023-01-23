@@ -1,0 +1,29 @@
+.ImageRotator3 {
+  width: 300px;
+  height: 400px;
+  position: absolute;
+  -webkit-animation: ImageRotator 15s linear infinite;
+  -moz-animation: ImageRotator 15s linear infinite;
+  -ms-animation: ImageRotator 15s linear infinite;
+  -o-animation: ImageRotator 15s linear infinite;
+  animation-delay: 7s;
+}
+@-webkit-keyframes ImageRotator3 {
+  from {
+    left: -50%;
+  }
+  to {
+    left: 100%;
+  }
+}
+
+/* .ImageRotator3b {
+  animation: cssAnimation 0s 5s forwards;
+  visibility: hidden;
+}
+
+@keyframes cssAnimation {
+  to {
+    visibility: visible;
+  }
+} */
