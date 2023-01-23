@@ -26,7 +26,7 @@ const Suggest_Outfits_Page = () => {
                 <div class="filter_labels" id="weather-title">
                   Weather
                 </div>
-                <input id="Weather" class="filter" type="number" placeholder="None"></input>
+                <input id="Weather" class="filter" type="number"></input>
                 <div class="filter_labels">Material</div>
                 <select name="Material" class="filter">
                   <option>None</option>

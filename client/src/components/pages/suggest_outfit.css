@@ -38,7 +38,7 @@
 }
 
 .filter_labels {
-  margin-bottom: 0px;
+  margin-bottom: 5px;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   font-weight: bold;
 }
@@ -46,6 +46,7 @@
 .filters-title {
   font-weight: bold;
   font-size: 30px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   margin-bottom: 0px;
   margin-top: 20px;
 }
@@ -88,19 +89,6 @@
   font-weight: bold;
 }
 
-.clothes {
-  text-align: center;
-}
-
-.clothes_button {
-  background-color: transparent;
-  border: none;
-  margin-left: 50px;
-}
-.clothes_button:hover {
-  background-color: greenyellow;
-}
-
 .middle-area {
   display: flex;
 }
@@ -119,4 +107,48 @@
 
 .dress {
   width: 150px;
+}
+
+.animate {
+  position: relative;
+  background-color: transparent;
+  border: none;
+  padding: 20px;
+}
+
+.animate::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  box-sizing: border-box;
+  height: 0;
+  border-bottom: 5px double #2fc12f;
+  border-left: 5px double rgb(25, 179, 22);
+  transition: all 0.6s ease;
+}
+
+.animate::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 0;
+  box-sizing: border-box;
+  height: 0;
+  border-top: 5px double rgb(111, 242, 111);
+  border-right: 5px double rgb(58, 176, 43);
+  transition: all 1s ease;
+}
+
+.animate2:hover .animate::after,
+.animate2:hover .animate::before {
+  border-color: rgb(9, 26, 209);
+  width: 100%;
+  height: 100%;
+}
+
+.silhouettes {
+  display: flex;
 }
