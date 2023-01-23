@@ -19,17 +19,20 @@ const Suggest_Outfits_Page = () => {
               <div>Click to add clothing item</div>
               <br />
             </div>
-
+            <br />
+            <br />
+            <br />
+            <br />
             <div class="middle-area">
               <div class="filters">
-                <div class="filters-title">Filters</div>
+                <div class="filters-title">Preferences</div>
                 <div class="filter_labels" id="weather-title">
-                  Weather
+                  Temperature
                 </div>
-                <input id="Weather" class="filter" type="number"></input>
+                <input id="Weather" class="filter" type="number" placeholder="Enter Here"></input>
                 <div class="filter_labels">Material</div>
                 <select name="Material" class="filter">
-                  <option>None</option>
+                  <option class="option">None</option>
                   <option>test</option>
                   <option>test</option>
                   <option>test</option>
@@ -49,21 +52,28 @@ const Suggest_Outfits_Page = () => {
                   <option>test</option>
                 </select>
               </div>
-
-              <div class="clothes-and-button">
-                <div class="clothes">
-                  <button class="clothes_button">
-                    <img src="../pics/t-shirt-silhouette.png" class="shirt" />
-                  </button>
-                  <button class="clothes_button">
-                    <img src="../pics/pants-silhouette.png" class="pants" />
-                  </button>
-                  <button class="clothes_button">
-                    <img src="../pics/running-shoe-silhouette.png" class="shoes" />
-                  </button>
-                  <button class="clothes_button">
-                    <img src="../pics/dress-silhouette.png" class="dress" />
-                  </button>
+              <div>
+                <div class="silhouettes">
+                  <div class="animate2">
+                    <button class="animate">
+                      <img src="../pics/t-shirt-silhouette.png" class="shirt" />
+                    </button>
+                  </div>
+                  <div class="animate2">
+                    <button class="animate">
+                      <img src="../pics/pants-silhouette.png" class="pants" />
+                    </button>
+                  </div>
+                  <div class="animate2">
+                    <button class="animate">
+                      <img src="../pics/running-shoe-silhouette.png" class="shoes" />
+                    </button>
+                  </div>
+                  <div class="animate2">
+                    <button class="animate">
+                      <img src="../pics/dress-silhouette.png" class="dress" />
+                    </button>
+                  </div>
                 </div>
 
                 <br />
@@ -76,6 +86,7 @@ const Suggest_Outfits_Page = () => {
               </div>
             </div>
           </div>
+
           <div id="root"></div>
           <script src="/bundle.js"></script>
         </body>

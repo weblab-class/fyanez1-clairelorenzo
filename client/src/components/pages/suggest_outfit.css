@@ -5,24 +5,26 @@
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   font-weight: bold;
   font-style: oblique;
+  color: black;
+  box-shadow: 10px 10px 10px 5px black;
 }
 
 .filters {
-  background-color: rgb(47, 136, 231);
+  background-color: rgb(48, 44, 4);
   width: 200px;
   border-radius: 50px;
   height: 490px;
   margin-top: 0px;
   margin-left: 10px;
   opacity: 0.8;
-  box-shadow: 10px 5px 5px black;
+  box-shadow: 15px 15px 15px black;
   float: inline-start;
   text-align: center;
   margin-right: 50px;
 }
 
 .filter {
-  background-color: rgb(120, 160, 240);
+  background-color: white;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   border-radius: 10px;
   width: 150px;
@@ -41,6 +43,7 @@
   margin-bottom: 5px;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   font-weight: bold;
+  color: white;
 }
 
 .filters-title {
@@ -49,6 +52,7 @@
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   margin-bottom: 0px;
   margin-top: 20px;
+  color: white;
 }
 
 .reset {
@@ -60,16 +64,17 @@
   height: 30px;
   font-size: 15px;
   border-radius: 30px;
+  box-shadow: 5px 5px 5px black;
+  opacity: 0.7;
 }
 
 .reset:hover {
-  font-weight: bold;
-  box-shadow: 5px 2.5px 2.5px black;
+  opacity: 1;
 }
 
 .background {
-  /* background-image: url("https://img.freepik.com/free-vector/vintage-ornamental-flowers-background_52683-28040.jpg?w=2000"); */
-  background-image: url("https://cdn.nba.com/headshots/nba/latest/1040x760/2544.png");
+  background-image: url("https://storage.needpix.com/rsynced_images/gold-937640_1280.jpg");
+  /* background-image: url("https://cdn.nba.com/headshots/nba/latest/1040x760/2544.png"); */
   background-size: cover;
 }
 
@@ -82,11 +87,11 @@
   font-size: 25px;
   margin-left: 200px;
   margin-right: 30px;
+  box-shadow: 5px 5px 5px black;
+  opacity: 0.7;
 }
 .suggest:hover {
-  box-shadow: 5px 2.5px 2.5px black;
-  font-size: 22.5px;
-  font-weight: bold;
+  opacity: 1;
 }
 
 .middle-area {
@@ -94,7 +99,7 @@
 }
 
 .shirt {
-  width: 170px;
+  height: 170px;
 }
 
 .pants {
@@ -114,6 +119,7 @@
   background-color: transparent;
   border: none;
   padding: 20px;
+  box-sizing: border-box;
 }
 
 .animate::before {
@@ -151,4 +157,8 @@
 
 .silhouettes {
   display: flex;
+}
+
+.option {
+  color: white;
 }
