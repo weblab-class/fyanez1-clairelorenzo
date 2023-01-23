@@ -11,6 +11,10 @@ const express = require("express");
 
 // import models so we can interact with the database
 const User = require("./models/user");
+const Top= require('./models/top');
+const Bottom = require('./models/bottom');
+const Dress = require('./models/dress');
+const Shoes = require('./models/shoes');
 
 // import authentication library
 const auth = require("./auth");

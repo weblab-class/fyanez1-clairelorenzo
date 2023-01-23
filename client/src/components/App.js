@@ -61,6 +61,7 @@ const App = () => {
         <Home path='/'></Home>
         {/* <Skeleton path="/" handleLogin={handleLogin} handleLogout={handleLogout} userId={userId} /> */}
         <NotFound default />
+        <Home path='/home'/>
         <Weather path='/weather'/> 
         <MakeMyFit path='/MakeMyFit'/>
         <MyItems path='/MyItems'/>

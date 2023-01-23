@@ -16,7 +16,7 @@ const Navbar = () => {
         <>
         <nav className="NavBar-container" >
         <div className='NavBar-title'>MakeMyFit</div>
-            <Link class= 'NavBar-link' to='./NavBar.js'>
+            <Link class= 'NavBar-link' to='/home'>
               Home
             </Link>
             
