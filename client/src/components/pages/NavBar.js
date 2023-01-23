@@ -16,29 +16,29 @@ const Navbar = () => {
         <>
         <nav className="NavBar-container" >
         <div className='NavBar-title'>MakeMyFit</div>
-            <Link to='./NavBar.js'>
+            <Link class= 'NavBar-link' to='./NavBar.js'>
               Home
             </Link>
             
-            <Link to='/suggest_outfit'>
+            <Link class= 'NavBar-link' to='/suggest_outfit'>
               Make My Fit!
             </Link>
-            <Link to='/MyItems'>
+            <Link class= 'NavBar-link' to='/MyItems'>
               My Items
             </Link>
-            <Link to='/MyPastOutfits'>
+            <Link class= 'NavBar-link' to='/MyPastOutfits'>
               My past Outfits
             </Link>
-            <Link to='/weather'>
+            <Link class= 'NavBar-link' to='/weather'>
               Weather
             </Link>
-            <Link to='/RandomShuffler'>
+            <Link class= 'NavBar-link' to='/RandomShuffler'>
               Random Shuffler
             </Link>
-            <Link to='/Inspo'>
+            <Link class= 'NavBar-link' to='/Inspo'>
               Inspo
             </Link>
-            <Link to='/Login'>
+            <Link class= 'NavBar-link' to='/Login'>
               Login
             </Link>
             </nav>
