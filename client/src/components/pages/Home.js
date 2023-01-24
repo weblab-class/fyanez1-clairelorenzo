@@ -3,8 +3,10 @@ import ImageRotator from './ImageRotator.js'
 import ImageRotator2 from './ImageRot2.js'
 import ImageRotator3 from './ImageRot3.js'
 import ImageRotator4 from './ImageRot4.js'
+import ImageRotator5 from './ImageRot5.js'
 import image1 from '../../public/logo.png'
 import './biglogo.css'
+import './home.css'
 
 
 // var div=document.getElementById('secondpic')
@@ -15,7 +17,8 @@ import './biglogo.css'
 
 
 const Home=()=> {
-document.body.style.backgroundColor = "black";
+document.body.style.backgroundColor = 'black';
+// document.body.style='body'
 useEffect(()=>{
     var div=document.getElementById('secondpic')
         const timer = setTimeout(() => {
@@ -37,12 +40,20 @@ useEffect(()=>{
         }, 10500)
     return () => clearTimeout(timer)
 }, [])
+useEffect(()=>{
+    var div4=document.getElementById('fifthpic')
+        const timer = setTimeout(() => {
+            div4.style.visibility='visible'
+        }, 14000)
+    return () => clearTimeout(timer)
+}, [])
 
 return (
 <>
 
-    <img class='Logo' src={image1}/>
+    {/* <img class='Logo' src={image1}/> */}
     <div/>
+        <div id='fifthpic' style={{visibility:'hidden'}}><ImageRotator5/></div>
         <div id='fourthpic' style={{visibility:'hidden'}}><ImageRotator4/></div>
         <div id='thirdpic' style={{visibility:'hidden'}} ><ImageRotator3/></div>
         <div id='secondpic' style={{visibility:'hidden'}}><ImageRotator2/></div>

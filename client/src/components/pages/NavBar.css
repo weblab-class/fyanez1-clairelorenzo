@@ -4,13 +4,15 @@
   display: flex;
   justify-content: space-evenly;
   padding: 8px 16px;
-  background-color: #b8860b;
+  background-color: rgba(255, 255, 255, 0.085);
   width: 100%;
 }
 
 .NavBar-title {
-  color: black;
-  font-size: 20px;
+  color: #b8860b;
+  font-size: 30px;
+  padding: 8px;
+  font-family: "verdana";
 }
 
 .NavBar-item {
@@ -19,6 +21,9 @@
 }
 
 .NavBar-link {
-  color: black;
+  padding: 10px;
+  color: #b8860b;
   text-decoration: none;
+  font-family: "verdana";
+  font-size: 20px;
 }

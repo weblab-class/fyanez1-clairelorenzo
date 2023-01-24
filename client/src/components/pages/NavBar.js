@@ -1,11 +1,15 @@
 import React from "react";
 import "./NavBar.css";
 import {Link} from '@reach/router';
-
+import './navbarlogo.css'
+import './Login.css'
+import logoicon from '../../public/logoicon.png'
+import { GoogleOAuthProvider, GoogleLogin, googleLogout} from "@react-oauth/google";
+const GOOGLE_CLIENT_ID = "562487959153-1uimctimfrsv1m8tsus87j34mfbvg6hu.apps.googleusercontent.com";
 
 
     
-const Navbar = () => {
+const Navbar = (props) => {
     return (
         // <Nav>
         //   <Bars />
@@ -15,33 +19,43 @@ const Navbar = () => {
         //   <NavMenu>
         <>
         <nav className="NavBar-container" >
+        <img src={logoicon} className='navbarlogo'></img>
         <div className='NavBar-title'>MakeMyFit</div>
-            <Link class= 'NavBar-link' to='/home'>
+            <Link className= 'NavBar-link' to='/home'>
               Home
             </Link>
             
-            <Link class= 'NavBar-link' to='/suggest_outfit'>
+            <Link className= 'NavBar-link' to='/suggest_outfit'>
               Make My Fit!
             </Link>
-            <Link class= 'NavBar-link' to='/MyItems'>
+            <Link className= 'NavBar-link' to='/MyItems'>
               My Items
             </Link>
-            <Link class= 'NavBar-link' to='/MyPastOutfits'>
+            <Link className= 'NavBar-link' to='/MyPastOutfits'>
               My past Outfits
             </Link>
-            <Link class= 'NavBar-link' to='/weather'>
+            <Link className= 'NavBar-link' to='/weather'>
               Weather
             </Link>
-            <Link class= 'NavBar-link' to='/RandomShuffler'>
+            <Link className= 'NavBar-link' to='/RandomShuffler'>
               Random Shuffler
             </Link>
-            <Link class= 'NavBar-link' to='/Inspo'>
+            
+            <Link className= 'NavBar-link' to='/Inspo'>
               Inspo
             </Link>
-            {/* <Link class= 'NavBar-link' to='/Login'>
-              Login
-            </Link> */}
-            </nav>
+            
+            <button
+          onClick={() => {
+            googleLogout();
+            props.logout();
+          }}
+        >
+          Logout
+        </button>
+
+        </nav>
+            
         </>
     //       </NavMenu>
     //       <NavBtn>

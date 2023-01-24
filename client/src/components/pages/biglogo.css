@@ -1,7 +1,8 @@
 .Logo {
-  width: 450px;
-  height: 550px;
+  width: 200px;
+  height: 200px;
   display: block;
+  align-items: left;
   margin-left: auto;
   margin-right: auto;
 }
