@@ -38,9 +38,9 @@ const Navbar = () => {
             <Link class= 'NavBar-link' to='/Inspo'>
               Inspo
             </Link>
-            <Link class= 'NavBar-link' to='/Login'>
+            {/* <Link class= 'NavBar-link' to='/Login'>
               Login
-            </Link>
+            </Link> */}
             </nav>
         </>
     //       </NavMenu>

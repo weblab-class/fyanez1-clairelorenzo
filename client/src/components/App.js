@@ -9,6 +9,7 @@ import Weather from "./pages/Weather.js";
 import MakeMyFit from "./pages/MakeMyFit.js"
 import MyItems from "./pages/MyItems.js";
 import MyPastOutfits from "./pages/MyPastOutfits.js";
+import Login from './pages/Login.js'
 import Suggest_Outfits_Page from  "./pages/suggest_outfit.js";
 import RandomShuffler from "./pages/RandomShuffler.js";
 import "../utilities.css";
@@ -53,7 +54,7 @@ const App = () => {
     setUserId(undefined);
     post("/api/logout");
   };
-  
+  if (userId){
   return (
     <>
     <Navbar/>
@@ -71,22 +72,23 @@ const App = () => {
         
       </Router>
       
-      {/* <img src={image1}/>
-      <div/>
-      <ImageRotator4/>
-      <ImageRotator3/>
-      <ImageRotator2/>
-      <ImageRotator/> */}
+      
+      
       
       
         
       
     </>
-
   );
+}
+else 
+{
+  return(
+    <Login login={handleLogin}></Login>
+  )
 };
+}
 
 
 
-export default App;
-
+export default App
