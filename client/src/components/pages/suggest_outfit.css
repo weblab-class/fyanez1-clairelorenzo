@@ -1,19 +1,20 @@
 .instructions {
   text-align: center;
   color: rgb(44, 99, 236);
-  font-size: 40px;
+  font-size: 35px;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   font-weight: bold;
   font-style: oblique;
   color: black;
   box-shadow: 10px 10px 10px 5px black;
+  border-radius: 50% 50% 50% 50%;
 }
 
 .filters {
   background-color: rgb(48, 44, 4);
-  width: 200px;
-  border-radius: 50px;
-  height: 490px;
+  width: 220px;
+  border-radius: 25px;
+  height: 400px;
   margin-top: 0px;
   margin-left: 10px;
   opacity: 0.8;
@@ -29,9 +30,9 @@
   border-radius: 10px;
   width: 150px;
   height: 40px;
-  font-size: 20px;
+  font-size: 14px;
   box-shadow: 10px 5px 5px black;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
   text-align: center;
 }
 
@@ -40,7 +41,7 @@
 }
 
 .filter_labels {
-  margin-bottom: 5px;
+  margin-bottom: 2px;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   font-weight: bold;
   color: white;
@@ -56,42 +57,45 @@
 }
 
 .reset {
-  background-color: bisque;
+  background-color: rgb(68, 63, 7);
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   border-radius: 10px;
+  color: white;
   display: inline-block;
   width: 90px;
   height: 30px;
   font-size: 15px;
-  border-radius: 30px;
   box-shadow: 5px 5px 5px black;
   opacity: 0.7;
 }
 
 .reset:hover {
   opacity: 1;
+  cursor: pointer;
+  cursor: pointer;
 }
 
 .background {
-  background-image: url("https://storage.needpix.com/rsynced_images/gold-937640_1280.jpg");
+  background-image: url("https://t4.ftcdn.net/jpg/03/66/43/85/360_F_366438547_HGjgqXdDdBlVyrQTRhiZOR4oZuOSu3i1.jpg");
   /* background-image: url("https://cdn.nba.com/headshots/nba/latest/1040x760/2544.png"); */
-  background-size: cover;
+  height: cover;
 }
 
 .suggest {
-  background-color: bisque;
+  background-color: rgb(68, 63, 7);
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  border-radius: 30px;
+  border-radius: 20px;
   width: 210px;
+  color: white;
   height: 60px;
   font-size: 25px;
   margin-left: 200px;
   margin-right: 30px;
   box-shadow: 5px 5px 5px black;
-  opacity: 0.7;
 }
 .suggest:hover {
-  opacity: 1;
+  opacity: 0.7;
+  cursor: pointer;
 }
 
 .middle-area {
@@ -130,8 +134,8 @@
   width: 0;
   box-sizing: border-box;
   height: 0;
-  border-bottom: 5px double #2fc12f;
-  border-left: 5px double rgb(25, 179, 22);
+  border-bottom: 5px double red;
+  border-left: 5px double red;
   transition: all 0.6s ease;
 }
 
@@ -143,16 +147,18 @@
   width: 0;
   box-sizing: border-box;
   height: 0;
-  border-top: 5px double rgb(111, 242, 111);
-  border-right: 5px double rgb(58, 176, 43);
-  transition: all 1s ease;
+  border-top: 5px double black;
+  border-right: 5px double black;
+  transition: all 0.6s ease;
 }
 
 .animate2:hover .animate::after,
 .animate2:hover .animate::before {
-  border-color: rgb(9, 26, 209);
+  border-color: rgb(135, 121, 40);
   width: 100%;
   height: 100%;
+  border-radius: 30px;
+  cursor: pointer;
 }
 
 .silhouettes {
@@ -161,4 +167,35 @@
 
 .option {
   color: white;
+}
+
+.silhouette-text {
+  position: absolute;
+  color: white;
+  font-size: 18px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+#tops-text {
+  margin-top: -120px;
+  margin-left: 55px;
+}
+
+#bottoms-text {
+  margin-top: -170px;
+  margin-left: 18px;
+}
+
+#shoes-text {
+  margin-top: -36px;
+  margin-left: 13px;
+}
+
+#dresses-text {
+  margin-top: -120px;
+  margin-left: 45px;
+}
+
+.silhouettes-and-buttons {
+  margin-left: 60px;
 }
