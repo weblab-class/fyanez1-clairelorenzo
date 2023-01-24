@@ -5,7 +5,7 @@ import shoes from "../pics/running-shoe-silhouette.png";
 import bottoms from "../pics/pants-silhouette.png";
 import tops from "../pics/t-shirt-silhouette.png";
 import logo from "../../public/logo.png";
-import Popup from "../popup";
+import Popup from "../popup.js";
 // import { Popup } from "@fluentui/react";
 import { useBoolean } from "@fluentui/react-hooks";
 

@@ -56,7 +56,7 @@ const App = () => {
   };
   if (userId){
   return (
-    <>
+    <div>
     <Navbar logout={handleLogout}/>
       <Router>
         <Home path='/'></Home>
@@ -79,7 +79,7 @@ const App = () => {
       
         
       
-    </>
+    </div>
   );
 }
 else 
@@ -92,4 +92,4 @@ else
 
 
 
-export default App
+export default App;
