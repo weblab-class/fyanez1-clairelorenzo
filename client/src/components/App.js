@@ -59,7 +59,7 @@ const App = () => {
     <Navbar/>
       <Router>
         <Home path='/'></Home>
-        {/* <Skeleton path="/" handleLogin={handleLogin} handleLogout={handleLogout} userId={userId} /> */}
+        <Skeleton path="/" handleLogin={handleLogin} handleLogout={handleLogout} userId={userId} />
         <NotFound default />
         <Home path='/home'/>
         <Weather path='/weather'/> 
