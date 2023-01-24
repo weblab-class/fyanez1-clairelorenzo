@@ -4,8 +4,14 @@ import dress from "../pics/dress-silhouette.png";
 import shoes from "../pics/running-shoe-silhouette.png";
 import bottoms from "../pics/pants-silhouette.png";
 import tops from "../pics/t-shirt-silhouette.png";
+import logo from "../../public/logo.png";
+import Popup from "../popup";
+// import { Popup } from "@fluentui/react";
+import { useBoolean } from "@fluentui/react-hooks";
 
 const Suggest_Outfits_Page = () => {
+  const [hideDialog, { toggle: toggleHideDialog }] = useBoolean(true);
+
   return (
     <>
       <html>
@@ -19,9 +25,10 @@ const Suggest_Outfits_Page = () => {
 
         <body>
           <div class="background">
-            <div class="instructions">
+            <div class="top">
               <br />
-              <div>Click to add clothing item (optional)</div>
+              <img class="logos" src={logo} />
+              <div class="instructions">Click to add clothing item (optional)</div>
               <br />
             </div>
             <br />
@@ -58,12 +65,7 @@ const Suggest_Outfits_Page = () => {
               <div class="silhouettes-and-buttons">
                 <div class="silhouettes">
                   <div class="animate2">
-                    <button
-                      class="animate"
-                      onClick={() => {
-                        get("/api/top", {});
-                      }}
-                    >
+                    <button class="animate" onClick={() => toggleHideDialog()}>
                       <img src={tops} class="shirt" />
                       <div class="silhouette-text" id="tops-text">
                         Tops
@@ -116,7 +118,7 @@ const Suggest_Outfits_Page = () => {
               </div>
             </div>
           </div>
-
+          <Popup hideDialog={hideDialog} toggleHideDialog={toggleHideDialog}></Popup>
           <div id="root"></div>
           <script src="/bundle.js"></script>
         </body>
