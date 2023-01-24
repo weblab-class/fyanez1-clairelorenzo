@@ -7,10 +7,10 @@ const GOOGLE_CLIENT_ID = "562487959153-1uimctimfrsv1m8tsus87j34mfbvg6hu.apps.goo
 
 const Login =(props) =>{
   return(
-  <div id="main">
-    <h1>Login</h1>
-    <div>
-    <GoogleOAuthProvider clientId={GOOGLE_CLIENT_ID} className='button'>
+  <div id="body">
+    <h1 className='main'>Login</h1>
+    <div className='button'>
+    <GoogleOAuthProvider clientId={GOOGLE_CLIENT_ID} >
         <GoogleLogin onSuccess={props.login} onError={(err) => console.log(err)} />
     </GoogleOAuthProvider>
     </div>
