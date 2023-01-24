@@ -1,3 +1,4 @@
+import { ProgressPlugin } from "webpack";
 import "./suggest_outfit.css";
 
 const Suggest_Outfits_Page = () => {
@@ -52,26 +53,58 @@ const Suggest_Outfits_Page = () => {
                   <option>test</option>
                 </select>
               </div>
-              <div>
+              <div class="silhouettes-and-buttons">
                 <div class="silhouettes">
                   <div class="animate2">
-                    <button class="animate">
+                    <button
+                      class="animate"
+                      onClick={() => {
+                        get("/api/top", { userid: props.userId });
+                      }}
+                    >
                       <img src="../pics/t-shirt-silhouette.png" class="shirt" />
+                      <div class="silhouette-text" id="tops-text">
+                        Tops
+                      </div>
                     </button>
                   </div>
                   <div class="animate2">
-                    <button class="animate">
+                    <button
+                      class="animate"
+                      onClick={() => {
+                        get("/api/bottom", { userid: props.userId });
+                      }}
+                    >
                       <img src="../pics/pants-silhouette.png" class="pants" />
+                      <div class="silhouette-text" id="bottoms-text">
+                        Bottoms
+                      </div>
                     </button>
                   </div>
                   <div class="animate2">
-                    <button class="animate">
+                    <button
+                      class="animate"
+                      onClick={() => {
+                        get("/api/shoes", { userid: props.userId });
+                      }}
+                    >
                       <img src="../pics/running-shoe-silhouette.png" class="shoes" />
+                      <div class="silhouette-text" id="shoes-text">
+                        Shoes
+                      </div>
                     </button>
                   </div>
                   <div class="animate2">
-                    <button class="animate">
+                    <button
+                      class="animate"
+                      onClick={() => {
+                        get("/api/dress", { userid: props.userId });
+                      }}
+                    >
                       <img src="../pics/dress-silhouette.png" class="dress" />
+                      <div class="silhouette-text" id="dresses-text">
+                        Dresses
+                      </div>
                     </button>
                   </div>
                 </div>
