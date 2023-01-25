@@ -73,12 +73,7 @@ const Suggest_Outfits_Page = () => {
                     </button>
                   </div>
                   <div class="animate2">
-                    <button
-                      class="animate"
-                      onClick={() => {
-                        get("/api/bottom", {});
-                      }}
-                    >
+                    <button class="animate" onClick={() => toggleHideDialog()}>
                       <img src={bottoms} class="pants" />
                       <div class="silhouette-text" id="bottoms-text">
                         Bottoms
@@ -86,12 +81,7 @@ const Suggest_Outfits_Page = () => {
                     </button>
                   </div>
                   <div class="animate2">
-                    <button
-                      class="animate"
-                      onClick={() => {
-                        get("/api/shoes", {});
-                      }}
-                    >
+                    <button class="animate" onClick={() => toggleHideDialog()}>
                       <img src={shoes} class="shoes" />
                       <div class="silhouette-text" id="shoes-text">
                         Shoes
@@ -99,12 +89,7 @@ const Suggest_Outfits_Page = () => {
                     </button>
                   </div>
                   <div class="animate2">
-                    <button
-                      class="animate"
-                      onClick={() => {
-                        get("/api/dress", {});
-                      }}
-                    >
+                    <button class="animate" onClick={() => toggleHideDialog()}>
                       <img src={dress} class="dress" />
                       <div class="silhouette-text" id="dresses-text">
                         Dresses
@@ -118,6 +103,9 @@ const Suggest_Outfits_Page = () => {
               </div>
             </div>
           </div>
+          <Popup hideDialog={hideDialog} toggleHideDialog={toggleHideDialog}></Popup>
+          <Popup hideDialog={hideDialog} toggleHideDialog={toggleHideDialog}></Popup>
+          <Popup hideDialog={hideDialog} toggleHideDialog={toggleHideDialog}></Popup>
           <Popup hideDialog={hideDialog} toggleHideDialog={toggleHideDialog}></Popup>
           <div id="root"></div>
           <script src="/bundle.js"></script>

@@ -5,7 +5,7 @@
   justify-content: space-evenly;
   padding: 8px 16px;
   background-color: rgba(255, 255, 255, 0.085);
-  width: 100%;
+  width: cover;
 }
 
 .NavBar-title {
