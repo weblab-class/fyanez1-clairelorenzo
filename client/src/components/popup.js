@@ -1,7 +1,7 @@
 import * as React from "react";
-import { Dialog, DialogType, DialogFooter } from "@fluentui/react/lib/Dialog";
-import { PrimaryButton, DefaultButton } from "@fluentui/react/lib/Button";
-import { ChoiceGroup, IChoiceGroupOption } from "@fluentui/react/lib/ChoiceGroup";
+import { Dialog, DialogType, DialogFooter } from "@fluentui/react";
+import { PrimaryButton, DefaultButton } from "@fluentui/react";
+import { ChoiceGroup } from "@fluentui/react";
 // import { useBoolean } from "@fluentui/react-hooks";
 
 const options = [

@@ -1,12 +1,12 @@
 .ImageRotator3 {
-  width: 300px;
-  height: 400px;
+  width: 400px;
+  height: 600px;
   position: absolute;
   -webkit-animation: ImageRotator 15s linear infinite;
   -moz-animation: ImageRotator 15s linear infinite;
   -ms-animation: ImageRotator 15s linear infinite;
   -o-animation: ImageRotator 15s linear infinite;
-  animation-delay: 7s;
+  animation-delay: 6s;
 }
 @-webkit-keyframes ImageRotator3 {
   from {

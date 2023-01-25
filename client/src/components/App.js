@@ -56,8 +56,8 @@ const App = () => {
   };
   if (userId){
   return (
-    <>
-    <Navbar/>
+    <div>
+    <Navbar logout={handleLogout}/>
       <Router>
         <Home path='/'></Home>
         {/* <Skeleton path="/" handleLogin={handleLogin} handleLogout={handleLogout} userId={userId} /> */}
@@ -70,6 +70,7 @@ const App = () => {
         <Suggest_Outfits_Page path='/suggest_outfit'/>
         <RandomShuffler path='/RandomShuffler'/>
         
+        
       </Router>
       
       
@@ -78,7 +79,7 @@ const App = () => {
       
         
       
-    </>
+    </div>
   );
 }
 else 
@@ -91,4 +92,4 @@ else
 
 
 
-export default App
+export default App;
