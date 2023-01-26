@@ -15,6 +15,7 @@
 
 // validator runs some basic checks to make sure you've set everything up correctly
 // this is a tool provided by staff, so you don't need to worry about it
+require('dotenv').config();
 const validator = require("./validator");
 validator.checkSetup();
 
@@ -33,8 +34,10 @@ const socketManager = require("./server-socket");
 
 // Server configuration below
 // TODO change connection URL after setting up your team database
-const mongoConnectionURL =
-  "mongodb+srv://fyanez:weblab5678@weblab2.z77axdu.mongodb.net/?retryWrites=true&w=majority";
+// const mongoConnectionURL =
+//   "mongodb+srv://fyanez:weblab5678@weblab2.z77axdu.mongodb.net/?retryWrites=true&w=majority";
+const mongoConnectionURL=
+process.env.ATLAS_SRV;
 // TODO change database name to the name you chose
 const databaseName = "weblab2";
 
@@ -59,7 +62,8 @@ app.use(express.json());
 app.use(
   session({
     // TODO: add a SESSION_SECRET string in your .env file, and replace the secret with process.env.SESSION_SECRET
-    secret: "session-secret",
+    // secret: "session-secret",
+    secret:process.env.SESSION_SECRET,
     resave: false,
     saveUninitialized: false,
   })
@@ -97,7 +101,8 @@ app.use((err, req, res, next) => {
 });
 
 // hardcode port to 3000 for now
-const port = 3000;
+// const port = 3000;
+const port=process.env.PORT || 3000
 const server = http.Server(app);
 socketManager.init(server);
 
