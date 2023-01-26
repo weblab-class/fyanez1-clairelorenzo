@@ -54,7 +54,7 @@ const Popup = (props) => {
       >
         <ChoiceGroup defaultSelectedKey="A" options={options} />
         <DialogFooter>
-          <PrimaryButton onClick={props.toggleHideDialog} text="Save" />
+          <PrimaryButton onClick={props.toggleHideDialog} text="Select" />
           <DefaultButton onClick={props.toggleHideDialog} text="Cancel" />
         </DialogFooter>
       </Dialog>
