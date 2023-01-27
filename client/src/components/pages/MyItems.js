@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Router } from "@reach/router";
 // import { get } from "core-js/core/dict";
 import { get, post } from "../../utilities";
+import './MyItems.css'
 
 const MyItems = () => {
   // const [allPictures, setPictures] = useState([]);
@@ -33,9 +34,8 @@ const MyItems = () => {
     // <button></button>
     
     <div>
-        <div>
-        Add New Item!
-    </div>
+        <div className='title'>My Items</div>
+        <div className='subtitle'>Add New Item:</div>
       <div>
         <div>Upload file here</div>
         <button>
@@ -44,18 +44,14 @@ const MyItems = () => {
           </a>
         </button>
       </div>
-      <br />
       <div>
-        <div>
             <input type='text' id='item_name'/>
             <label htmlFor='item_name'>Item Name</label>
-        </div>
-    </div>
+            </div>
         <input type="text" onChange={changeText} value={value} />
         <label htmlFor="link_id"> Paste link here!</label>
         
-        <input type="submit" value="submit" onClick={savePicture()} />
-        
+        <input type="submit" value="submit" onClick={savePicture()} />   
 
       </div>
   );

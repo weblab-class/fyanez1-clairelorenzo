@@ -41,6 +41,8 @@ import './home.css';
 //   }, []);
 
 const Home=()=> {
+
+
 document.body.style.backgroundColor = 'black';
 // document.body.style='body'
 useEffect(()=>{
@@ -72,13 +74,27 @@ useEffect(()=>{
     return () => clearTimeout(timer)
 }, [])
 
+const options = {
+	method: 'GET',
+	headers: {
+		'X-RapidAPI-Key': '471226b05emshcd8332c3d996176p1b824ajsnadee9df6adc1',
+		'X-RapidAPI-Host': 'open-weather13.p.rapidapi.com'
+	}
+};
+
+fetch('https://open-weather13.p.rapidapi.com/city/boston', options)
+	.then(response => response.json())
+	.then(response => console.log(response))
+    // .then(response => document.write(response))
+	.catch(err => console.error(err));
+
 return (
 <>
 
     {/* <img class='Logo' src={image1}/> */}
-    <img class='Logo' src={image2}/>
+    <img className='Logo' src={image2}/>
     <div/>
-    <div class='random'>
+    <div className='random'>
         <div id='fifthpic' style={{visibility:'hidden'}}><ImageRotator5/></div>
         <div id='fourthpic' style={{visibility:'hidden'}}><ImageRotator4/></div>
         <div id='thirdpic' style={{visibility:'hidden'}} ><ImageRotator3/></div>
