@@ -17,9 +17,9 @@ const MyItems = () => {
   //   };
   // };
 
-  useEffect(() => {
-    console.log(JSON.stringify(fileData));
-  }, [fileData]);
+//   useEffect(() => {
+//     console.log(JSON.stringify(fileData));
+//   }, [fileData]);
 
   return (
     // <button></button>
@@ -32,6 +32,9 @@ const MyItems = () => {
           </a>
         </button>
         {/* <input type="text" onInput={imageHandler}></input>; */}
+        <input type='text' id='link_id'></input>
+        <label for='link_id'>Paste link here!</label>
+
       </div>
       {/* <input type="file" onChange={fileChangeHandler} /> ;
       {fileData != null && <img src={fileData} />}; */}
