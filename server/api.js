@@ -8,6 +8,7 @@
 */
 
 const express = require("express");
+const ClothingItem = require("./models/clothingItem");
 
 // import models so we can interact with the database
 const User = require("./models/user");
@@ -49,75 +50,81 @@ router.post("/initsocket", (req, res) => {
 // |------------------------------|
 
 //top
-router.get("/top", (req, res) => {
-  Top.find({}).then((tops) => {
-    res.send(tops);
-  });
-});
+// router.get("/top", (req, res) => {
+//   Top.find({}).then((tops) => {
+//     res.send(tops);
+//   });
+// });
 
-router.post("/top", (req, res) => {
-  const newItem = new Top({
-    item_name: "String",
-    item_warmth: "String",
-    item_color: "String",
-    item_style: "String",
-    image_ref: "String",
-  });
-  newItem.save().then((item) => res.send(item));
-});
+// router.post("/top", (req, res) => {
+//   const newItem = new Top({
+//     item_name: "String",
+//     item_warmth: "String",
+//     item_color: "String",
+//     item_style: "String",
+//     image_ref: "String",
+//   });
+//   newItem.save().then((item) => res.send(item));
+// });
 
 //bottom
-router.get("/bottom", (req, res) => {
-  Bottom.find({}).then((bottoms) => {
-    res.send(bottoms);
-  });
-});
+// router.get("/bottom", (req, res) => {
+//   Bottom.find({}).then((bottoms) => {
+//     res.send(bottoms);
+//   });
+// });
 
-router.post("/bottom", (req, res) => {
-  const newItem = new Top({
-    item_name: "String",
-    item_warmth: "String",
-    item_color: "String",
-    item_style: "String",
-    image_ref: "String",
-  });
-  newItem.save().then((item) => res.send(item));
-});
+// router.post("/bottom", (req, res) => {
+//   const newItem = new Top({
+//     item_name: "String",
+//     item_warmth: "String",
+//     item_color: "String",
+//     item_style: "String",
+//     image_ref: "String",
+//   });
+//   newItem.save().then((item) => res.send(item));
+// });
 
-//shoes
-router.get("/shoes", (req, res) => {
-  Shoes.find({}).then((shoes) => {
-    res.send(shoes);
-  });
-});
+// //shoes
+// router.get("/shoes", (req, res) => {
+//   Shoes.find({}).then((shoes) => {
+//     res.send(shoes);
+//   });
+// });
 
-router.post("/shoes", (req, res) => {
-  const newItem = new Top({
-    item_name: "String",
-    item_warmth: "String",
-    item_color: "String",
-    item_style: "String",
-    image_ref: "String",
-  });
-  newItem.save().then((item) => res.send(item));
-});
+// router.post("/shoes", (req, res) => {
+//   const newItem = new Top({
+//     item_name: "String",
+//     item_warmth: "String",
+//     item_color: "String",
+//     item_style: "String",
+//     image_ref: "String",
+//   });
+//   newItem.save().then((item) => res.send(item));
+// });
 
-//dress
-router.get("/dress", (req, res) => {
-  Dress.find({}).then((dresses) => {
-    res.send(dresses);
-  });
-});
+// //dress
+// router.get("/dress", (req, res) => {
+//   Dress.find({}).then((dresses) => {
+//     res.send(dresses);
+//   });
+// });
 
-router.post("/dress", (req, res) => {
-  const newItem = new Top({
-    item_name: "String",
-    item_warmth: "String",
-    item_color: "String",
-    item_style: "String",
-    image_ref: "String",
-  });
-  newItem.save().then((item) => res.send(item));
+// router.post("/dress", (req, res) => {
+//   const newItem = new Top({
+//     item_name: "String",
+//     item_warmth: "String",
+//     item_color: "String",
+//     item_style: "String",
+//     image_ref: "String",
+//   });
+//   newItem.save().then((item) => res.send(item));
+// });
+
+router.post("/picture", (req, res) => {
+  console.log(JSON.stringify(req.body.file));
+  const clothingItem = new ClothingItem({ item_name: "random", item_file: req.body.file });
+  clothingItem.save();
 });
 
 // |------------------------------|

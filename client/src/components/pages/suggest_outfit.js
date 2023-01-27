@@ -23,6 +23,14 @@ const Suggest_Outfits_Page = () => {
   //   });
   // }, []);
 
+  // const [items, setItems] = useState([]);
+
+  // get("/api/pictures").then((items) => {
+  //   setItems(items);
+  // });
+
+  // items = items.map((item) => <img src={item.src} />);
+
   return (
     <>
       <html>
@@ -122,8 +130,10 @@ const Suggest_Outfits_Page = () => {
           <script src="/bundle.js"></script>
 
           <div>
-            {/* <button onClick={post("/api/item", { picture: pic })}>Test</button> */}
+            {/* <button onClick={post("/api/pictures", { picture: pic })}>Test</button> */}
             <img src={logo} />
+            <img src="https://imgur.com/a/LLIwN14" />
+            <img src="https://i.imgur.com/waq9vrH.png" />
           </div>
         </body>
       </html>

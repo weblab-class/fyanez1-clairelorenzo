@@ -116,23 +116,23 @@ server.listen(process.env.PORT || 3000);
 
 ///////////////////////////////////API ENDPOINTS//////////////////////////////////////
 
-//user info
-router.get("/whoami", (req, res) => {
-  if (!req.user) {
-    // not logged in
-    return res.send({});
-  }
-  res.send(req.user);
+// user info
+// router.get("/whoami", (req, res) => {
+//   if (!req.user) {
+//     // not logged in
+//     return res.send({});
+//   }
+//   res.send(req.user);
+// });
+
+router.post("/picture", (req, res) => {
+  const clothingItem = req.file;
+  clothingItem.save();
 });
 
-router.post("/item", (req, res) => {
-  const clothingItem = req.query;
-  clothingItem.save().then((pic) => res.send(pic));
-});
-
-router.get("/item", (req, res) => {
-  res.send();
-});
+// router.get("/pictures", (req, res) => {
+//   res.send();
+// });
 ///////////////////////////////////API ENDPOINTS//////////////////////////////////////
 
 // anything else falls to this "not found" case
