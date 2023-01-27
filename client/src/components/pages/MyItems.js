@@ -7,7 +7,7 @@ const MyItems = () => {
     document.body.appendChild(button);
 
     button.addEventListener("click", function() {
-        // code to add item goes here
+    //     // code to add item goes here
     //     var fileInput = document.createElement("input");
     // fileInput.type = "file";
 
@@ -29,6 +29,30 @@ const MyItems = () => {
     // });
     // fileInput.click();
   });
+// const button = document.querySelector('#submit-button');
+// button.addEventListener('click', sendUserData);
+// function sendUserData() {
+//     const userData = {
+//       content_creator: document.querySelector('#name').value,
+//       content: document.querySelector('#comment').value
+//     };
+  
+//     fetch('https://your-api-endpoint.com/user', {
+//       method: 'POST',
+//       headers: { 'Content-Type': 'application/json' },
+//       body: JSON.stringify(userData)
+//     })
+//     .then(response => response.json())
+//     .then(data => console.log(data))
+//     .catch(error => console.error(error));
+//   }
+
+
+
+
+
+
+
     return (
         <button></button>
 
