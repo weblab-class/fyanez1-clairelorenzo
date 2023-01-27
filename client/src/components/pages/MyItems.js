@@ -17,27 +17,35 @@ const MyItems = () => {
   //   };
   // };
 
-//   useEffect(() => {
-//     console.log(JSON.stringify(fileData));
-//   }, [fileData]);
+  //   useEffect(() => {
+  //     console.log(JSON.stringify(fileData));
+  //   }, [fileData]);
+
+  const [value, setValue] = useState("");
+  const savePicture = () => {
+    post("/api/picture", { picture: value });
+  };
+  const changeText = (event) => {
+    setValue(event.target.value);
+  };
 
   return (
     // <button></button>
     <div>
       <div>
-        <p>Upload file here</p>
+        <div>Upload file here</div>
         <button>
-          <a rel="alternate" href="https://imgur.com/upload">
+          <a rel="alternate" href="https://imgur.com/upload" target="_blank">
             Test
           </a>
         </button>
-        {/* <input type="text" onInput={imageHandler}></input>; */}
-        <input type='text' id='link_id'></input>
-        <label for='link_id'>Paste link here!</label>
-
       </div>
-      {/* <input type="file" onChange={fileChangeHandler} /> ;
-      {fileData != null && <img src={fileData} />}; */}
+      <br />
+      <div>
+        <input type="text" onChange={changeText} value={value} />
+        <input type="submit" value="submit" onclick={savePicture()} />
+        <label for="link_id"> Paste link here!</label>
+      </div>
     </div>
   );
 };

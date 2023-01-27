@@ -121,10 +121,28 @@ router.post("/initsocket", (req, res) => {
 //   newItem.save().then((item) => res.send(item));
 // });
 
-router.post("/picture", (req, res) => {
-  console.log(JSON.stringify(req.body.file));
-  const clothingItem = new ClothingItem({ item_name: "random", item_file: req.body.file });
-  clothingItem.save();
+router.post("/picture", async (req, res) => {
+  const get_str_ref = (link) => {
+    let new_str;
+    new_str = "";
+
+    for (var i = 0, _pj_a = link.length; i < _pj_a; i += 1) {
+      if (new_str === "https://imgur.com/") {
+        return link.slice(i);
+      } else {
+        new_str += link[i];
+      }
+    }
+  };
+  if (req.body.picture) {
+    const new_value = get_str_ref(req.body.picture);
+    const clothingItem = new ClothingItem({ item_name: "random", item_file: req.body.picture });
+    await clothingItem.save();
+    res.send({ sucess: true });
+  } else {
+    res.send({ sucess: false, reason: "random" });
+    console.log("Invalid picture");
+  }
 });
 
 // |------------------------------|
