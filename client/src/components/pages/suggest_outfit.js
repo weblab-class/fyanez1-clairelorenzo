@@ -10,7 +10,7 @@ import Popup from "../popup";
 import { useBoolean } from "@fluentui/react-hooks";
 import { get } from "../../utilities";
 
-const Suggest_Outfits_Page = () => {
+const Suggest_Outfits_Page = (props) => {
   const [hideDialog, { toggle: toggleHideDialog }] = useBoolean(true);
   // const [userId, setUserId] = useState(null);
 
@@ -46,7 +46,6 @@ const Suggest_Outfits_Page = () => {
           <div class="background">
             <div class="top">
               <br />
-              <img class="logos" src={logo} />
               <div class="instructions">Click to add clothing item (optional)</div>
               <br />
             </div>
@@ -130,10 +129,14 @@ const Suggest_Outfits_Page = () => {
           <script src="/bundle.js"></script>
 
           <div>
-            {/* <button onClick={post("/api/pictures", { picture: pic })}>Test</button> */}
+            <button
+              onClick={() => {
+                get("/api/pictures", { user: props.userID, item_type: "all" });
+              }}
+            >
+              Test
+            </button>
             <img src={logo} />
-            <img src="https://imgur.com/a/LLIwN14" />
-            <img src="https://i.imgur.com/waq9vrH.png" />
           </div>
         </body>
       </html>
