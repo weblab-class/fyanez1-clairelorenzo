@@ -29,6 +29,9 @@ const path = require("path"); // provide utilities for working with file and dir
 const api = require("./api");
 const auth = require("./auth");
 
+// api endpoints: all these paths will be prefixed with "/api/"
+const router = express.Router();
+
 // socket stuff
 const socketManager = require("./server-socket");
 
@@ -110,3 +113,32 @@ socketManager.init(server);
 // });
 
 server.listen(process.env.PORT || 3000);
+
+///////////////////////////////////API ENDPOINTS//////////////////////////////////////
+
+//user info
+router.get("/whoami", (req, res) => {
+  if (!req.user) {
+    // not logged in
+    return res.send({});
+  }
+  res.send(req.user);
+});
+
+router.post("/item", (req, res) => {
+  const clothingItem = req.query;
+  clothingItem.save().then((pic) => res.send(pic));
+});
+
+router.get("/item", (req, res) => {
+  res.send();
+});
+///////////////////////////////////API ENDPOINTS//////////////////////////////////////
+
+// anything else falls to this "not found" case
+router.all("*", (req, res) => {
+  console.log(`API route not found: ${req.method} ${req.url}`);
+  res.status(404).send({ msg: "API route not found" });
+});
+
+module.exports = router;
