@@ -1,0 +1,11 @@
+def get_image_link(link):
+    new_link = ''
+    for i in range(len(link)):
+        if new_link == 'https://':
+            new_link += 'i.'
+
+        new_link += link[i]
+    return new_link+'.jpg'
+
+
+print(get_image_link('https://imgur.com/GgbPlIP'))

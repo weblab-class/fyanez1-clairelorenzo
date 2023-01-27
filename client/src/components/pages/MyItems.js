@@ -31,7 +31,11 @@ const MyItems = () => {
 
   return (
     // <button></button>
+    
     <div>
+        <div>
+        Add New Item!
+    </div>
       <div>
         <div>Upload file here</div>
         <button>
@@ -42,11 +46,18 @@ const MyItems = () => {
       </div>
       <br />
       <div>
-        <input type="text" onChange={changeText} value={value} />
-        <input type="submit" value="submit" onClick={savePicture()} />
-        <label htmlFor="link_id"> Paste link here!</label>
-      </div>
+        <div>
+            <input type='text' id='item_name'/>
+            <label htmlFor='item_name'>Item Name</label>
+        </div>
     </div>
+        <input type="text" onChange={changeText} value={value} />
+        <label htmlFor="link_id"> Paste link here!</label>
+        
+        <input type="submit" value="submit" onClick={savePicture()} />
+        
+
+      </div>
   );
 };
 
