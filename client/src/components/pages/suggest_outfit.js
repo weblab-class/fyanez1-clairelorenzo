@@ -8,9 +8,20 @@ import logo from "../pics/logo2.png";
 import Popup from "../popup";
 // import { Popup } from "@fluentui/react";
 import { useBoolean } from "@fluentui/react-hooks";
+import { get } from "../../utilities";
 
 const Suggest_Outfits_Page = () => {
   const [hideDialog, { toggle: toggleHideDialog }] = useBoolean(true);
+  // const [userId, setUserId] = useState(null);
+
+  // useEffect(() => {
+  //   get("/api/whoami").then((user) => {
+  //     if (user._id) {
+  //       // they are registed in the database, and currently logged in.
+  //       setUserId(user._id);
+  //     }
+  //   });
+  // }, []);
 
   return (
     <>
@@ -109,6 +120,11 @@ const Suggest_Outfits_Page = () => {
           <Popup hideDialog={hideDialog} toggleHideDialog={toggleHideDialog}></Popup>
           <div id="root"></div>
           <script src="/bundle.js"></script>
+
+          <div>
+            {/* <button onClick={post("/api/item", { picture: pic })}>Test</button> */}
+            <img src={logo} />
+          </div>
         </body>
       </html>
     </>
