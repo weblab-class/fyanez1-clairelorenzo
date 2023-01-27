@@ -25,6 +25,7 @@ const router = express.Router();
 
 //initialize socket
 const socketManager = require("./server-socket");
+const { response } = require("express");
 // const { ThemeConsumer } = require("styled-components");
 
 router.post("/login", auth.login);
@@ -49,103 +50,40 @@ router.post("/initsocket", (req, res) => {
 // | write your API methods below!|
 // |------------------------------|
 
-//top
-// router.get("/top", (req, res) => {
-//   Top.find({}).then((tops) => {
-//     res.send(tops);
-//   });
-// });
-
-// router.post("/top", (req, res) => {
-//   const newItem = new Top({
-//     item_name: "String",
-//     item_warmth: "String",
-//     item_color: "String",
-//     item_style: "String",
-//     image_ref: "String",
-//   });
-//   newItem.save().then((item) => res.send(item));
-// });
-
-//bottom
-// router.get("/bottom", (req, res) => {
-//   Bottom.find({}).then((bottoms) => {
-//     res.send(bottoms);
-//   });
-// });
-
-// router.post("/bottom", (req, res) => {
-//   const newItem = new Top({
-//     item_name: "String",
-//     item_warmth: "String",
-//     item_color: "String",
-//     item_style: "String",
-//     image_ref: "String",
-//   });
-//   newItem.save().then((item) => res.send(item));
-// });
-
-// //shoes
-// router.get("/shoes", (req, res) => {
-//   Shoes.find({}).then((shoes) => {
-//     res.send(shoes);
-//   });
-// });
-
-// router.post("/shoes", (req, res) => {
-//   const newItem = new Top({
-//     item_name: "String",
-//     item_warmth: "String",
-//     item_color: "String",
-//     item_style: "String",
-//     image_ref: "String",
-//   });
-//   newItem.save().then((item) => res.send(item));
-// });
-
-// //dress
-// router.get("/dress", (req, res) => {
-//   Dress.find({}).then((dresses) => {
-//     res.send(dresses);
-//   });
-// });
-
-// router.post("/dress", (req, res) => {
-//   const newItem = new Top({
-//     item_name: "String",
-//     item_warmth: "String",
-//     item_color: "String",
-//     item_style: "String",
-//     image_ref: "String",
-//   });
-//   newItem.save().then((item) => res.send(item));
-// });
-
 router.post("/picture", async (req, res) => {
   const get_str_ref = (link) => {
     var new_link;
     new_link = "";
-
     for (var i = 0, _pj_a = link.length; i < _pj_a; i += 1) {
       if (new_link === "https://") {
         new_link += "i.";
       }
-
       new_link += link[i];
     }
-
     return new_link + ".jpg";
   };
-
   if (req.body.picture) {
     const new_value = get_str_ref(req.body.picture);
-    const clothingItem = new ClothingItem({ item_name: "bobo", item_file: new_value });
+    const clothingItem = new ClothingItem({
+      item_name: "shirt",
+      item_file: new_value,
+      user: "John",
+    });
     await clothingItem.save();
     res.send({ sucess: true });
   } else {
     res.send({ sucess: false, reason: "random" });
     console.log("Invalid picture");
   }
+});
+
+router.get("/pictures", (req, res) => {
+  if (req.query.item_type === "all") {
+    query = { user: req.query.user };
+  } else {
+    query = { user: req.query.user, item_type: req.query.item_type };
+  }
+  ClothingItem.find(query).then((pictures) => res.send(pictures));
 });
 
 // |------------------------------|
