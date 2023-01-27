@@ -3,7 +3,8 @@ import { Dialog, DialogType, DialogFooter } from "@fluentui/react";
 import { PrimaryButton, DefaultButton } from "@fluentui/react";
 import { ChoiceGroup, ChoiceGroupOption } from "@fluentui/react";
 import "./popup.css";
-import image1 from "./../public/logo.png";
+import image1 from "./pics/logo2.png";
+
 // import { useBoolean } from "@fluentui/react-hooks";
 
 const options = [

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Router } from "@reach/router";
 // import { get } from "core-js/core/dict";
 import { get, post } from "../../utilities";
-import './MyItems.css'
+import "./MyItems.css";
 
 const MyItems = () => {
   // const [allPictures, setPictures] = useState([]);
@@ -32,28 +32,44 @@ const MyItems = () => {
 
   return (
     // <button></button>
-    
-    <div>
-        <div className='title'>My Items</div>
-        <div className='subtitle'>Add New Item:</div>
-      <div>
-        <div>Upload file here</div>
-        <button>
-          <a rel="alternate" href="https://imgur.com/upload" target="_blank">
-            Test
-          </a>
-        </button>
-      </div>
-      <div>
-            <input type='text' id='item_name'/>
-            <label htmlFor='item_name'>Item Name</label>
-            </div>
-        <input type="text" onChange={changeText} value={value} />
-        <label htmlFor="link_id"> Paste link here!</label>
-        
-        <input type="submit" value="submit" onClick={savePicture()} />   
 
+    <div>
+      <div className="title">My Items</div>
+      <div className="subtitle">Add New Item:</div>
+      <br />
+      <div>
+        <div class="text">
+          Upload file{" "}
+          <a rel="alternate" href="https://imgur.com/upload" target="_blank">
+            here
+          </a>{" "}
+          and copy the link
+        </div>
       </div>
+      <div>
+        <input type="text" id="item_name" />
+        <label class="text" htmlFor="item_name">
+          Item Name
+        </label>
+      </div>
+      <input type="text" onChange={changeText} value={value} />
+      <label class="text" htmlFor="link_id">
+        {" "}
+        Paste link here!
+      </label>
+
+      <div class="item-type">
+        <select class="dropdown" name="Type">
+          <option>Top</option>
+          <option>Bottom</option>
+          <option>Shoes</option>
+          <option>Other</option>
+        </select>
+        <div class="text">Item Type</div>
+      </div>
+      <br />
+      <input class="submit" type="submit" value="submit" onClick={savePicture()} />
+    </div>
   );
 };
 

@@ -8,4 +8,23 @@
 .subtitle {
   font-size: 30px;
   font-weight: bold;
+  color: white;
+}
+
+.text {
+  color: white;
+}
+
+.item-type {
+  display: flex;
+}
+
+.submit {
+  width: 7%;
+  margin-left: 3%;
+}
+
+.dropdown {
+  width: 13.3%;
+  text-align: center;
 }
