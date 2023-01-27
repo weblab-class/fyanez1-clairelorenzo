@@ -43,8 +43,8 @@ const MyItems = () => {
       <br />
       <div>
         <input type="text" onChange={changeText} value={value} />
-        <input type="submit" value="submit" onclick={savePicture()} />
-        <label for="link_id"> Paste link here!</label>
+        <input type="submit" value="submit" onClick={savePicture()} />
+        <label htmlFor="link_id"> Paste link here!</label>
       </div>
     </div>
   );

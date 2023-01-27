@@ -123,20 +123,23 @@ router.post("/initsocket", (req, res) => {
 
 router.post("/picture", async (req, res) => {
   const get_str_ref = (link) => {
-    let new_str;
-    new_str = "";
+    var new_link;
+    new_link = "";
 
     for (var i = 0, _pj_a = link.length; i < _pj_a; i += 1) {
-      if (new_str === "https://imgur.com/") {
-        return link.slice(i);
-      } else {
-        new_str += link[i];
+      if (new_link === "https://") {
+        new_link += "i.";
       }
+
+      new_link += link[i];
     }
+
+    return new_link + ".jpg";
   };
+
   if (req.body.picture) {
     const new_value = get_str_ref(req.body.picture);
-    const clothingItem = new ClothingItem({ item_name: "random", item_file: req.body.picture });
+    const clothingItem = new ClothingItem({ item_name: "bobo", item_file: new_value });
     await clothingItem.save();
     res.send({ sucess: true });
   } else {
