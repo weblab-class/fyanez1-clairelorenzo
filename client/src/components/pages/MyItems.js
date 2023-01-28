@@ -5,6 +5,7 @@ import { get, post } from "../../utilities";
 import "./MyItems.css";
 
 const MyItems = (props) => {
+  const [images,SetImages]=useState([]);
   // const [allPictures, setPictures] = useState([]);
   // const [fileData, setFileData] = useState(null);
   // const fileChangeHandler = (event) => {
@@ -21,6 +22,10 @@ const MyItems = (props) => {
   //   useEffect(() => {
   //     console.log(JSON.stringify(fileData));
   //   }, [fileData]);
+
+
+
+
 
   const [value, setValue] = useState("");
   const savePicture = () => {
@@ -40,7 +45,7 @@ const MyItems = (props) => {
       <div className="subtitle">Add New Item:</div>
       <br />
       <div>
-        <div class="text">
+        <div className="text">
           Upload file{" "}
           <a rel="alternate" href="https://imgur.com/upload" target="_blank">
             here
@@ -50,27 +55,52 @@ const MyItems = (props) => {
       </div>
       <div>
         <input type="text" id="item_name" />
-        <label class="text" htmlFor="item_name">
+        <label className="text" htmlFor="item_name">
           Item Name
         </label>
       </div>
       <input type="text" onChange={changeText} value={value} />
-      <label class="text" htmlFor="link_id">
+      <label className="text" htmlFor="link_id">
         {" "}
         Paste link here!
       </label>
 
-      <div class="item-type">
-        <select class="dropdown" name="Type">
+      <div className="item-type">
+        <select className="dropdown" name="Type">
           <option>Top</option>
           <option>Bottom</option>
           <option>Shoes</option>
           <option>Other</option>
         </select>
-        <div class="text">Item Type</div>
+        <div className="text">Item Type</div>
+      </div>
+      <div className="item-type">
+        <select  className='dropdown' name='Style'>
+          <option>Formal</option>
+          <option>Casual</option>
+          <option>Sports</option>
+          <option>Lounge</option>
+          <option>Professional</option>
+        </select>
+        <div className="text">Item Style</div>
       </div>
       <br />
-      <input class="submit" type="submit" value="submit" onClick={savePicture} />
+      <input className="submit" type="submit" value="submit" onClick={savePicture} />
+
+      <div>
+      <button
+              onClick={() => {
+      {get("/api/pictures", {item_type: "all", user: props.userID})
+                // user: props.userID, item_type: "all"
+                .then(response => SetImages(response))}
+              }
+            }>
+              Refresh My Items!
+            </button>
+      <div>
+      {images.map((image, i) => <img className='items' key={i} src={image.item_file} />)}
+      </div>
+      </div>
     </div>
   );
 };
