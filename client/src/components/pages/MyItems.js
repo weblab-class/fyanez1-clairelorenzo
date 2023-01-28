@@ -41,7 +41,9 @@ const MyItems = (props) => {
     // <button></button>
 
     <div>
+      
       <div className="title">My Items</div>
+      <div className='addNewItemBox'>
       <div className="subtitle">Add New Item:</div>
       <br />
       <div>
@@ -86,7 +88,7 @@ const MyItems = (props) => {
       </div>
       <br />
       <input className="submit" type="submit" value="submit" onClick={savePicture} />
-
+      </div>
       <div>
       <button
               onClick={() => {
