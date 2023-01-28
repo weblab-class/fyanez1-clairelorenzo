@@ -83,7 +83,10 @@ router.get("/pictures", (req, res) => {
   } else {
     query = { user: req.query.user, item_type: req.query.item_type };
   }
-  ClothingItem.find(query).then((pictures) => res.send(pictures));
+  ClothingItem.find(query)
+  .then((pictures)=>{console.log(pictures);
+  return pictures})
+  .then((pictures) => res.send(pictures));
 });
 
 // |------------------------------|
