@@ -9,14 +9,12 @@ import Popup from "../popup";
 // import { Popup } from "@fluentui/react";
 import { useBoolean } from "@fluentui/react-hooks";
 import { get } from "../../utilities";
-import {useState, useEffect} from "react";
-
-
+import { useState, useEffect } from "react";
 
 const Suggest_Outfits_Page = (props) => {
   const [hideDialog, { toggle: toggleHideDialog }] = useBoolean(true);
-  const [images,SetImages]=useState([]);
-  console.log(images)
+  const [images, SetImages] = useState([]);
+  console.log(images);
   // const [userId, setUserId] = useState(null);
 
   // useEffect(() => {
@@ -134,16 +132,9 @@ const Suggest_Outfits_Page = (props) => {
           <script src="/bundle.js"></script>
 
           <div>
-            <button
-              onClick={() => {
-                get("/api/pictures", {item_type: "all", user: props.userID})
-                // user: props.userID, item_type: "all"
-                .then(response => SetImages(response));
-              }}
-            >
-              Test
-            </button>
-            {images.map((image, i) => <img key={i} src={image.item_file} />)}
+            {images.map((image, i) => (
+              <img key={i} src={image.item_file} />
+            ))}
             <img src={logo} />
           </div>
         </body>

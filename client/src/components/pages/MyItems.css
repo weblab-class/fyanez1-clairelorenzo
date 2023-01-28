@@ -1,8 +1,11 @@
+/* .main {} */
+
 .title {
   font-size: 50px;
   font-weight: bold;
   text-align: center;
   color: grey;
+  margin-bottom: 2%;
 }
 
 .subtitle {
@@ -13,6 +16,13 @@
 
 .text {
   color: white;
+  font-weight: 150;
+}
+
+.instructions {
+  color: white;
+  font-weight: bold;
+  font-size: 100px;
 }
 
 .item-type {
@@ -20,20 +30,37 @@
 }
 
 .submit {
-  width: 7%;
-  margin-left: 3%;
+  width: 40%;
+  background-color: white;
+  height: 5%;
+  margin-top: 20px;
 }
 
 .dropdown {
-  width: 13.3%;
+  width: 60%;
   text-align: center;
+  margin-bottom: 5%;
 }
 
 .items {
-  max-height: 300px;
-  max-width: 200px;
+  max-height: 270px;
+  max-width: 180px;
 }
 
 .addNewItemBox {
-  background-color: black;
+  background-color: rgb(151, 146, 80);
+  width: 20%;
+  border-radius: 25px;
+  height: 430px;
+  margin-top: 0px;
+  margin-left: 2%;
+  opacity: 0.8;
+  box-shadow: 15px 15px 15px black;
+  float: inline-start;
+  text-align: center;
+  margin-right: 50px;
+}
+
+.addBox-and-pics {
+  display: flex;
 }
