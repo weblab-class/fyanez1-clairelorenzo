@@ -4,7 +4,7 @@ import { Router } from "@reach/router";
 import { get, post } from "../../utilities";
 import "./MyItems.css";
 
-const MyItems = () => {
+const MyItems = (props) => {
   // const [allPictures, setPictures] = useState([]);
   // const [fileData, setFileData] = useState(null);
   // const fileChangeHandler = (event) => {
@@ -24,8 +24,10 @@ const MyItems = () => {
 
   const [value, setValue] = useState("");
   const savePicture = () => {
-    post("/api/picture", { picture: value });
+    post("/api/picture", { picture: value, user: props.userID });
+    console.log(value)
   };
+
   const changeText = (event) => {
     setValue(event.target.value);
   };
@@ -68,7 +70,7 @@ const MyItems = () => {
         <div class="text">Item Type</div>
       </div>
       <br />
-      <input class="submit" type="submit" value="submit" onClick={savePicture()} />
+      <input class="submit" type="submit" value="submit" onClick={savePicture} />
     </div>
   );
 };

@@ -65,7 +65,7 @@ const App = () => {
           <Home path="/home" />
           <Weather path="/weather" />
           <MakeMyFit path="/MakeMyFit" />
-          <MyItems path="/MyItems" />
+          <MyItems path="/MyItems" userID={userId}/>
           <MyPastOutfits path="/MyPastOutfits" />
           <Suggest_Outfits_Page path="/suggest_outfit" userID={userId} />
           <RandomShuffler path="/RandomShuffler" />

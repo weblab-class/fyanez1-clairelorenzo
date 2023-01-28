@@ -65,9 +65,10 @@ router.post("/picture", async (req, res) => {
   if (req.body.picture) {
     const new_value = get_str_ref(req.body.picture);
     const clothingItem = new ClothingItem({
-      item_name: "shirt",
+      // item_name: "shirt",
       item_file: new_value,
-      user: "John",
+      item_type: 'all',
+      user: req.body.user,
     });
     await clothingItem.save();
     res.send({ sucess: true });
@@ -79,7 +80,8 @@ router.post("/picture", async (req, res) => {
 
 router.get("/pictures", (req, res) => {
   if (req.query.item_type === "all") {
-    query = { user: req.query.user };
+    query = {user:req.query.user};
+    // user:req.query.user
   } else {
     query = { user: req.query.user, item_type: req.query.item_type };
   }

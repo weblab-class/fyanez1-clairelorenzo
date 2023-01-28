@@ -15,7 +15,8 @@ import {useState, useEffect} from "react";
 
 const Suggest_Outfits_Page = (props) => {
   const [hideDialog, { toggle: toggleHideDialog }] = useBoolean(true);
-  const [images,SetImages]=useState([])
+  const [images,SetImages]=useState([]);
+  console.log(images)
   // const [userId, setUserId] = useState(null);
 
   // useEffect(() => {
@@ -47,36 +48,36 @@ const Suggest_Outfits_Page = (props) => {
         </head>
 
         <body>
-          <div class="background">
-            <div class="top">
+          <div className="background">
+            <div className="top">
               <br />
-              <div class="instructions">Click to add clothing item (optional)</div>
+              <div className="instructions">Click to add clothing item (optional)</div>
               <br />
             </div>
             <br />
             <br />
-            <div class="middle-area">
-              <div class="filters">
-                <div class="filters-title">Preferences</div>
-                <div class="filter_labels" id="weather-title">
+            <div className="middle-area">
+              <div className="filters">
+                <div className="filters-title">Preferences</div>
+                <div className="filter_labels" id="weather-title">
                   Temperature
                 </div>
                 <input id="Weather" class="filter" type="number" placeholder="Enter Here"></input>
-                <div class="filter_labels">Material</div>
+                <div className="filter_labels">Material</div>
                 <select name="Material" class="filter">
                   <option>None</option>
                   <option>test</option>
                   <option>test</option>
                   <option>test</option>
                 </select>
-                <div class="filter_labels">Style</div>
+                <div className="filter_labels">Style</div>
                 <select name="Style" class="filter">
                   <option>None</option>
                   <option>test</option>
                   <option>test</option>
                   <option>test</option>
                 </select>
-                <div class="filter_labels">Filter</div>
+                <div className="filter_labels">Filter</div>
                 <select name="* filter *" class="filter">
                   <option>None</option>
                   <option>test</option>
@@ -84,44 +85,44 @@ const Suggest_Outfits_Page = (props) => {
                   <option>test</option>
                 </select>
               </div>
-              <div class="silhouettes-and-buttons">
-                <div class="silhouettes">
-                  <div class="animate2">
-                    <button class="animate" onClick={() => toggleHideDialog()}>
+              <div className="silhouettes-and-buttons">
+                <div className="silhouettes">
+                  <div className="animate2">
+                    <button className="animate" onClick={() => toggleHideDialog()}>
                       <img src={tops} class="shirt" />
-                      <div class="silhouette-text" id="tops-text">
+                      <div className="silhouette-text" id="tops-text">
                         Tops
                       </div>
                     </button>
                   </div>
-                  <div class="animate2">
-                    <button class="animate" onClick={() => toggleHideDialog()}>
-                      <img src={bottoms} class="pants" />
-                      <div class="silhouette-text" id="bottoms-text">
+                  <div className="animate2">
+                    <button className="animate" onClick={() => toggleHideDialog()}>
+                      <img src={bottoms} className="pants" />
+                      <div className="silhouette-text" id="bottoms-text">
                         Bottoms
                       </div>
                     </button>
                   </div>
-                  <div class="animate2">
+                  <div className="animate2">
                     <button class="animate" onClick={() => toggleHideDialog()}>
                       <img src={shoes} class="shoes" />
-                      <div class="silhouette-text" id="shoes-text">
+                      <div className="silhouette-text" id="shoes-text">
                         Shoes
                       </div>
                     </button>
                   </div>
-                  <div class="animate2">
+                  <div className="animate2">
                     <button class="animate" onClick={() => toggleHideDialog()}>
-                      <img src={dress} class="dress" />
-                      <div class="silhouette-text" id="dresses-text">
+                      <img src={dress} className="dress" />
+                      <div className="silhouette-text" id="dresses-text">
                         Dresses
                       </div>
                     </button>
                   </div>
                 </div>
 
-                <button class="suggest">Suggest Outfits!</button>
-                <button class="reset">Reset</button>
+                <button className="suggest">Suggest Outfits!</button>
+                <button className="reset">Reset</button>
               </div>
             </div>
           </div>
@@ -135,13 +136,14 @@ const Suggest_Outfits_Page = (props) => {
           <div>
             <button
               onClick={() => {
-                get("/api/pictures", { user: props.userID, item_type: "all" })
-                .then(response => setImages(response));
+                get("/api/pictures", {item_type: "all", user: props.userID})
+                // user: props.userID, item_type: "all"
+                .then(response => SetImages(response));
               }}
             >
               Test
             </button>
-            {/* {images.map((image, i) => <img key={i} src={fill this in}) />} */}
+            {images.map((image, i) => <img key={i} src={image.item_file} />)}
             <img src={logo} />
           </div>
         </body>
