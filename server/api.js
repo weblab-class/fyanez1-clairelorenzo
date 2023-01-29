@@ -65,9 +65,10 @@ router.post("/picture", async (req, res) => {
   if (req.body.picture) {
     const new_value = get_str_ref(req.body.picture);
     const clothingItem = new ClothingItem({
-      // item_name: "shirt",
       item_file: new_value,
-      item_type: 'all',
+      item_name: req.body.name,
+      item_type: req.body.type,
+      item_style: req.body.style,
       user: req.body.user,
     });
     await clothingItem.save();
@@ -80,15 +81,16 @@ router.post("/picture", async (req, res) => {
 
 router.get("/pictures", (req, res) => {
   if (req.query.item_type === "all") {
-    query = {user:req.query.user};
-    // user:req.query.user
+    query = { user: req.query.user };
   } else {
     query = { user: req.query.user, item_type: req.query.item_type };
   }
   ClothingItem.find(query)
-  .then((pictures)=>{console.log(pictures);
-  return pictures})
-  .then((pictures) => res.send(pictures));
+    .then((pictures) => {
+      console.log(pictures);
+      return pictures;
+    })
+    .then((pictures) => res.send(pictures));
 });
 
 // |------------------------------|

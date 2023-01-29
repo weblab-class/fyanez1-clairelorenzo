@@ -6,17 +6,43 @@ import "./MyItems.css";
 
 const MyItems = (props) => {
   const [images, SetImages] = useState([]);
-  const [value, setValue] = useState("");
+  const [value, setValue] = useState(""); // pic url
+  const [item_name, setItemName] = useState(""); // name
+  const [item_type, setItemType] = useState(""); // type
+  const [item_style, setItemStyle] = useState(""); //style
+
   const savePicture = () => {
-    post("/api/picture", { picture: value, user: props.userID });
+    post("/api/picture", {
+      picture: value,
+      name: item_name,
+      type: item_type,
+      style: item_style,
+      user: props.userID,
+    });
     get("/api/pictures", { item_type: "all", user: props.userID }).then((response) =>
       SetImages(response)
     );
     console.log(value);
   };
 
+  //image url
   const changeText = (event) => {
     setValue(event.target.value);
+  };
+
+  //item type
+  const changeType = (event) => {
+    setItemType(event.target.item_type);
+  };
+
+  //item style
+  const changeStyle = (event) => {
+    setItemStyle(event.target.item_style);
+  };
+
+  //item name
+  const changeName = (event) => {
+    setItemName(event.target.item_name);
   };
 
   useEffect(() => {
@@ -50,21 +76,21 @@ const MyItems = (props) => {
           <input className="dropdown" type="text" onChange={changeText} value={value} />
           <div>
             <div className="text">Item Name</div>
-            <input className="dropdown" type="text" id="item_name" />
+            <input className="dropdown" type="text" id="item_name" onChange={changeName} />
             <label className="text" htmlFor="item_name"></label>
           </div>
           <label className="text" htmlFor="link_id"></label>
 
           <div className="item-type"></div>
           <div className="text">Item Type</div>
-          <select className="dropdown" name="Type">
+          <select className="dropdown" name="Type" onChange={changeType}>
             <option>Top</option>
             <option>Bottom</option>
             <option>Shoes</option>
             <option>Other</option>
           </select>
           <div className="text">Item Style</div>
-          <select className="dropdown" name="Style">
+          <select className="dropdown" name="Style" onChange={changeStyle}>
             <option>Formal</option>
             <option>Casual</option>
             <option>Sports</option>

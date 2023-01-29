@@ -16,6 +16,11 @@
   margin-left: -20%;
 }
 
+.logo {
+  display: flex;
+  justify-content: center;
+}
+
 .top {
   box-shadow: 10px 10px 10px 5px black;
   display: flex;
