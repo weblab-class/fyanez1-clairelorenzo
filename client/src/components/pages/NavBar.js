@@ -19,12 +19,14 @@ const Navbar = (props) => {
     <>
       <nav className="NavBar-container">
         <img src={logoicon2} className="navbarlogo"></img>
-        <div className="NavBar-title">MakeMyFit</div>
+        <div to="/home" className="NavBar-title">
+          MakeMyFit
+        </div>
         <Link className="NavBar-link" to="/home">
           Home
         </Link>
 
-        <Link className="NavBar-link" to="/suggest_outfit">
+        <Link id="makemyfit" className="NavBar-link" to="/suggest_outfit">
           Make My Fit!
         </Link>
         <Link className="NavBar-link" to="/MyItems">
@@ -45,6 +47,7 @@ const Navbar = (props) => {
         </Link>
 
         <button
+          className="logout"
           onClick={() => {
             googleLogout();
             props.logout();

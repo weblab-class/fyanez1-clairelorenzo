@@ -13,6 +13,7 @@
   font-size: 30px;
   padding: 8px;
   font-family: "verdana";
+  text-decoration: none;
 }
 
 .NavBar-item {
@@ -28,4 +29,26 @@
   font-size: 16px;
   display: flex;
   align-items: center;
+}
+
+.NavBar-link:hover {
+  background-color: gray;
+  background-blend-mode: color-dodge;
+}
+
+.logout {
+  color: #b8860b;
+  text-decoration: none;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 16px;
+  display: flex;
+  background-color: transparent;
+  border: none;
+  align-items: center;
+}
+
+.logout:hover {
+  background-color: gray;
+  background-blend-mode: color-dodge;
+  cursor: pointer;
 }

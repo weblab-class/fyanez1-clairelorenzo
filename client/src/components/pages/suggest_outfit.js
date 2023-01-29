@@ -131,10 +131,7 @@ const Suggest_Outfits_Page = (props) => {
           <div id="root"></div>
           <script src="/bundle.js"></script>
 
-          <div>
-            {images.map((image, i) => (
-              <img key={i} src={image.item_file} />
-            ))}
+          <div className="logo">
             <img src={logo} />
           </div>
         </body>
