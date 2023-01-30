@@ -124,10 +124,26 @@ const Suggest_Outfits_Page = (props) => {
               </div>
             </div>
           </div>
-          <Popup hideDialog={hideDialog} toggleHideDialog={toggleHideDialog}></Popup>
-          <Popup hideDialog={hideDialog} toggleHideDialog={toggleHideDialog}></Popup>
-          <Popup hideDialog={hideDialog} toggleHideDialog={toggleHideDialog}></Popup>
-          <Popup hideDialog={hideDialog} toggleHideDialog={toggleHideDialog}></Popup>
+          <Popup
+            hideDialog={hideDialog}
+            toggleHideDialog={toggleHideDialog}
+            userID={props.userID}
+          ></Popup>
+          <Popup
+            hideDialog={hideDialog}
+            toggleHideDialog={toggleHideDialog}
+            userID={props.userID}
+          ></Popup>
+          <Popup
+            hideDialog={hideDialog}
+            toggleHideDialog={toggleHideDialog}
+            userID={props.userID}
+          ></Popup>
+          <Popup
+            hideDialog={hideDialog}
+            toggleHideDialog={toggleHideDialog}
+            userID={props.userID}
+          ></Popup>
           <div id="root"></div>
           <script src="/bundle.js"></script>
 
