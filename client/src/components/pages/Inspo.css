@@ -1,11 +1,11 @@
 .slide1 {
-  width: 400px;
-  height: 600px;
+  width: 200px;
+  height: 300px;
   position: absolute;
-  -webkit-animation: ImageRotator 15s linear infinite;
-  -moz-animation: ImageRotator 15s linear infinite;
-  -ms-animation: ImageRotator 15s linear infinite;
-  -o-animation: ImageRotator 15s linear infinite;
+  -webkit-animation: ImageRotator 25s linear infinite;
+  -moz-animation: ImageRotator 25s linear infinite;
+  -ms-animation: ImageRotator 25s linear infinite;
+  -o-animation: ImageRotator 25s linear infinite;
   /* animation-delay: 6s; */
 }
 @-webkit-keyframes slide1 {
@@ -18,13 +18,13 @@
 }
 
 .slide2 {
-  width: 400px;
-  height: 600px;
+  width: 200px;
+  height: 300px;
   position: absolute;
-  -webkit-animation: ImageRotator 15s linear infinite;
-  -moz-animation: ImageRotator 15s linear infinite;
-  -ms-animation: ImageRotator 15s linear infinite;
-  -o-animation: ImageRotator 15s linear infinite;
+  -webkit-animation: ImageRotator 25s linear infinite;
+  -moz-animation: ImageRotator 25s linear infinite;
+  -ms-animation: ImageRotator 25s linear infinite;
+  -o-animation: ImageRotator 25s linear infinite;
   animation-delay: 3s;
 }
 @-webkit-keyframes slide2 {
@@ -37,13 +37,13 @@
 }
 
 .slide3 {
-  width: 400px;
-  height: 600px;
+  width: 200px;
+  height: 300px;
   position: absolute;
-  -webkit-animation: ImageRotator 15s linear infinite;
-  -moz-animation: ImageRotator 15s linear infinite;
-  -ms-animation: ImageRotator 15s linear infinite;
-  -o-animation: ImageRotator 15s linear infinite;
+  -webkit-animation: ImageRotator 25s linear infinite;
+  -moz-animation: ImageRotator 25s linear infinite;
+  -ms-animation: ImageRotator 25s linear infinite;
+  -o-animation: ImageRotator 25s linear infinite;
   animation-delay: 6s;
 }
 @-webkit-keyframes slide3 {
@@ -56,13 +56,13 @@
 }
 
 .slide4 {
-  width: 400px;
-  height: 600px;
+  width: 200px;
+  height: 300px;
   position: absolute;
-  -webkit-animation: ImageRotator 15s linear infinite;
-  -moz-animation: ImageRotator 15s linear infinite;
-  -ms-animation: ImageRotator 15s linear infinite;
-  -o-animation: ImageRotator 15s linear infinite;
+  -webkit-animation: ImageRotator 25s linear infinite;
+  -moz-animation: ImageRotator 25s linear infinite;
+  -ms-animation: ImageRotator 25s linear infinite;
+  -o-animation: ImageRotator 25s linear infinite;
   animation-delay: 9s;
 }
 @-webkit-keyframes slide4 {
@@ -74,17 +74,17 @@
   }
 }
 
-.slide1 {
-  width: 400px;
-  height: 600px;
+.slide1b {
+  width: 200px;
+  height: 300px;
   position: absolute;
-  -webkit-animation: ImageRotator 15s linear infinite;
-  -moz-animation: ImageRotator 15s linear infinite;
-  -ms-animation: ImageRotator 15s linear infinite;
-  -o-animation: ImageRotator 15s linear infinite;
-  /* animation-delay: 6s; */
+  -webkit-animation: ImageRotator 25s linear infinite;
+  -moz-animation: ImageRotator 25s linear infinite;
+  -ms-animation: ImageRotator 25s linear infinite;
+  -o-animation: ImageRotator 25s linear infinite;
+  animation-delay: 12s;
 }
-@-webkit-keyframes slide1 {
+@-webkit-keyframes slide1b {
   from {
     left: -50%;
   }
@@ -93,17 +93,35 @@
   }
 }
 
-.slide2 {
-  width: 400px;
-  height: 600px;
+.slide2b {
+  width: 200px;
+  height: 300px;
   position: absolute;
-  -webkit-animation: ImageRotator 15s linear infinite;
-  -moz-animation: ImageRotator 15s linear infinite;
-  -ms-animation: ImageRotator 15s linear infinite;
-  -o-animation: ImageRotator 15s linear infinite;
-  animation-delay: 3s;
+  -webkit-animation: ImageRotator 25s linear infinite;
+  -moz-animation: ImageRotator 25s linear infinite;
+  -ms-animation: ImageRotator 25s linear infinite;
+  -o-animation: ImageRotator 25s linear infinite;
+  animation-delay: 15s;
 }
-@-webkit-keyframes slide2 {
+@-webkit-keyframes slide2b {
+  from {
+    left: -50%;
+  }
+  to {
+    left: 100%;
+  }
+}
+.slide3b {
+  width: 200px;
+  height: 300px;
+  position: absolute;
+  -webkit-animation: ImageRotator 25s linear infinite;
+  -moz-animation: ImageRotator 25s linear infinite;
+  -ms-animation: ImageRotator 25s linear infinite;
+  -o-animation: ImageRotator 25s linear infinite;
+  animation-delay: 18s;
+}
+@-webkit-keyframes slide3b {
   from {
     left: -50%;
   }
@@ -112,17 +130,18 @@
   }
 }
 
-.slide3 {
-  width: 400px;
-  height: 600px;
+.slide4b {
+  width: 200px;
+  height: 300px;
   position: absolute;
-  -webkit-animation: ImageRotator 15s linear infinite;
-  -moz-animation: ImageRotator 15s linear infinite;
-  -ms-animation: ImageRotator 15s linear infinite;
-  -o-animation: ImageRotator 15s linear infinite;
-  animation-delay: 6s;
+  -webkit-animation: ImageRotator 25s linear infinite;
+  -moz-animation: ImageRotator 25s linear infinite;
+  -ms-animation: ImageRotator 25s linear infinite;
+  -o-animation: ImageRotator 25s linear infinite;
+  animation-delay: 21s;
 }
-@-webkit-keyframes slide3 {
+
+@-webkit-keyframes slide4b {
   from {
     left: -50%;
   }
@@ -130,110 +149,14 @@
     left: 100%;
   }
 }
-
-.slide4 {
-  width: 400px;
-  height: 600px;
-  position: absolute;
-  -webkit-animation: ImageRotator 15s linear infinite;
-  -moz-animation: ImageRotator 15s linear infinite;
-  -ms-animation: ImageRotator 15s linear infinite;
-  -o-animation: ImageRotator 15s linear infinite;
-  animation-delay: 9s;
-}
-@-webkit-keyframes slide4 {
-  from {
-    left: -50%;
-  }
-  to {
-    left: 100%;
-  }
-}
-
-.slide1 {
-  width: 400px;
-  height: 600px;
-  position: absolute;
-  -webkit-animation: ImageRotator 15s linear infinite;
-  -moz-animation: ImageRotator 15s linear infinite;
-  -ms-animation: ImageRotator 15s linear infinite;
-  -o-animation: ImageRotator 15s linear infinite;
-  /* animation-delay: 6s; */
-}
-@-webkit-keyframes slide1 {
-  from {
-    left: -50%;
-  }
-  to {
-    left: 100%;
-  }
-}
-
-.slide2 {
-  width: 400px;
-  height: 600px;
-  position: absolute;
-  -webkit-animation: ImageRotator 15s linear infinite;
-  -moz-animation: ImageRotator 15s linear infinite;
-  -ms-animation: ImageRotator 15s linear infinite;
-  -o-animation: ImageRotator 15s linear infinite;
-  animation-delay: 3s;
-}
-@-webkit-keyframes slide2 {
-  from {
-    left: -50%;
-  }
-  to {
-    left: 100%;
-  }
-}
-
-.slide3 {
-  width: 400px;
-  height: 600px;
-  position: absolute;
-  -webkit-animation: ImageRotator 15s linear infinite;
-  -moz-animation: ImageRotator 15s linear infinite;
-  -ms-animation: ImageRotator 15s linear infinite;
-  -o-animation: ImageRotator 15s linear infinite;
-  animation-delay: 6s;
-}
-@-webkit-keyframes slide3 {
-  from {
-    left: -50%;
-  }
-  to {
-    left: 100%;
-  }
-}
-
-.slide4 {
-  width: 400px;
-  height: 600px;
-  position: absolute;
-  -webkit-animation: ImageRotator 15s linear infinite;
-  -moz-animation: ImageRotator 15s linear infinite;
-  -ms-animation: ImageRotator 15s linear infinite;
-  -o-animation: ImageRotator 15s linear infinite;
-  animation-delay: 9s;
-}
-@-webkit-keyframes slide4 {
-  from {
-    left: -50%;
-  }
-  to {
-    left: 100%;
-  }
-}
-
 .slide5 {
-  width: 400px;
-  height: 600px;
+  width: 200px;
+  height: 300px;
   position: absolute;
-  -webkit-animation: ImageRotator 15s linear reverse infinite;
-  -moz-animation: ImageRotator 15s linear reverse infinite;
-  -ms-animation: ImageRotator 15s linear reverse infinite;
-  -o-animation: ImageRotator 15s linear reverse infinite;
+  -webkit-animation: ImageRotator 25s linear reverse infinite;
+  -moz-animation: ImageRotator 25s linear reverse infinite;
+  -ms-animation: ImageRotator 25s linear reverse infinite;
+  -o-animation: ImageRotator 25s linear reverse infinite;
   /* animation-delay: 6s; */
 }
 @-webkit-keyframes slide5 {
@@ -246,13 +169,13 @@
 }
 
 .slide6 {
-  width: 400px;
-  height: 600px;
+  width: 200px;
+  height: 300px;
   position: absolute;
-  -webkit-animation: ImageRotator 15s linear reverse infinite;
-  -moz-animation: ImageRotator 15s linear reverse infinite;
-  -ms-animation: ImageRotator 15s linear reverse infinite;
-  -o-animation: ImageRotator 15s linear reverse infinite;
+  -webkit-animation: ImageRotator 25s linear reverse infinite;
+  -moz-animation: ImageRotator 25s linear reverse infinite;
+  -ms-animation: ImageRotator 25s linear reverse infinite;
+  -o-animation: ImageRotator 25s linear reverse infinite;
   animation-delay: 3s;
 }
 @-webkit-keyframes slide6 {
@@ -265,13 +188,13 @@
 }
 
 .slide7 {
-  width: 400px;
-  height: 600px;
+  width: 200px;
+  height: 300px;
   position: absolute;
-  -webkit-animation: ImageRotator 15s linear reverse infinite;
-  -moz-animation: ImageRotator 15s linear reverse infinite;
-  -ms-animation: ImageRotator 15s linear reverse infinite;
-  -o-animation: ImageRotator 15s linear reverse infinite;
+  -webkit-animation: ImageRotator 25s linear reverse infinite;
+  -moz-animation: ImageRotator 25s linear reverse infinite;
+  -ms-animation: ImageRotator 25s linear reverse infinite;
+  -o-animation: ImageRotator 25s linear reverse infinite;
   animation-delay: 6s;
 }
 @-webkit-keyframes slide7 {
@@ -284,13 +207,13 @@
 }
 
 .slide8 {
-  width: 400px;
-  height: 600px;
+  width: 200px;
+  height: 300px;
   position: absolute;
-  -webkit-animation: ImageRotator 15s linear reverse infinite;
-  -moz-animation: ImageRotator 15s linear reverse infinite;
-  -ms-animation: ImageRotator 15s linear reverse infinite;
-  -o-animation: ImageRotator 15s linear reverse infinite;
+  -webkit-animation: ImageRotator 25s linear reverse infinite;
+  -moz-animation: ImageRotator 25s linear reverse infinite;
+  -ms-animation: ImageRotator 25s linear reverse infinite;
+  -o-animation: ImageRotator 25s linear reverse infinite;
   animation-delay: 9s;
 }
 @-webkit-keyframes slide8 {
