@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+// import axios from 'axios';
 import ImageRotator from './ImageRotator.js'
 import ImageRotator2 from './ImageRot2.js'
 import ImageRotator3 from './ImageRot3.js'
@@ -41,6 +42,18 @@ import './home.css';
 //   }, []);
 
 const Home=()=> {
+// const axios= require('axios');
+// const params={
+//     access_key:'5321e0babffa8ce2937bae2764172746',
+//     query:'Boston'
+// };
+// axios.get('https://weatherstack/current',{params})
+// .then(response => {
+//     const apiResponse=response.data;
+//     console.log('temp in $(apiResponse.location.name is $(apiResponse.current.temperature)');
+// }).catch(error =>{
+//     console.log(error)
+// } )
 
 
 document.body.style.backgroundColor = 'black';
