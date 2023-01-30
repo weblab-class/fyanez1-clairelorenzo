@@ -1,8 +1,11 @@
 .test {
-  background-color: white;
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  background-color: gray;
 }
 
-.x {
-  color: red;
+.button {
+  background-color: goldenrod;
+}
+
+.button:hover {
+  background-color: rgb(152, 117, 28);
 }

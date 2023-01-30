@@ -13,40 +13,13 @@ initializeIcons();
 import "./popup.css";
 import image1 from "./pics/logo2.png";
 
-const options = [
-  {
-    imageSrc: image1,
-    imageSize: { width: 80, height: 100 },
-  },
-  {
-    imageSrc: "https://i.imgur.com/LR24Vao.jpg",
-    imageSize: { width: 80, height: 100 },
-  },
-  {
-    imageSrc: "https://i.imgur.com/fjAyhy6.jpg",
-    imageSize: { width: 80, height: 100 },
-  },
-  {
-    imageSrc: image1,
-    imageSize: { width: 80, height: 100 },
-  },
-  {
-    imageSrc: "https://i.imgur.com/LR24Vao.jpg",
-    imageSize: { width: 80, height: 100 },
-  },
-  {
-    imageSrc: "https://i.imgur.com/fjAyhy6.jpg",
-    imageSize: { width: 80, height: 100 },
-  },
-];
-
 const modelProps = {
-  isBlocking: false,
+  isBlocking: true,
   styles: { main: { maxWidth: 600 }, root: { color: "red" } },
   className: "x",
 };
 const dialogContentProps = {
-  type: DialogType.largeHeader,
+  type: DialogType.normal,
   title: "Choose an item",
   className: "test",
 };
@@ -55,13 +28,19 @@ const Popup = (props) => {
   const [images, SetImages] = useState([]);
 
   useEffect(() => {
-    get("/api/pictures", { item_type: "all", user: props.userID }).then((response) => {
-      const mappedImages = response.map((image) => ({
-        imageSrc: image.item_file,
-        imageSize: { width: 75, height: 90 },
-      }));
-      SetImages(mappedImages);
-    });
+    get("/api/pictures", { item_type: props.clothing_type, user: props.userID }).then(
+      (response) => {
+        const mappedImages = response.map((image, i) => ({
+          imageSrc: image.item_file,
+          selectedImageSrc: image.item_file,
+          imageSize: { width: 75, height: 90 },
+          key: i.toString(),
+          text: image.item_name,
+          onChange: props.changeImageFunc,
+        }));
+        SetImages(mappedImages);
+      }
+    );
   }, images);
 
   return (
@@ -73,9 +52,9 @@ const Popup = (props) => {
         modalProps={modelProps}
         minWidth={600}
       >
-        <ChoiceGroup defaultSelectedKey="A" options={images} />
+        <ChoiceGroup options={images} onChange={props.changeImageFunc} />
         <DialogFooter>
-          <PrimaryButton onClick={props.toggleHideDialog} text="Select" />
+          <DefaultButton className="button" onClick={props.toggleHideDialog} text="Select" />
           <DefaultButton onClick={props.toggleHideDialog} text="Cancel" />
         </DialogFooter>
       </Dialog>

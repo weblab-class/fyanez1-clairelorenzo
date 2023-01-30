@@ -18,11 +18,11 @@ const MyItems = (props) => {
       type: item_type,
       style: item_style,
       user: props.userID,
+    }).then(() => {
+      get("/api/pictures", { item_type: "all", user: props.userID }).then((response) =>
+        SetImages(response)
+      );
     });
-    get("/api/pictures", { item_type: "all", user: props.userID }).then((response) =>
-      SetImages(response)
-    );
-    console.log(value, item_name, item_type, item_style, props.userID);
   };
 
   //image url

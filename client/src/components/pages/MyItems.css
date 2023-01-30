@@ -50,7 +50,8 @@
 
 .addNewItemBox {
   background-color: rgb(151, 146, 80);
-  width: 40%;
+  max-width: 22%;
+  min-width: 20%;
   border-radius: 25px;
   height: 430px;
   margin-top: 0px;
