@@ -54,7 +54,7 @@ const Popup = (props) => {
       >
         <ChoiceGroup options={images} onChange={props.changeImageFunc} />
         <DialogFooter>
-          <DefaultButton className="button" onClick={props.toggleHideDialog} text="Select" />
+          <DefaultButton className="button" onClick={props.select} text="Select" />
           <DefaultButton onClick={props.toggleHideDialog} text="Cancel" />
         </DialogFooter>
       </Dialog>

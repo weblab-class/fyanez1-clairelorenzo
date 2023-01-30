@@ -23,20 +23,42 @@ const Suggest_Outfits_Page = (props) => {
   const [shoe, SetShoe] = useState(shoe_pic);
   const [dress, SetDress] = useState(dress_pic);
 
-  const chooseTop = (event) => {
-    setTop(event.target.value);
+  const [selectedTop, setSelectedTop] = useState(top_pic);
+  const [selectedBottom, setSelectedBottom] = useState(bottom_pic);
+  const [selectedShoes, setSelectedShoes] = useState(shoe_pic);
+  const [selectedDress, setSelectedDress] = useState(dress_pic);
+
+  const chooseTop = (event, option) => {
+    SetTop(option.imageSrc);
   };
 
-  const chooseBottom = (event) => {
-    setTop(event.target.value);
+  const chooseBottom = (event, option) => {
+    SetBottom(option.imageSrc);
   };
 
-  const chooseShoes = (event) => {
-    setTop(event.target.value);
+  const chooseShoes = (event, option) => {
+    SetShoe(option.imageSrc);
   };
 
-  const chooseDress = (event) => {
-    setTop(event.target.value);
+  const chooseDress = (event, option) => {
+    SetDress(option.imageSrc);
+  };
+
+  const selectTop = () => {
+    setSelectedTop(top);
+    toggleHideDialog();
+  };
+  const selectBottom = () => {
+    setSelectedBottom(bottom);
+    toggleHideDialog2();
+  };
+  const selectShoes = () => {
+    setSelectedShoes(shoe);
+    toggleHideDialog3();
+  };
+  const selectDress = () => {
+    setSelectedDress(dress);
+    toggleHideDialog4();
   };
 
   return (
@@ -92,34 +114,34 @@ const Suggest_Outfits_Page = (props) => {
                 <div className="silhouettes">
                   <div className="animate2">
                     <button className="animate" onClick={() => toggleHideDialog()}>
-                      <img src={top} class="shirt" />
-                      <div className="silhouette-text" id="tops-text">
+                      <img src={selectedTop} class="shirt" />
+                      {/* <div className="silhouette-text" id="tops-text">
                         Tops
-                      </div>
+                      </div> */}
                     </button>
                   </div>
                   <div className="animate2">
                     <button className="animate" onClick={() => toggleHideDialog2()}>
-                      <img src={bottom} className="pants" />
-                      <div className="silhouette-text" id="bottoms-text">
+                      <img src={selectedBottom} className="pants" />
+                      {/* <div className="silhouette-text" id="bottoms-text">
                         Bottoms
-                      </div>
+                      </div> */}
                     </button>
                   </div>
                   <div className="animate2">
                     <button class="animate" onClick={() => toggleHideDialog3()}>
-                      <img src={shoe} class="shoes" />
-                      <div className="silhouette-text" id="shoes-text">
+                      <img src={selectedShoes} class="shoes" />
+                      {/* <div className="silhouette-text" id="shoes-text">
                         Shoes
-                      </div>
+                      </div> */}
                     </button>
                   </div>
                   <div className="animate2">
                     <button class="animate" onClick={() => toggleHideDialog4()}>
-                      <img src={dress} className="dress" />
-                      <div className="silhouette-text" id="dresses-text">
+                      <img src={selectedDress} className="dress" />
+                      {/* <div className="silhouette-text" id="dresses-text">
                         Dresses
-                      </div>
+                      </div> */}
                     </button>
                   </div>
                 </div>
@@ -129,12 +151,14 @@ const Suggest_Outfits_Page = (props) => {
               </div>
             </div>
           </div>
+          {/* {console.log(selectedKey)} */}
           <Popup
             hideDialog={hideDialog}
             toggleHideDialog={toggleHideDialog}
             userID={props.userID}
             clothing_type={"Top"}
             changeImageFunc={chooseTop}
+            select={selectTop}
           ></Popup>
           <Popup
             hideDialog={hideDialog2}
@@ -142,6 +166,7 @@ const Suggest_Outfits_Page = (props) => {
             userID={props.userID}
             clothing_type={"Bottom"}
             changeImageFunc={chooseBottom}
+            select={selectBottom}
           ></Popup>
           <Popup
             hideDialog={hideDialog3}
@@ -149,6 +174,7 @@ const Suggest_Outfits_Page = (props) => {
             userID={props.userID}
             clothing_type={"Shoes"}
             changeImageFunc={chooseShoes}
+            select={selectShoes}
           ></Popup>
           <Popup
             hideDialog={hideDialog4}
@@ -156,6 +182,7 @@ const Suggest_Outfits_Page = (props) => {
             userID={props.userID}
             clothing_type={"Other"}
             changeImageFunc={chooseDress}
+            select={selectDress}
           ></Popup>
           <div id="root"></div>
           <script src="/bundle.js"></script>
