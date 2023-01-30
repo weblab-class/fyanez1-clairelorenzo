@@ -8,8 +8,8 @@ const MyItems = (props) => {
   const [images, SetImages] = useState([]);
   const [value, setValue] = useState(""); // pic url
   const [item_name, setItemName] = useState(""); // name
-  const [item_type, setItemType] = useState(""); // type
-  const [item_style, setItemStyle] = useState(""); //style
+  const [item_type, setItemType] = useState("Top"); // type
+  const [item_style, setItemStyle] = useState("Formal"); //style
 
   const savePicture = () => {
     post("/api/picture", {
@@ -22,7 +22,7 @@ const MyItems = (props) => {
     get("/api/pictures", { item_type: "all", user: props.userID }).then((response) =>
       SetImages(response)
     );
-    console.log(value);
+    console.log(value, item_name, item_type, item_style, props.userID);
   };
 
   //image url
@@ -32,17 +32,17 @@ const MyItems = (props) => {
 
   //item type
   const changeType = (event) => {
-    setItemType(event.target.item_type);
+    setItemType(event.target.value);
   };
 
   //item style
   const changeStyle = (event) => {
-    setItemStyle(event.target.item_style);
+    setItemStyle(event.target.value);
   };
 
   //item name
   const changeName = (event) => {
-    setItemName(event.target.item_name);
+    setItemName(event.target.value);
   };
 
   useEffect(() => {

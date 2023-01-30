@@ -50,7 +50,7 @@ router.post("/initsocket", (req, res) => {
 // | write your API methods below!|
 // |------------------------------|
 
-router.post("/picture", async (req, res) => {
+router.post("/picture", (req, res) => {
   const get_str_ref = (link) => {
     var new_link;
     new_link = "";
@@ -62,7 +62,9 @@ router.post("/picture", async (req, res) => {
     }
     return new_link + ".jpg";
   };
+  console.log(req.body);
   if (req.body.picture) {
+    console.log("here");
     const new_value = get_str_ref(req.body.picture);
     const clothingItem = new ClothingItem({
       item_file: new_value,
@@ -71,11 +73,9 @@ router.post("/picture", async (req, res) => {
       item_style: req.body.style,
       user: req.body.user,
     });
-    await clothingItem.save();
-    res.send({ sucess: true });
+    clothingItem.save().then(() => res.send({ sucess: true }));
   } else {
     res.send({ sucess: false, reason: "random" });
-    console.log("Invalid picture");
   }
 });
 
@@ -87,7 +87,6 @@ router.get("/pictures", (req, res) => {
   }
   ClothingItem.find(query)
     .then((pictures) => {
-      console.log(pictures);
       return pictures;
     })
     .then((pictures) => res.send(pictures));

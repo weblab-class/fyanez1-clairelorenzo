@@ -8,4 +8,4 @@ const clothingItemSchema = new mongoose.Schema({
   user: String,
 });
 
-module.exports = mongoose.model("clothingItem", clothingItemSchema);
+module.exports = mongoose.model("clothingitems", clothingItemSchema);
