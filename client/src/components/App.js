@@ -11,7 +11,7 @@ import MyItems from "./pages/MyItems.js";
 import MyPastOutfits from "./pages/MyPastOutfits.js";
 import Login from "./pages/Login.js";
 import Inspo from "./pages/Inspo.js";
-import outfitGenerator from "./pages/outfitGenerator.js";
+import OutfitGenerator from "./pages/outfitGenerator.js";
 import Suggest_Outfits_Page from "./pages/suggest_outfit.js";
 import RandomShuffler from "./pages/RandomShuffler.js";
 import "../utilities.css";
@@ -72,7 +72,7 @@ const App = () => {
           <Suggest_Outfits_Page path="/suggest_outfit" userID={userId} />
           <RandomShuffler path="/RandomShuffler" />
           <Inspo path="/Inspo" />
-          <outfitGenerator path="/outfitGenerator" />
+          <OutfitGenerator path="/outfitGenerator" userID={userId}/>
         </Router>
       </div>
     );
