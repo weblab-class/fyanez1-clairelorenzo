@@ -24,8 +24,8 @@ def do_colors_match(color, colors_to_match):
 
 def make_outfit(items, constraints, items_filled):
     """
-    items: all clothing items in user's database (array of dictionaries)- 
-        example: [{item_name:'black shoes', item_link:'...', item_style:'sports', 
+    items: all clothing items in user's database (array of dictionaries)-
+        example: [{item_name:'black shoes', item_link:'...', item_style:'sports',
         item_type:'shoes', item_color:'white', warmth_score:2 }]
 
     constraints: array with constraints for outfit [temp,style]
