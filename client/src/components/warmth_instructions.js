@@ -30,7 +30,7 @@ const warmth_instructions = () => {
           target={`#${buttonId}`}
           secondaryButtonProps={exampleSecondaryButtonProps}
           onDismiss={toggleTeachingBubbleVisible}
-          headline="temperature range (F)"
+          headline="temperature range (°F)"
           classNmae="test"
         >
           <div>1: 70+ </div>

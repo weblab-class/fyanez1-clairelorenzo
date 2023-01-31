@@ -17,45 +17,51 @@ const Navbar = (props) => {
 
     //   <NavMenu>
     <>
-      <nav className="NavBar-container">
-        <img src={logoicon2} className="navbarlogo"></img>
-        <div to="/home" className="NavBar-title">
-          MakeMyFit
-        </div>
-        <Link className="NavBar-link" to="/home">
-          Home
-        </Link>
-
-        <Link id="makemyfit" className="NavBar-link" to="/suggest_outfit">
-          Make My Fit!
-        </Link>
-        <Link className="NavBar-link" to="/MyItems">
-          My Items
-        </Link>
-        <Link className="NavBar-link" to="/MyPastOutfits">
+      <div className="page-specific">
+        <nav className="NavBar-container">
+          <Link to="/home">
+            <img src={logoicon2} className="navbarlogo"></img>
+          </Link>
+          <Link to="/suggest_outfit" className="NavBar-title">
+            MakeMyFit
+          </Link>
+          <Link className="NavBar-link" to="/home">
+            Home
+          </Link>
+          <Link className="NavBar-link" to="/MyItems">
+            My Items
+          </Link>
+          {/* <Link className="NavBar-link" to="/MyPastOutfits">
           My past Outfits
-        </Link>
-        <Link className="NavBar-link" to="/weather">
-          Weather
-        </Link>
-        <Link className="NavBar-link" to="/RandomShuffler">
+        </Link> */}
+          <Link className="NavBar-link" to="/weather">
+            Weather
+          </Link>
+          {/* <Link className="NavBar-link" to="/RandomShuffler">
           Random Shuffler
-        </Link>
+        </Link> */}
 
-        <Link className="NavBar-link" to="/Inspo">
-          Inspo
-        </Link>
+          <Link className="NavBar-link" to="/Inspo">
+            Inspo
+          </Link>
 
-        <button
-          className="logout"
-          onClick={() => {
-            googleLogout();
-            props.logout();
-          }}
-        >
-          Logout
-        </button>
-      </nav>
+          {/* delete later */}
+          <Link className="NavBar-link" to="/outfitGenerator">
+            ***Temporary Page for outfits***
+          </Link>
+          {/* delete later */}
+
+          <button
+            className="logout"
+            onClick={() => {
+              googleLogout();
+              props.logout();
+            }}
+          >
+            Logout
+          </button>
+        </nav>
+      </div>
     </>
     //       </NavMenu>
     //       <NavBtn>

@@ -3,17 +3,19 @@ import React from "react";
 import { useBoolean } from "@fluentui/react-hooks";
 import { get } from "../../utilities";
 import { useState, useEffect } from "react";
-import "./suggest_outfit.css";
-import Algorithm from "./outfitAlgorithm";
+import { Router } from "@reach/router";
+import { make_outfit, do_colors_match, _pj_snippets } from "./outfit_algorithm.js";
 
 const outfitGenerator = (props) => {
-  const [outfits, setOutfits] = useState({});
+  //   const [items, SetItems] = useState([]);
 
-  useEffect(() => {
-    get("/api/outfits", { item_type: "all", user: props.userID }).then((response) =>
-      setOutfits(response)
-    );
-  }, []);
+  //   useEffect(() => {
+  //     get("/api/outfits", { item_type: "all", user: props.userID }).then((response) =>
+  //       SetItems(response)
+  //     );
+  //   }, []);
+
+  //   const Outfits = make_outfit(items, props.constraints, props.items_filled);
 
   return (
     <>
@@ -26,7 +28,9 @@ const outfitGenerator = (props) => {
           <link rel="stylesheet" href="outfitGenerator.css" />
         </head>
 
-        <body></body>
+        <body>
+          <div className="main">Test</div>
+        </body>
       </html>
     </>
   );
