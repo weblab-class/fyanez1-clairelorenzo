@@ -72,6 +72,8 @@ router.post("/picture", (req, res) => {
       item_type: req.body.type,
       item_style: req.body.style,
       user: req.body.user,
+      item_color: req.body.color,
+      item_warmth_score: req.body.warmth,
     });
     clothingItem.save().then(() => res.send({ sucess: true }));
   } else {
@@ -85,6 +87,15 @@ router.get("/pictures", (req, res) => {
   } else {
     query = { user: req.query.user, item_type: req.query.item_type };
   }
+  ClothingItem.find(query)
+    .then((pictures) => {
+      return pictures;
+    })
+    .then((pictures) => res.send(pictures));
+});
+
+router.get("/outfit", (req, res) => {
+  query = { user: req.query.user, item_file: req.query.file };
   ClothingItem.find(query)
     .then((pictures) => {
       return pictures;

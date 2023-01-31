@@ -3,6 +3,7 @@ import { Router } from "@reach/router";
 // import { get } from "core-js/core/dict";
 import { get, post } from "../../utilities";
 import "./MyItems.css";
+import Warmth_instructions from "../warmth_instructions";
 
 const MyItems = (props) => {
   const [images, SetImages] = useState([]);
@@ -10,6 +11,8 @@ const MyItems = (props) => {
   const [item_name, setItemName] = useState(""); // name
   const [item_type, setItemType] = useState("Top"); // type
   const [item_style, setItemStyle] = useState("Formal"); //style
+  const [item_color, setItemColor] = useState("Black"); //color
+  const [item_warmth, setItemWarmth] = useState(); // warmth
 
   const savePicture = () => {
     post("/api/picture", {
@@ -18,6 +21,8 @@ const MyItems = (props) => {
       type: item_type,
       style: item_style,
       user: props.userID,
+      color: item_color,
+      warmth: item_warmth,
     }).then(() => {
       get("/api/pictures", { item_type: "all", user: props.userID }).then((response) =>
         SetImages(response)
@@ -43,6 +48,16 @@ const MyItems = (props) => {
   //item name
   const changeName = (event) => {
     setItemName(event.target.value);
+  };
+
+  //item color
+  const changeColor = (event) => {
+    setItemColor(event.target.value);
+  };
+
+  //item warmth
+  const changeWarmth = (event) => {
+    setItemWarmth(event.target.value);
   };
 
   useEffect(() => {
@@ -87,7 +102,8 @@ const MyItems = (props) => {
             <option>Top</option>
             <option>Bottom</option>
             <option>Shoes</option>
-            <option>Other</option>
+            <option>Dress</option>
+            <option>Jacket</option>
           </select>
           <div className="text">Item Style</div>
           <select className="dropdown" name="Style" onChange={changeStyle}>
@@ -97,6 +113,24 @@ const MyItems = (props) => {
             <option>Lounge</option>
             <option>Professional</option>
           </select>
+          <div className="text">Color</div>
+          <select className="dropdown" onChange={changeColor}>
+            <option>Black</option>
+            <option>Blue</option>
+            <option>Brown</option>
+            <option>Gray</option>
+            <option>Green</option>
+            <option>Orange</option>
+            <option>Purple</option>
+            <option>Red</option>
+            <option>Tan</option>
+            <option>Yellow</option>
+            <option>White</option>
+          </select>
+          <div className="text">Warmth Score (1-4)</div>
+          <input className="dropdown" type="text" onChange={changeWarmth} />
+          <Warmth_instructions></Warmth_instructions>
+          <div></div>
           <br />
           <input className="submit" type="submit" value="submit" onClick={savePicture} />
         </div>

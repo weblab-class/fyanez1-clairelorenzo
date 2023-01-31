@@ -28,6 +28,15 @@ const Suggest_Outfits_Page = (props) => {
   const [selectedShoes, setSelectedShoes] = useState(shoe_pic);
   const [selectedDress, setSelectedDress] = useState(dress_pic);
 
+  const [temperature, setTemperature] = useState();
+  const [style, setStyle] = useState();
+  const chooseTemp = (event) => {
+    setTemperature(event.target.value);
+  };
+  const chooseStyle = (event) => {
+    setStyle(event.target.value);
+  };
+
   const chooseTop = (event, option) => {
     SetTop(option.imageSrc);
   };
@@ -87,27 +96,20 @@ const Suggest_Outfits_Page = (props) => {
                 <div className="filter_labels" id="weather-title">
                   Temperature
                 </div>
-                <input id="Weather" class="filter" type="number" placeholder="Enter Here"></input>
-                <div className="filter_labels">Material</div>
-                <select name="Material" class="filter">
-                  <option>None</option>
-                  <option>test</option>
-                  <option>test</option>
-                  <option>test</option>
-                </select>
+                <input
+                  id="Weather"
+                  class="filter"
+                  type="number"
+                  placeholder="Enter Here"
+                  onChange={chooseTemp}
+                ></input>
                 <div className="filter_labels">Style</div>
-                <select name="Style" class="filter">
-                  <option>None</option>
-                  <option>test</option>
-                  <option>test</option>
-                  <option>test</option>
-                </select>
-                <div className="filter_labels">Filter</div>
-                <select name="* filter *" class="filter">
-                  <option>None</option>
-                  <option>test</option>
-                  <option>test</option>
-                  <option>test</option>
+                <select name="Style" class="filter" onChange={chooseStyle}>
+                  <option>Formal</option>
+                  <option>Casual</option>
+                  <option>Sports</option>
+                  <option>Lounge</option>
+                  <option>Professional</option>
                 </select>
               </div>
               <div className="silhouettes-and-buttons">
