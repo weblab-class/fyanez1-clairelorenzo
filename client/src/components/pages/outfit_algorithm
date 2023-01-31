@@ -1,0 +1,156 @@
+from ast import Pass
+
+from click import pass_context
+import random
+
+
+def do_colors_match(color, colors_to_match):
+    color_map = {'black': ['black', 'blue', 'brown', 'gray', 'green', 'orange', 'purple', 'red', 'tan', 'yellow', 'white'],
+                 'blue': ['black', 'white', 'green'],
+                 'brown': ['black', 'white', 'tan'],
+                 'gray': ['black', 'white'],
+                 'green': ['black', 'white'],
+                 'orange': ['black', 'white', 'yellow'],
+                 'purple': ['black', 'white'],
+                 'red': ['black', 'white'],
+                 'tan': ['black', 'white', 'brown'],
+                 'yellow': ['black', 'white', 'orange'],
+                 'white': ['black', 'white', 'blue', 'brown', 'gray', 'green', 'orange', 'purple', 'red', 'tan', 'yellow']}
+    for color1 in colors_to_match:
+        if color not in color_map[color1]:
+            return False
+    return True
+
+
+def make_outfit(items, constraints, items_filled):
+    """
+    items: all clothing items in user's database (array of dictionaries)- 
+        example: [{item_name:'black shoes', item_link:'...', item_style:'sports', 
+        item_type:'shoes', item_color:'white', warmth_score:2 }]
+
+    constraints: array with constraints for outfit [temp,style]
+    items_filled: dictionary mapping element to the item already chosen by user (item chosen is dict with data). Could be empty if user hasn't
+    chosen anything or could already have all items needed for the outfit
+        example: {shoes:{...}, top:{...}}
+        exmample2: {}
+
+    """
+    color_map = {'black': ['black', 'blue', 'brown', 'gray', 'green', 'orange', 'purple', 'red', 'tan', 'yellow', 'white'],
+                 'blue': ['black', 'white', 'green'],
+                 'brown': ['black', 'white', 'tan'],
+                 'gray': ['black', 'white'],
+                 'green': ['black', 'white'],
+                 'orange': ['black', 'white', 'yellow'],
+                 'purple': ['black', 'white'],
+                 'red': ['black', 'white'],
+                 'tan': ['black', 'white', 'brown'],
+                 'yellow': ['black', 'white', 'orange'],
+                 'white': ['black', 'white', 'blue', 'brown', 'gray', 'green', 'orange', 'purple', 'red', 'tan', 'yellow']}
+    options = {'top': [], 'bottom': [], 'dress': [], 'shoes': []}
+    outfit = {}
+    temperature = constraints[0]
+    if temperature < 40:
+        temp_category = 4
+    elif temperature < 55:
+        temp_category = 3
+    elif temperature < 70:
+        temp_category = 2
+    else:
+        temp_category = 1
+    style = constraints[1]
+
+    to_style = []
+
+    for element in ('top', 'bottom', 'shoes', 'dress'):
+        if element in items_filled:
+            outfit[element] = items_filled[element]
+        else:
+            to_style.append(element)
+    if 'top' in items_filled or 'bottom' in items_filled:
+        to_style.remove('dress')
+    if 'dress' in items_filled:
+        to_style.remove('top')
+        to_style.remove('bottom')
+    if to_style == []:
+        return outfit
+
+    # temp_category (1,2,3,4), style, colors_to_match
+    colors_to_match = []
+    for item in items_filled:
+        color = items_filled[color]['item_color']
+        colors_to_match.append(color)
+
+    for category in to_style:
+        for item in items:
+            if item['item_type'] == category and item['item_warmth_score'] == temp_category and item['item_style'] == style and do_colors_match(item['item_color'], colors_to_match):
+                options[category].append(item)
+
+    if options['shoes'] == [] or (options['dress'] == [] and options['top'] == []) or (options['dress'] == [] and options['bottom'] == []):
+        return 'No Outfits to Match Temperature and Preferences'
+
+    if options['dress'] == []:
+        number_of_tops = len(options['top'])
+        number_of_bottoms = len(options['bottom'])
+        number_of_shoes = len(options['shoes'])
+        top_ind = random.randint(0, number_of_tops-1)
+        bottom_ind = random.randint(0, number_of_bottoms-1)
+        shoes_ind = random.randint(0, number_of_shoes-1)
+        outfit['top'] = options['top'][top_ind]
+        outfit['bottom'] = options['bottom'][bottom_ind]
+        outfit['shoes'] = options['shoes'][shoes_ind]
+
+    elif options['top'] or options['bottom'] == []:
+        number_of_dresses = len(options['dress'])
+        number_of_shoes = len(options['shoes'])
+        dress_ind = random.randint(0, number_of_dresses-1)
+        shoes_ind = random.randint(0, number_of_shoes-1)
+        outfit['dress'] = options['dress'][dress_ind]
+        outfit['shoes'] = options['shoes'][shoes_ind]
+
+# flip a coin to see if it will be dress or top and bottom
+# if coin==0, top and bottom; if coin==1, dress
+    else:
+        coin = random.randint(0, 1)
+        if coin == 0:
+            number_of_tops = len(options['top'])
+            number_of_bottoms = len(options['bottom'])
+            top_ind = random.randint(0, number_of_tops-1)
+            bottom_ind = random.randint(0, number_of_bottoms-1)
+            outfit['top'] = options['top'][top_ind]
+            outfit['bottom'] = options['bottom'][bottom_ind]
+        else:
+            number_of_dresses = len(options['dress'])
+            dress_ind = random.randint(0, number_of_dresses-1)
+            outfit['dress'] = options['dress'][dress_ind]
+
+        number_of_shoes = len(options['shoes'])
+        shoes_ind = random.randint(0, number_of_shoes-1)
+        outfit['shoes'] = options['shoes'][shoes_ind]
+
+    return outfit
+
+
+current_items = [{'item_style': 'formal', 'item_type': 'dress',
+                  'item_color': 'red', 'item_warmth_score': 2},
+
+                 {'item_type': 'shoes', 'item_style': 'formal',
+                 'item_color': 'black', 'item_warmth_score': 2},
+
+                 {'item_type': 'shoes', 'item_style': 'casual',
+                 'item_color': 'white', 'item_warmth_score': 1},
+
+                 {'item_style': 'casual', 'item_type': 'top',
+                 'item_color': 'black', 'item_warmth_score': 1},
+
+                 {'item_style': 'casual', 'item_type': 'top',
+                 'item_color': 'blue', 'item_warmth_score': 1},
+
+                 {'item_style': 'casual', 'item_type': 'bottom',
+                  'item_color': 'green', 'item_warmth_score': 1}
+
+                 ]
+current_temp = 80
+current_style = 'casual'
+current_constraints = [current_temp, current_style]
+current_items_filled = {}
+print(make_outfit(current_items, current_constraints, current_items_filled))

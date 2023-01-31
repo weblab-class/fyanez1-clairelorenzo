@@ -87,19 +87,6 @@ useEffect(()=>{
     return () => clearTimeout(timer)
 }, [])
 
-// const options = {
-// 	method: 'GET',
-// 	headers: {
-// 		'X-RapidAPI-Key': '471226b05emshcd8332c3d996176p1b824ajsnadee9df6adc1',
-// 		'X-RapidAPI-Host': 'open-weather13.p.rapidapi.com'
-// 	}
-// };
-
-// fetch('https://open-weather13.p.rapidapi.com/city/boston', options)
-// 	.then(response => response.json())
-// 	.then(response => console.log(response))
-//     // .then(response => document.write(response))
-// 	.catch(err => console.error(err));
 
 return (
 <>
