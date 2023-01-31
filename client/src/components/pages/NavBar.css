@@ -14,6 +14,14 @@
   padding: 8px;
   font-family: "verdana";
   text-decoration: none;
+  margin-top: 0.4%;
+  margin-right: 0%;
+}
+
+.NavBar-title:hover {
+  /* background-color: gray; */
+  border-bottom: 5px double #8f7900;
+  margin-top: 0.2%;
 }
 
 .NavBar-item {
@@ -32,8 +40,11 @@
 }
 
 .NavBar-link:hover {
-  background-color: gray;
-  background-blend-mode: color-dodge;
+  border-bottom: 5px double #8f7900;
+}
+
+.page-specific nav Link {
+  border-bottom: 5px double #8f7900;
 }
 
 .logout {
@@ -45,10 +56,10 @@
   background-color: transparent;
   border: none;
   align-items: center;
+  margin-left: 20%;
 }
 
 .logout:hover {
-  background-color: gray;
-  background-blend-mode: color-dodge;
+  border-bottom: 5px double #8f7900;
   cursor: pointer;
 }

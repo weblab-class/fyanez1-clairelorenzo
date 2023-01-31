@@ -39,7 +39,6 @@
   box-shadow: 15px 15px 15px black;
   float: inline-start;
   text-align: center;
-  margin-right: 50px;
 }
 
 .filter {
@@ -134,7 +133,11 @@
 }
 
 .dress {
-  width: 150px;
+  width: 130px;
+}
+
+.jacket {
+  width: 210px;
 }
 
 .animate {

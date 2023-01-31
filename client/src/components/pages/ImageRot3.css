@@ -1,6 +1,6 @@
 .ImageRotator3 {
   width: 400px;
-  height: 600px;
+  height: 480px;
   position: absolute;
   -webkit-animation: ImageRotator 15s linear infinite;
   -moz-animation: ImageRotator 15s linear infinite;
