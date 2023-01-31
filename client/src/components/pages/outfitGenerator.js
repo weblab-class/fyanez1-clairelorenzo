@@ -6,7 +6,7 @@ import { useState, useEffect } from "react";
 import { Router } from "@reach/router";
 import { make_outfit, do_colors_match, _pj_snippets } from "./outfit_algorithm.js";
 
-const outfitGenerator = (props) => {
+const OutfitGenerator = (props) => {
   //   const [items, SetItems] = useState([]);
 
   //   useEffect(() => {
@@ -36,4 +36,4 @@ const outfitGenerator = (props) => {
   );
 };
 
-export default outfitGenerator;
+export default OutfitGenerator;
