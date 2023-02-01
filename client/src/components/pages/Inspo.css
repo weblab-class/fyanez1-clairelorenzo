@@ -305,3 +305,13 @@
   overflow-x: hidden;
   height: 1040px;
 } */
+
+.instructions-inspo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px;
+  color: white;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 30px;
+}

@@ -348,7 +348,10 @@ const Inspo = () => {
 
   return (
     <div>
-      <div>Click on any item to start shopping!</div>
+      <div className="instructions-inspo">
+        <div>Click on any item to start shopping!</div>
+      </div>
+
       <div>
         <a
           href="https://www.amazon.com/CRYSULLY-Autumn-Outerwear-Windproof-Jackets/dp/B07Z4HWJQF/ref=sr_1_20_sspa?keywords=jacket&qid=1675028804&sprefix=jack%2Caps%2C101&sr=8-20-spons&smid=A2HAYHLPF6CED5&spLa=ZW5jcnlwdGVkUXVhbGlmaWVyPUFIRFFaWVBPOVZHVE0mZW5jcnlwdGVkSWQ9QTA4MjQyMjcxVVAwVkRBSjY4Q1lFJmVuY3J5cHRlZEFkSWQ9QTAyMTA0OTUxVzVLWTNIR045U1RaJndpZGdldE5hbWU9c3BfbXRmJmFjdGlvbj1jbGlja1JlZGlyZWN0JmRvTm90TG9nQ2xpY2s9dHJ1ZQ&th=1&psc=1"

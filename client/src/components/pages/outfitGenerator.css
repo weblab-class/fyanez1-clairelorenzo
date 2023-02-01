@@ -1,6 +1,85 @@
-/* .main {
+.everything {
+  display: flex;
+  justify-content: center;
+}
+
+.image {
+  width: 150px;
+  height: 200px;
+}
+
+.clothing-item {
+  padding: 30px;
+}
+
+.name {
+  display: flex;
+  justify-content: center;
   color: white;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  margin-top: 5px;
+  font-size: 20px;
+}
+
+.regenerate {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  padding: 16px;
+  color: white;
+  font-size: 30px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  box-sizing: border-box;
+  width: 250px;
+  margin-top: 3%;
+  background-color: gold;
+  background-color: #8f7900;
+  width: 16%;
+  margin-left: 42%;
+  box-shadow: 5px 5px white;
+  border: none;
+  border-radius: 50px;
+  margin-top: 5%;
+}
+
+.regenerate:hover {
+  box-shadow: 5px 5px #8f7900;
+  color: #8f7900;
   background-color: white;
-  width: 400px;
-  height: 400px;
+  cursor: pointer;
+}
+
+/* .animate::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  box-sizing: border-box;
+  height: 0;
+  border-bottom: 5px double red;
+  border-left: 5px double red;
+  transition: all 0.6s ease;
+}
+
+.animate::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 0;
+  box-sizing: border-box;
+  height: 0;
+  border-top: 5px double red;
+  border-right: 5px double red;
+  transition: all 0.6s ease;
+}
+
+.animate2:hover .animate::after,
+.animate2:hover .animate::before {
+  border-color: red;
+  width: 100%;
+  height: 100%;
+  border-radius: 30px;
+  cursor: pointer;
 } */
