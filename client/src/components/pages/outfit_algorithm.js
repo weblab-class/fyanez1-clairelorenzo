@@ -84,13 +84,13 @@ export function make_outfit(items, constraints, items_filled) {
   }
 
   if ("Top" in items_filled || "Bottom" in items_filled) {
-    let index = items_filled.indexOf("Dress");
+    let index = to_style.indexOf("Dress");
     to_style.splice(index, 1);
   }
   if ("Dress" in items_filled) {
-    let index1 = items_filled.indexOf("Top");
+    let index1 = to_style.indexOf("Top");
     to_style.splice(index1, 1);
-    let index2 = items_filled.indexOf("Bottom");
+    let index2 = to_style.indexOf("Bottom");
     to_style.splice(index2, 1);
   }
 

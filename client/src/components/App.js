@@ -24,8 +24,14 @@ import ImageRotator4 from "./pages/ImageRot4.js";
 import image1 from "./../public/logo.png";
 import Home from "./pages/Home.js";
 import { socket } from "../client-socket.js";
-
 import { get, post } from "../utilities";
+import { useBoolean } from "@fluentui/react-hooks";
+import { Link } from "@reach/router";
+import dress_pic from "./pics/dress-silhouette.png";
+import shoe_pic from "./pics/running-shoe-silhouette.png";
+import bottom_pic from "./pics/pants-silhouette.png";
+import top_pic from "./pics/t-shirt-silhouette.png";
+import jacket_pic from "./pics/jacket.png";
 
 /**
  * Define the "App" component
@@ -34,7 +40,7 @@ const App = () => {
   const [userId, setUserId] = useState(undefined);
 
   //style and temperature
-  const [temperature, setTemperature] = useState();
+  const [temperature, setTemperature] = useState(71);
   const [style, setStyle] = useState("Formal");
   const chooseTemp = (event) => {
     setTemperature(event.target.value);
@@ -42,6 +48,75 @@ const App = () => {
   const chooseStyle = (event) => {
     setStyle(event.target.value);
   };
+
+  //////////////////////
+  const [hideDialog, { toggle: toggleHideDialog }] = useBoolean(true);
+  const [hideDialog2, { toggle: toggleHideDialog2 }] = useBoolean(true);
+  const [hideDialog3, { toggle: toggleHideDialog3 }] = useBoolean(true);
+  const [hideDialog4, { toggle: toggleHideDialog4 }] = useBoolean(true);
+  const [hideDialog5, { toggle: toggleHideDialog5 }] = useBoolean(true);
+
+  const [top, SetTop] = useState(top_pic);
+  const [bottom, SetBottom] = useState(bottom_pic);
+  const [shoe, SetShoe] = useState(shoe_pic);
+  const [dress, SetDress] = useState(dress_pic);
+  const [jacket, SetJacket] = useState(jacket_pic);
+
+  const [selectedTop, setSelectedTop] = useState(top_pic);
+  const [selectedBottom, setSelectedBottom] = useState(bottom_pic);
+  const [selectedShoes, setSelectedShoes] = useState(shoe_pic);
+  const [selectedDress, setSelectedDress] = useState(dress_pic);
+  const [selectedJacket, setSelectedJacket] = useState(jacket_pic);
+
+  const chooseTop = (event, option) => {
+    SetTop(option.imageSrc);
+  };
+
+  const chooseBottom = (event, option) => {
+    SetBottom(option.imageSrc);
+  };
+
+  const chooseShoes = (event, option) => {
+    SetShoe(option.imageSrc);
+  };
+
+  const chooseDress = (event, option) => {
+    SetDress(option.imageSrc);
+  };
+
+  const chooseJacket = (event, option) => {
+    SetJacket(option.imageSrc);
+  };
+
+  const selectTop = () => {
+    setSelectedTop(top);
+    toggleHideDialog();
+  };
+  const selectBottom = () => {
+    setSelectedBottom(bottom);
+    toggleHideDialog2();
+  };
+  const selectShoes = () => {
+    setSelectedShoes(shoe);
+    toggleHideDialog3();
+  };
+  const selectDress = () => {
+    setSelectedDress(dress);
+    toggleHideDialog4();
+  };
+  const selectJacket = () => {
+    setSelectedJacket(dress);
+    toggleHideDialog5();
+  };
+
+  const resetItems = () => {
+    setSelectedTop(top_pic);
+    setSelectedBottom(bottom_pic);
+    setSelectedShoes(shoe_pic);
+    setSelectedDress(dress_pic);
+    setSelectedJacket(jacket_pic);
+  };
+  ///////////////////////////////////////////////
 
   useEffect(() => {
     get("/api/whoami").then((user) => {
@@ -88,6 +163,37 @@ const App = () => {
             style={style}
             temperature_function={chooseTemp}
             style_function={chooseStyle}
+            top={top}
+            bottom={bottom}
+            shoe={shoe}
+            dress={dress}
+            jacket={jacket}
+            selectedTop={selectedTop}
+            selectedBottom={selectedBottom}
+            selectedShoes={selectedShoes}
+            selectedDress={selectedDress}
+            selectedJacket={selectedJacket}
+            chooseTop={chooseTop}
+            chooseBottom={chooseBottom}
+            chooseShoes={chooseShoes}
+            chooseDress={chooseDress}
+            chooseJacket={chooseJacket}
+            selectTop={selectTop}
+            selectBottom={selectBottom}
+            selectShoes={selectShoes}
+            selectDress={selectDress}
+            selectJacket={selectJacket}
+            hideDialog={hideDialog}
+            hideDialog2={hideDialog2}
+            hideDialog3={hideDialog3}
+            hideDialog4={hideDialog4}
+            hideDialog5={hideDialog5}
+            toggleHideDialog={toggleHideDialog}
+            toggleHideDialog2={toggleHideDialog2}
+            toggleHideDialog3={toggleHideDialog3}
+            toggleHideDialog4={toggleHideDialog4}
+            toggleHideDialog5={toggleHideDialog5}
+            resetItems={resetItems}
           />
           <Suggest_Outfits_Page
             path="/suggest_outfit"
@@ -96,6 +202,37 @@ const App = () => {
             style={style}
             temperature_function={chooseTemp}
             style_function={chooseStyle}
+            top={top}
+            bottom={bottom}
+            shoe={shoe}
+            dress={dress}
+            jacket={jacket}
+            selectedTop={selectedTop}
+            selectedBottom={selectedBottom}
+            selectedShoes={selectedShoes}
+            selectedDress={selectedDress}
+            selectedJacket={selectedJacket}
+            chooseTop={chooseTop}
+            chooseBottom={chooseBottom}
+            chooseShoes={chooseShoes}
+            chooseDress={chooseDress}
+            chooseJacket={chooseJacket}
+            selectTop={selectTop}
+            selectBottom={selectBottom}
+            selectShoes={selectShoes}
+            selectDress={selectDress}
+            selectJacket={selectJacket}
+            hideDialog={hideDialog}
+            hideDialog2={hideDialog2}
+            hideDialog3={hideDialog3}
+            hideDialog4={hideDialog4}
+            hideDialog5={hideDialog5}
+            toggleHideDialog={toggleHideDialog}
+            toggleHideDialog2={toggleHideDialog2}
+            toggleHideDialog3={toggleHideDialog3}
+            toggleHideDialog4={toggleHideDialog4}
+            toggleHideDialog5={toggleHideDialog5}
+            resetItems={resetItems}
           />
         </Router>
       </div>

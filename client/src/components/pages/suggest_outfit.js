@@ -14,82 +14,73 @@ import { useState, useEffect } from "react";
 import { Link } from "@reach/router";
 
 const Suggest_Outfits_Page = (props) => {
-  const [hideDialog, { toggle: toggleHideDialog }] = useBoolean(true);
-  const [hideDialog2, { toggle: toggleHideDialog2 }] = useBoolean(true);
-  const [hideDialog3, { toggle: toggleHideDialog3 }] = useBoolean(true);
-  const [hideDialog4, { toggle: toggleHideDialog4 }] = useBoolean(true);
-  const [hideDialog5, { toggle: toggleHideDialog5 }] = useBoolean(true);
-  const [images, SetImages] = useState([]);
+  // const [hideDialog, { toggle: toggleHideDialog }] = useBoolean(true);
+  // const [hideDialog2, { toggle: toggleHideDialog2 }] = useBoolean(true);
+  // const [hideDialog3, { toggle: toggleHideDialog3 }] = useBoolean(true);
+  // const [hideDialog4, { toggle: toggleHideDialog4 }] = useBoolean(true);
+  // const [hideDialog5, { toggle: toggleHideDialog5 }] = useBoolean(true);
+  // const [images, SetImages] = useState([]);
 
-  const [top, SetTop] = useState(top_pic);
-  const [bottom, SetBottom] = useState(bottom_pic);
-  const [shoe, SetShoe] = useState(shoe_pic);
-  const [dress, SetDress] = useState(dress_pic);
-  const [jacket, SetJacket] = useState(jacket_pic);
+  // const [top, SetTop] = useState(top_pic);
+  // const [bottom, SetBottom] = useState(bottom_pic);
+  // const [shoe, SetShoe] = useState(shoe_pic);
+  // const [dress, SetDress] = useState(dress_pic);
+  // const [jacket, SetJacket] = useState(jacket_pic);
 
-  const [selectedTop, setSelectedTop] = useState(top_pic);
-  const [selectedBottom, setSelectedBottom] = useState(bottom_pic);
-  const [selectedShoes, setSelectedShoes] = useState(shoe_pic);
-  const [selectedDress, setSelectedDress] = useState(dress_pic);
-  const [selectedJacket, setSelectedJacket] = useState(jacket_pic);
+  // const [selectedTop, setSelectedTop] = useState(top_pic);
+  // const [selectedBottom, setSelectedBottom] = useState(bottom_pic);
+  // const [selectedShoes, setSelectedShoes] = useState(shoe_pic);
+  // const [selectedDress, setSelectedDress] = useState(dress_pic);
+  // const [selectedJacket, setSelectedJacket] = useState(jacket_pic);
 
-  // const [temperature, setTemperature] = useState();
-  // const [style, setStyle] = useState();
-  // const chooseTemp = (event) => {
-  //   setTemperature(event.target.value);
-  // };
-  // const chooseStyle = (event) => {
-  //   setStyle(event.target.value);
+  // const chooseTop = (event, option) => {
+  //   SetTop(option.imageSrc);
   // };
 
-  const chooseTop = (event, option) => {
-    SetTop(option.imageSrc);
-  };
+  // const chooseBottom = (event, option) => {
+  //   SetBottom(option.imageSrc);
+  // };
 
-  const chooseBottom = (event, option) => {
-    SetBottom(option.imageSrc);
-  };
+  // const chooseShoes = (event, option) => {
+  //   SetShoe(option.imageSrc);
+  // };
 
-  const chooseShoes = (event, option) => {
-    SetShoe(option.imageSrc);
-  };
+  // const chooseDress = (event, option) => {
+  //   SetDress(option.imageSrc);
+  // };
 
-  const chooseDress = (event, option) => {
-    SetDress(option.imageSrc);
-  };
+  // const chooseJacket = (event, option) => {
+  //   SetJacket(option.imageSrc);
+  // };
 
-  const chooseJacket = (event, option) => {
-    SetJacket(option.imageSrc);
-  };
+  // const selectTop = () => {
+  //   setSelectedTop(top);
+  //   toggleHideDialog();
+  // };
+  // const selectBottom = () => {
+  //   setSelectedBottom(bottom);
+  //   toggleHideDialog2();
+  // };
+  // const selectShoes = () => {
+  //   setSelectedShoes(shoe);
+  //   toggleHideDialog3();
+  // };
+  // const selectDress = () => {
+  //   setSelectedDress(dress);
+  //   toggleHideDialog4();
+  // };
+  // const selectJacket = () => {
+  //   setSelectedJacket(dress);
+  //   toggleHideDialog5();
+  // };
 
-  const selectTop = () => {
-    setSelectedTop(top);
-    toggleHideDialog();
-  };
-  const selectBottom = () => {
-    setSelectedBottom(bottom);
-    toggleHideDialog2();
-  };
-  const selectShoes = () => {
-    setSelectedShoes(shoe);
-    toggleHideDialog3();
-  };
-  const selectDress = () => {
-    setSelectedDress(dress);
-    toggleHideDialog4();
-  };
-  const selectJacket = () => {
-    setSelectedJacket(dress);
-    toggleHideDialog5();
-  };
-
-  const resetItems = () => {
-    setSelectedTop(top_pic);
-    setSelectedBottom(bottom_pic);
-    setSelectedShoes(shoe_pic);
-    setSelectedDress(dress_pic);
-    setSelectedJacket(jacket_pic);
-  };
+  // const resetItems = () => {
+  //   setSelectedTop(top_pic);
+  //   setSelectedBottom(bottom_pic);
+  //   setSelectedShoes(shoe_pic);
+  //   setSelectedDress(dress_pic);
+  //   setSelectedJacket(jacket_pic);
+  // };
 
   return (
     <>
@@ -137,40 +128,40 @@ const Suggest_Outfits_Page = (props) => {
               <div className="silhouettes-and-buttons">
                 <div className="silhouettes">
                   <div className="animate2">
-                    <button className="animate" onClick={() => toggleHideDialog()}>
-                      <img src={selectedTop} class="shirt" />
+                    <button className="animate" onClick={() => props.toggleHideDialog()}>
+                      <img src={props.selectedTop} class="shirt" />
                       {/* <div className="silhouette-text" id="tops-text">
                         Tops
                       </div> */}
                     </button>
                   </div>
                   <div className="animate2">
-                    <button className="animate" onClick={() => toggleHideDialog2()}>
-                      <img src={selectedBottom} className="pants" />
+                    <button className="animate" onClick={() => props.toggleHideDialog2()}>
+                      <img src={props.selectedBottom} className="pants" />
                       {/* <div className="silhouette-text" id="bottoms-text">
                         Bottoms
                       </div> */}
                     </button>
                   </div>
                   <div className="animate2">
-                    <button class="animate" onClick={() => toggleHideDialog3()}>
-                      <img src={selectedShoes} class="shoes" />
+                    <button class="animate" onClick={() => props.toggleHideDialog3()}>
+                      <img src={props.selectedShoes} class="shoes" />
                       {/* <div className="silhouette-text" id="shoes-text">
                         Shoes
                       </div> */}
                     </button>
                   </div>
                   <div className="animate2">
-                    <button class="animate" onClick={() => toggleHideDialog4()}>
-                      <img src={selectedDress} className="dress" />
+                    <button class="animate" onClick={() => props.toggleHideDialog4()}>
+                      <img src={props.selectedDress} className="dress" />
                       {/* <div className="silhouette-text" id="dresses-text">
                         Dresses
                       </div> */}
                     </button>
                   </div>
                   <div className="animate2">
-                    <button class="animate" onClick={() => toggleHideDialog5()}>
-                      <img src={jacket_pic} className="jacket" />
+                    <button class="animate" onClick={() => props.toggleHideDialog5()}>
+                      <img src={props.selectedJacket} className="jacket" />
                       {/* <div className="silhouette-text" id="dresses-text">
                         Dresses
                       </div> */}
@@ -181,7 +172,7 @@ const Suggest_Outfits_Page = (props) => {
                   <button className="suggest">Suggest Outfits!</button>
                 </Link>
 
-                <button className="reset" onClick={resetItems}>
+                <button className="reset" onClick={props.resetItems}>
                   Reset
                 </button>
               </div>
@@ -189,44 +180,44 @@ const Suggest_Outfits_Page = (props) => {
           </div>
           {/* {console.log(selectedKey)} */}
           <Popup
-            hideDialog={hideDialog}
-            toggleHideDialog={toggleHideDialog}
+            hideDialog={props.hideDialog}
+            toggleHideDialog={props.toggleHideDialog}
             userID={props.userID}
             clothing_type={"Top"}
-            changeImageFunc={chooseTop}
-            select={selectTop}
+            changeImageFunc={props.chooseTop}
+            select={props.selectTop}
           ></Popup>
           <Popup
-            hideDialog={hideDialog2}
-            toggleHideDialog={toggleHideDialog2}
+            hideDialog={props.hideDialog2}
+            toggleHideDialog={props.toggleHideDialog2}
             userID={props.userID}
             clothing_type={"Bottom"}
-            changeImageFunc={chooseBottom}
-            select={selectBottom}
+            changeImageFunc={props.chooseBottom}
+            select={props.selectBottom}
           ></Popup>
           <Popup
-            hideDialog={hideDialog3}
-            toggleHideDialog={toggleHideDialog3}
+            hideDialog={props.hideDialog3}
+            toggleHideDialog={props.toggleHideDialog3}
             userID={props.userID}
             clothing_type={"Shoes"}
-            changeImageFunc={chooseShoes}
-            select={selectShoes}
+            changeImageFunc={props.chooseShoes}
+            select={props.selectShoes}
           ></Popup>
           <Popup
-            hideDialog={hideDialog4}
-            toggleHideDialog={toggleHideDialog4}
+            hideDialog={props.hideDialog4}
+            toggleHideDialog={props.toggleHideDialog4}
             userID={props.userID}
             clothing_type={"Dress"}
-            changeImageFunc={chooseDress}
-            select={selectDress}
+            changeImageFunc={props.chooseDress}
+            select={props.selectDress}
           ></Popup>
           <Popup
-            hideDialog={hideDialog5}
-            toggleHideDialog={toggleHideDialog5}
+            hideDialog={props.hideDialog5}
+            toggleHideDialog={props.toggleHideDialog5}
             userID={props.userID}
             clothing_type={"Jacket"}
-            changeImageFunc={chooseJacket}
-            select={selectJacket}
+            changeImageFunc={props.chooseJacket}
+            select={props.selectJacket}
           ></Popup>
           <div id="root"></div>
           <script src="/bundle.js"></script>
