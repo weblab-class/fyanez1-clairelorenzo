@@ -11,7 +11,7 @@ import Popup from "../popup";
 import { useBoolean } from "@fluentui/react-hooks";
 import { get } from "../../utilities";
 import { useState, useEffect } from "react";
-import {Link} from "@reach/router";
+import { Link } from "@reach/router";
 
 const Suggest_Outfits_Page = (props) => {
   const [hideDialog, { toggle: toggleHideDialog }] = useBoolean(true);
@@ -177,11 +177,9 @@ const Suggest_Outfits_Page = (props) => {
                     </button>
                   </div>
                 </div>
-<Link to='/outfitGenerator'><button className="suggest">
-                  Suggest Outfits!
-                </button></Link>
-                
-
+                <Link to="/outfitGenerator">
+                  <button className="suggest">Suggest Outfits!</button>
+                </Link>
 
                 <button className="reset" onClick={resetItems}>
                   Reset
