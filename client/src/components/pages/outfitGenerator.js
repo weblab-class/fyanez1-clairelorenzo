@@ -1,7 +1,7 @@
 import "./outfitGenerator.css";
 import React from "react";
-import "./suggest_outfit.css";
-import "./MyItems.css";
+// import "./suggest_outfit.css";
+// import "./MyItems.css";
 import { useBoolean } from "@fluentui/react-hooks";
 import { get } from "../../utilities";
 import { useState, useEffect } from "react";
@@ -140,7 +140,7 @@ const OutfitGenerator = (props) => {
     <>
       <html>
         <head>
-          <meta charset="UTF-8" />
+          <meta charSet="UTF-8" />
           <link rel="shortcut icon" href="/static/favicon.ico" type="image/x-icon" />
           <link rel="icon" href="/static/favicon.ico" type="image/x-icon" />
           <title>Outfit Generator</title>
@@ -171,17 +171,20 @@ const OutfitGenerator = (props) => {
             {/* <div></div>
             {outfit2} */}
           </div>
+          <div>
+            {" "}
+            <Link to="/outfitGenerator" className="link">
+              <button className="regenerate" onClick={generate}>
+                Regenerate
+              </button>
+            </Link>
+            <div></div>
+            <br />
+            <br />
+            <br />
+            <br />
+          </div>
         </body>
-        <Link to="/outfitGenerator" className="link">
-          <button className="regenerate" onClick={generate}>
-            Regenerate
-          </button>
-        </Link>
-        <div></div>
-        <br />
-        <br />
-        <br />
-        <br />
       </html>
     </>
   );
