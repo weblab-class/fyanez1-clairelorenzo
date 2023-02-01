@@ -6,33 +6,34 @@ import { useState, useEffect } from "react";
 import { Router } from "@reach/router";
 import { getRandomInt, make_outfit, do_colors_match, _pj_snippets } from "./outfit_algorithm.js";
 import Suggest_Outfits_Page from "./suggest_outfit";
+import { Link } from "@reach/router";
 
 const OutfitGenerator = (props) => {
-  const [outfit, SetOutfit] = useState();
+  //   const [outfit, SetOutfit] = useState();
 
-  useEffect(() => {
-    get("/api/pictures", { item_type: "all", user: props.userID }).then((response) => {
-      //run algorithm
-      const generated_outfit = make_outfit(response, [props.temperature, props.style], {});
-      if (typeof generated_outfit === "string") {
-        //no outfits generated
-        SetOutfit(generated_outfit);
-      } else {
-        //render the outfits
-        outfit_images = generated_outfit.map((image, i) => (
-          <>
-            <div className="clothing-item">
-              <img className="image" key={i} src={image.item_file} />
-              <div className="name">{image.item_name}</div>
-            </div>
-          </>
-        ));
+  //   useEffect(() => {
+  //     get("/api/pictures", { item_type: "all", user: props.userID }).then((response) => {
+  //       //run algorithm
+  //       const generated_outfit = make_outfit(response, [props.temperature, props.style], {});
+  //       if (typeof generated_outfit === "string") {
+  //         //no outfits generated
+  //         SetOutfit(generated_outfit);
+  //       } else {
+  //         //render the outfits
+  //         outfit_images = generated_outfit.map((image, i) => (
+  //           <>
+  //             <div className="clothing-item">
+  //               <img className="image" key={i} src={image.item_file} />
+  //               <div className="name">{image.item_name}</div>
+  //             </div>
+  //           </>
+  //         ));
 
-        SetOutfit(outfit_images);
-        console.log(outfit);
-      }
-    });
-  }, []);
+  //         SetOutfit(outfit_images);
+  //         console.log(outfit);
+  //       }
+  //     });
+  //   }, []);
 
   const temp_outfit = [
     { item_file: "https://i.imgur.com/yMOFcnM.jpg", item_name: "asdf" },
@@ -53,18 +54,20 @@ const OutfitGenerator = (props) => {
 
         <body>
           <div className="everything">
-            {/* {temp_outfit.map((image, i) => (
+            {temp_outfit.map((image, i) => (
               <>
                 <div className="clothing-item">
                   <img className="image" key={i} src={image.item_file} />
                   <div className="name">{image.item_name}</div>
                 </div>
               </>
-            ))} */}
-            {outfit}
+            ))}
+            {/* {outfit} */}
           </div>
         </body>
-        <button className="regenerate">Regenerate</button>
+        <Link to="/outfitGenerator" className="link">
+          <button className="regenerate">Regenerate</button>
+        </Link>
       </html>
     </>
   );

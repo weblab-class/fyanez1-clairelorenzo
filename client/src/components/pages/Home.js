@@ -8,6 +8,7 @@ import ImageRotator5 from "./ImageRot5.js";
 import image2 from "../pics/logo2.png";
 import "./biglogo.css";
 import "./home.css";
+import { Link } from "@reach/router";
 
 // var div=document.getElementById('secondpic')
 //     div.style.visibility='hidden'
@@ -102,12 +103,12 @@ const Home = () => {
               <ImageRotator2 />
             </div>
             <ImageRotator />
-            <button className="button1">
-              <div>Make My Fit</div>
-            </button>
-            <button className="button2">
-              <div>Add New Items</div>
-            </button>
+            <Link to="/suggest_outfit">
+              <button className="button1">Make My Fit</button>
+            </Link>
+            <Link to="/MyItems">
+              <button className="button2">Add New Items</button>
+            </Link>
           </div>
           <div className="Logo">
             <img src={image2} />
