@@ -71,7 +71,7 @@ const MyItems = (props) => {
     // <button></button>
 
     <div className="main">
-      <div className="top" className='white_background'>
+      <div className='white_background'>
         <div className='top'>
         <br />
       <div className="instructions">My Items</div>
