@@ -7,7 +7,7 @@ export function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min)) + min;
 }
 
-function do_colors_match(color, colors_to_match) {
+export function do_colors_match(color, colors_to_match) {
   color_map = {
     black: [
       "black",
@@ -55,25 +55,25 @@ function do_colors_match(color, colors_to_match) {
   }
 }
 
-function make_outfit(items, constraints, items_filled) {
-  options = { top: [], bottom: [], dress: [], shoes: [] };
-  outfit = {};
+export function make_outfit(items, constraints, items_filled) {
+  let options = { top: [], bottom: [], dress: [], shoes: [] };
+  let outfit = {};
   let temperature = constraints[0];
   if (temperature < 40) {
-    temp_category = 4;
+    let temp_category = 4;
   } else if (temperature < 55) {
-    temp_category = 3;
+    let temp_category = 3;
   } else if (temperature < 70) {
-    temp_category = 2;
+    let temp_category = 2;
   } else {
-    temp_category = 1;
+    let temp_category = 1;
   }
 
-  style = constraints[1];
+  let style = constraints[1];
 
-  to_style = [];
+  let to_style = [];
 
-  item_categories = ["top", "bottom", "shoes", "dress"];
+  let item_categories = ["top", "bottom", "shoes", "dress"];
 
   for (let i = 0; i < item_categories.length; i++) {
     if (items_filled.includes(item_categories[i])) {

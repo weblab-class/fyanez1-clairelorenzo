@@ -29,6 +29,7 @@ const OutfitGenerator = (props) => {
         ));
 
         SetOutfit(outfit_images);
+        console.log(outfit);
       }
     });
   }, []);
@@ -52,15 +53,15 @@ const OutfitGenerator = (props) => {
 
         <body>
           <div className="everything">
-            {temp_outfit.map((image, i) => (
+            {/* {temp_outfit.map((image, i) => (
               <>
                 <div className="clothing-item">
                   <img className="image" key={i} src={image.item_file} />
                   <div className="name">{image.item_name}</div>
                 </div>
               </>
-            ))}
-            {/* {outfit} */}
+            ))} */}
+            {outfit}
           </div>
         </body>
         <button className="regenerate">Regenerate</button>
