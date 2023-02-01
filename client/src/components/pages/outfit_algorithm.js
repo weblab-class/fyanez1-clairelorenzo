@@ -1,3 +1,5 @@
+// import "assert"
+
 // import * as random from 'random';
 export function getRandomInt(min, max) {
   // Generating random integer in range [x, y)
@@ -7,7 +9,7 @@ export function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min)) + min;
 }
 
-export function do_colors_match(color, colors_to_match) {
+function do_colors_match(color, colors_to_match) {
   color_map = {
     black: [
       "black",
@@ -47,46 +49,45 @@ export function do_colors_match(color, colors_to_match) {
   };
 
   for (let i = 0; i < colors_to_match.length; i++) {
-    if (!color_map[colors_to_match[i]].includes(color)) {
-      return true;
-    } else {
+    if (!(color_map[colors_to_match[i]].includes(color))) {
       return false;
-    }
+    };
+  };
+     return true;
+    
   }
-}
 
-export function make_outfit(items, constraints, items_filled) {
+function make_outfit(items, constraints, items_filled) {
+let temp_category=0
   let options = { top: [], bottom: [], dress: [], shoes: [] };
   let outfit = {};
   let temperature = constraints[0];
   if (temperature < 40) {
-    let temp_category = 4;
+    temp_category = 4;
   } else if (temperature < 55) {
-    let temp_category = 3;
+    temp_category = 3;
   } else if (temperature < 70) {
-    let temp_category = 2;
+    temp_category = 2;
   } else {
-    let temp_category = 1;
+    temp_category = 1;
   }
-
   let style = constraints[1];
-
   let to_style = [];
-
   let item_categories = ["top", "bottom", "shoes", "dress"];
 
   for (let i = 0; i < item_categories.length; i++) {
-    if (items_filled.includes(item_categories[i])) {
+    if (item_categories[i] in items_filled) {
       outfit[element] = items_filled[element];
     } else {
-      to_style.push(items[i]);
+      to_style.push(item_categories[i]);
     }
   }
-  if (items_filled.includes("top") || items_filled.includes("bottom")) {
+
+  if (("top" in items_filled) || ("bottom" in items_filled)) {
     let index = items_filled.indexOf("dress");
     to_style.splice(index, 1);
   }
-  if (items_filled.includes("dress")) {
+  if ("dress" in items_filled) {
     let index1 = items_filled.indexOf("top");
     to_style.splice(index1, 1);
     let index2 = items_filled.indexOf("bottom");
@@ -107,27 +108,32 @@ export function make_outfit(items, constraints, items_filled) {
     colors_to_match.push(color);
   }
 
+
   for (let i = 0; i < to_style.length; i++) {
     for (let j = 0; j < items.length; j++) {
+    
       if (
-        item["item_type"] == to_style[i] &&
-        item["item_warmth_score"] == temp_category &&
-        item["item_style"] == style &&
-        do_colors_match(item["item_color"], colors_to_match)
+        items[j]["item_type"] == to_style[i] &&
+        items[j]["item_warmth_score"] == temp_category &&
+        items[j]["item_style"] == style &&
+        do_colors_match(items[j]["item_color"], colors_to_match)==true
       ) {
-        options[category].push(item);
+        options[to_style[i]].push(items[j]);
       }
     }
   }
+
   if (
-    options["shoes"] == [] ||
-    (options["dress"] == [] && options["top"] == []) ||
-    (options["dress"] == [] && options["bottom"] == [])
+    options["shoes"].length==0 ||
+    (options["dress"].length==0 && options["top"].length==0) ||
+    (options["dress"].length==0 && options["bottom"].length==0)
   ) {
     return "No Outfits to Match Temperature and Preferences";
   }
+  
 
-  if (options["dress"] == []) {
+  if (options["dress"].length==0) {
+    console.log('no dresses')
     let number_of_tops = options["top"].length;
     let number_of_bottoms = options["bottom"].length;
     let number_of_shoes = options["shoes"].length;
@@ -137,7 +143,7 @@ export function make_outfit(items, constraints, items_filled) {
     outfit["top"] = options["top"][top_ind];
     outfit["bottom"] = options["bottom"][bottom_ind];
     outfit["shoes"] = options["shoes"][shoes_ind];
-  } else if (options["top"] == [] || options["bottom"] == []) {
+  } else if (options["top"].length==0 || options["bottom"].length==0) {
     let number_of_dresses = options["dress"].length;
     let number_of_shoes = options["shoes"].length;
     let dress_ind = getRandomInt(0, number_of_dresses.length);
@@ -169,6 +175,6 @@ export function make_outfit(items, constraints, items_filled) {
   for (let i in outfit) {
     final.push(outfit[i]);
   }
-
   return final;
 }
+
