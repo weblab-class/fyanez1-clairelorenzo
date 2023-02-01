@@ -40,9 +40,9 @@ body {
 
 .button1 {
   position: absolute;
-  margin-left: 20%;
+  margin-left: 10%;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  margin-top: 14%;
+  margin-top: 60%;
   background-color: #8f7900;
   color: white;
   width: 250px;
@@ -64,9 +64,9 @@ body {
 
 .button2 {
   position: absolute;
-  margin-left: 60%;
+  margin-left: 70%;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  margin-top: 14%;
+  margin-top: 60%;
   background-color: white;
   color: #8f7900;
   width: 250px;

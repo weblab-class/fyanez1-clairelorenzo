@@ -66,3 +66,7 @@
 .addBox-and-pics {
   display: flex;
 }
+
+.white_background {
+  background-color: white;
+}
