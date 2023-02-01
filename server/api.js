@@ -30,12 +30,132 @@ const { response } = require("express");
 
 const general_data = [
   {
-    item_file: "https://i.imgur.com/l8cE6W2",
+    item_file: "https://imgur.com/3hNOlsF.jpg",
+    item_name: "White t-shirt",
+    item_type: "Bottom",
+    item_style: "Casual",
+    item_color: "White",
+    item_warmth_score: 4,
+  },
+  {
+    item_file: "https://imgur.com/6UE1LC1.jpg",
     item_name: "Jeans",
     item_type: "Bottom",
     item_style: "Casual",
     item_color: "Black",
     item_warmth_score: 4,
+  },
+  {
+    item_file: "https://imgur.com/kZiUydI.jpg",
+    item_name: "Shirt",
+    item_type: "Top",
+    item_style: "Casual",
+    item_color: "Blue",
+    item_warmth_score: 4,
+  },
+  {
+    item_file: "https://imgur.com/keoDMYi.jpg",
+    item_name: "Shirt",
+    item_type: "Top",
+    item_style: "Casual",
+    item_color: "Green",
+    item_warmth_score: 4,
+  },
+  {
+    item_file: "https://i.imgur.com/6Ot1hEK.jpg",
+    item_name: "Dress",
+    item_type: "Dress",
+    item_style: "Casual",
+    item_color: "Red",
+    item_warmth_score: 2,
+  },
+  {
+    item_file: "https://i.imgur.com/zVMO24Q.jpg",
+    item_name: "Dress",
+    item_type: "Dress",
+    item_style: "Casual",
+    item_color: "Blue",
+    item_warmth_score: 2,
+  },
+  {
+    item_file: "https://i.imgur.com/tP0Td1N.jpg",
+    item_name: "Dress",
+    item_type: "Dress",
+    item_style: "Casual",
+    item_color: "White",
+    item_warmth_score: 2,
+  },
+  {
+    item_file: "https://i.imgur.com/tKioO42.jpg",
+    item_name: "Dress",
+    item_type: "Dress",
+    item_style: "Casual",
+    item_color: "Black",
+    item_warmth_score: 2,
+  },
+  {
+    item_file: "https://i.imgur.com/t8pseuU.jpg",
+    item_name: "Pants",
+    item_type: "Bottom",
+    item_style: "Casual",
+    item_color: "Gray",
+    item_warmth_score: 1,
+  },
+  {
+    item_file: "https://i.imgur.com/o4yhVX6.jpg",
+    item_name: "Pants",
+    item_type: "Bottom",
+    item_style: "Sports",
+    item_color: "Black",
+    item_warmth_score: 1,
+  },
+  {
+    item_file: "https://i.imgur.com/Oyv2Fo7.jpg",
+    item_name: "Pants",
+    item_type: "Bottom",
+    item_style: "Sports",
+    item_color: "Green",
+    item_warmth_score: 1,
+  },
+  {
+    item_file: "https://i.imgur.com/zn0vZP0.jpg",
+    item_name: "Shoes",
+    item_type: "Shoes",
+    item_style: "Formal",
+    item_color: "Black",
+    item_warmth_score: 1,
+  },
+  {
+    item_file: "https://i.imgur.com/Ts03Otj.jpg",
+    item_name: "Crocs",
+    item_type: "Shoes",
+    item_style: "Casual",
+    item_color: "Black",
+    item_warmth_score: 2,
+  },
+  {
+    item_file: "https://i.imgur.com/SG06Lr2.jpg",
+    item_name: "Heels",
+    item_type: "Shoes",
+    item_style: "Formal",
+    item_color: "Black",
+    item_warmth_score: 2,
+  },
+  {
+    item_file: "https://i.imgur.com/gzRqFxy.jpg",
+    item_name: "Shoes",
+    item_type: "Shoes",
+    item_style: "Casual",
+    item_color: "White",
+    item_warmth_score: 1,
+  },
+  {
+    item_file: "https://imgur.com/4gCVsNO.jpg",
+    item_name: "Nike Panda",
+    item_type: "Shoes",
+    item_style: "Casual",
+    item_color: "Black",
+    item_warmth_score: 1,
   },
 ];
 
@@ -100,7 +220,7 @@ router.get("/pictures", (req, res) => {
   }
   ClothingItem.find(query)
     .then((pictures) => {
-      return pictures;
+      return pictures.concat(general_data);
     })
     .then((pictures) => res.send(pictures));
 });
