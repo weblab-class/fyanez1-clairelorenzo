@@ -14,13 +14,13 @@ const OutfitGenerator = (props) => {
 
   useEffect(() => {
     get("/api/pictures", { item_type: "all", user: props.userID }).then((response) => {
-      const generated_outfit = make_outfit(response, [70, "formal"], {});
+      const generated_outfit = make_outfit(response, [71, "Formal"], {});
       if (typeof generated_outfit === "string") {
         setOutfit(generated_outfit);
         console.log("data", response);
         console.log("outfit", generated_outfit);
       } else {
-        outfit_images = generated_outfit.map((image, i) => (
+        let outfit_images = generated_outfit.map((image, i) => (
           <>
             <div className="clothing-item">
               <img className="image" key={i} src={image.item_file} />
@@ -90,3 +90,5 @@ const OutfitGenerator = (props) => {
 };
 
 export default OutfitGenerator;
+
+/////////////////////////////////////////////////
