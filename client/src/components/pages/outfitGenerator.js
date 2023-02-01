@@ -98,6 +98,9 @@ const OutfitGenerator = (props) => {
       <br />
       </div>
       </div>
+      <div style={{ visibility: "hidden" }}>h</div>
+      <div style={{ visibility: "hidden" }}>h</div>
+      <div style={{ visibility: "hidden" }}>h</div>
           <div className="everything">
             {/* {temp_outfit.map((image, i) => (
               <>
