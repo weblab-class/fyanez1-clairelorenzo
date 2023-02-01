@@ -33,6 +33,16 @@ import { get, post } from "../utilities";
 const App = () => {
   const [userId, setUserId] = useState(undefined);
 
+  //style and temperature
+  const [temperature, setTemperature] = useState();
+  const [style, setStyle] = useState();
+  const chooseTemp = (event) => {
+    setTemperature(event.target.value);
+  };
+  const chooseStyle = (event) => {
+    setStyle(event.target.value);
+  };
+
   useEffect(() => {
     get("/api/whoami").then((user) => {
       if (user._id) {
@@ -69,10 +79,24 @@ const App = () => {
           <MakeMyFit path="/MakeMyFit" />
           <MyItems path="/MyItems" userID={userId} />
           <MyPastOutfits path="/MyPastOutfits" />
-          <Suggest_Outfits_Page path="/suggest_outfit" userID={userId} />
           <RandomShuffler path="/RandomShuffler" />
           <Inspo path="/Inspo" />
-          <OutfitGenerator path="/outfitGenerator" userID={userId}/>
+          <OutfitGenerator
+            path="/outfitGenerator"
+            userID={userId}
+            temperature={temperature}
+            style={style}
+            temperature_function={chooseTemp}
+            style_function={chooseStyle}
+          />
+          <Suggest_Outfits_Page
+            path="/suggest_outfit"
+            userID={userId}
+            temperature={temperature}
+            style={style}
+            temperature_function={chooseTemp}
+            style_function={chooseStyle}
+          />
         </Router>
       </div>
     );

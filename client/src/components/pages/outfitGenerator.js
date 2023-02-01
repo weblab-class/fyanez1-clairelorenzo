@@ -8,37 +8,36 @@ import { getRandomInt, make_outfit, do_colors_match, _pj_snippets } from "./outf
 import Suggest_Outfits_Page from "./suggest_outfit";
 
 const OutfitGenerator = (props) => {
-  //   const [outfits, SetOutfits] = useState([]);
+  const [outfit, SetOutfit] = useState();
 
-  //   useEffect(() => {
-  //     get("/api/pictures", { item_type: "all", user: props.userID }).then((response) => {
-  //       //const all_outfits = make_outfit(response, [70, "Formal"], {});
-  //       SetOutfits(response);
-  //     });
-  //   }, []);
+  useEffect(() => {
+    get("/api/pictures", { item_type: "all", user: props.userID }).then((response) => {
+      //run algorithm
+      const generated_outfit = make_outfit(response, [props.temperature, props.style], {});
+      if (typeof generated_outfit === "string") {
+        //no outfits generated
+        SetOutfit(generated_outfit);
+      } else {
+        //render the outfits
+        outfit_images = generated_outfit.map((image, i) => (
+          <>
+            <div className="clothing-item">
+              <img className="image" key={i} src={image.item_file} />
+              <div className="name">{image.item_name}</div>
+            </div>
+          </>
+        ));
 
-  const temp_outfits = {
-    top: { item_file: "https://i.imgur.com/yMOFcnM.jpg" },
-    bottom: { item_file: "https://i.imgur.com/yMOFcnM.jpg" },
-    shoes: { item_file: "https://i.imgur.com/yMOFcnM.jpg" },
-  };
+        SetOutfit(outfit_images);
+      }
+    });
+  }, []);
 
-  const temp_outfits2 = [
+  const temp_outfit = [
     { item_file: "https://i.imgur.com/yMOFcnM.jpg", item_name: "asdf" },
     { item_file: "https://i.imgur.com/yMOFcnM.jpg", item_name: "asdf" },
     { item_file: "https://i.imgur.com/yMOFcnM.jpg", item_name: "asdf" },
   ];
-
-  const example = {
-    top: { item_style: "casual", item_type: "top", item_color: "blue", item_warmth_score: 1 },
-    bottom: {
-      item_style: "casual",
-      item_type: "bottom",
-      item_color: "green",
-      item_warmth_score: 1,
-    },
-    shoes: { item_type: "shoes", item_style: "casual", item_color: "white", item_warmth_score: 1 },
-  };
 
   return (
     <>
@@ -52,13 +51,8 @@ const OutfitGenerator = (props) => {
         </head>
 
         <body>
-          {/* <div className="main">
-            {temp_outfits.map((image, i) => (
-              <img className="image" key={i} src={image.item_file} />
-            ))}
-          </div> */}
           <div className="everything">
-            {temp_outfits2.map((image, i) => (
+            {temp_outfit.map((image, i) => (
               <>
                 <div className="clothing-item">
                   <img className="image" key={i} src={image.item_file} />
@@ -66,6 +60,7 @@ const OutfitGenerator = (props) => {
                 </div>
               </>
             ))}
+            {/* {outfit} */}
           </div>
         </body>
         <button className="regenerate">Regenerate</button>

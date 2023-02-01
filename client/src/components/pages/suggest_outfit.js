@@ -32,14 +32,14 @@ const Suggest_Outfits_Page = (props) => {
   const [selectedDress, setSelectedDress] = useState(dress_pic);
   const [selectedJacket, setSelectedJacket] = useState(jacket_pic);
 
-  const [temperature, setTemperature] = useState();
-  const [style, setStyle] = useState();
-  const chooseTemp = (event) => {
-    setTemperature(event.target.value);
-  };
-  const chooseStyle = (event) => {
-    setStyle(event.target.value);
-  };
+  // const [temperature, setTemperature] = useState();
+  // const [style, setStyle] = useState();
+  // const chooseTemp = (event) => {
+  //   setTemperature(event.target.value);
+  // };
+  // const chooseStyle = (event) => {
+  //   setStyle(event.target.value);
+  // };
 
   const chooseTop = (event, option) => {
     SetTop(option.imageSrc);
@@ -121,10 +121,11 @@ const Suggest_Outfits_Page = (props) => {
                   class="filter"
                   type="number"
                   placeholder="Enter Here"
-                  onChange={chooseTemp}
+                  onChange={props.temperature_function}
+                  required
                 ></input>
                 <div className="filter_labels">Style</div>
-                <select name="Style" class="filter" onChange={chooseStyle}>
+                <select name="Style" class="filter" onChange={props.style_function}>
                   <option>Formal</option>
                   <option>Casual</option>
                   <option>Sports</option>
