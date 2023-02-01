@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import "./Inspo.css";
+import "./suggest_outfit.css"
 import { Link } from "@reach/router";
 import jacket1 from "../../public/beige_jacket.jpg";
 import jacket2 from "../../public/black_bomber.jpg";
@@ -347,8 +348,16 @@ const Inspo = () => {
   }, []);
 
   return (
-    <div>
-      <div>Click on any item to start shopping!</div>
+    <div className='inspo'>
+      <div className="top">
+              <br />
+              <div className="instructions">Click on any item to start shopping!</div>
+              <br />
+            </div>
+      <div style={{ visibility: "hidden" }}>h</div>
+      <div style={{ visibility: "hidden" }}>h</div>
+      <div style={{ visibility: "hidden" }}>h</div>  
+      <div className='subtitle_items'> Jackets and Sweaters </div>
       <div>
         <a
           href="https://www.amazon.com/CRYSULLY-Autumn-Outerwear-Windproof-Jackets/dp/B07Z4HWJQF/ref=sr_1_20_sspa?keywords=jacket&qid=1675028804&sprefix=jack%2Caps%2C101&sr=8-20-spons&smid=A2HAYHLPF6CED5&spLa=ZW5jcnlwdGVkUXVhbGlmaWVyPUFIRFFaWVBPOVZHVE0mZW5jcnlwdGVkSWQ9QTA4MjQyMjcxVVAwVkRBSjY4Q1lFJmVuY3J5cHRlZEFkSWQ9QTAyMTA0OTUxVzVLWTNIR045U1RaJndpZGdldE5hbWU9c3BfbXRmJmFjdGlvbj1jbGlja1JlZGlyZWN0JmRvTm90TG9nQ2xpY2s9dHJ1ZQ&th=1&psc=1"
@@ -459,7 +468,7 @@ const Inspo = () => {
       <div style={{ visibility: "hidden" }}>h</div>
       <div style={{ visibility: "hidden" }}>h</div>
       <div style={{ visibility: "hidden" }}>h</div>
-
+      <div className='subtitle_items'> Dresses </div>
       <div>
         <a
           href="https://www.amazon.com/Zalalus-Wedding-Shoulder-Sleeveless-Cocktail/dp/B09W2YZJ24/ref=sr_1_2?crid=1W6O8P6KJX6LG&keywords=dress&qid=1675030499&sprefix=dress%2Caps%2C115&sr=8-2"
@@ -567,7 +576,7 @@ const Inspo = () => {
       <div style={{ visibility: "hidden" }}>h</div>
       <div style={{ visibility: "hidden" }}>h</div>
       <div style={{ visibility: "hidden" }}>h</div>
-
+      <div className='subtitle_items'> Tops</div>
       <div>
         <a
           href="https://www.amazon.com/Under-Armour-Victory-Metallic-Silver/dp/B07PR22R8C/ref=sr_1_226?crid=29N5D3TP2JV0S&keywords=tank+top&qid=1675030691&sprefix=tank+top%2Caps%2C87&sr=8-226"
@@ -677,6 +686,7 @@ const Inspo = () => {
       <div style={{ visibility: "hidden" }}>h</div>
       <div style={{ visibility: "hidden" }}>h</div>
       <div style={{ visibility: "hidden" }}>h</div>
+      <div className='subtitle_items'> Pants </div>
       <div>
         <a
           href="https://www.amazon.com/Womens-Cotton-Casual-Military-12/dp/B07ZLQ5SFQ/ref=sr_1_3?keywords=cargo+pants&qid=1675030166&sprefix=ca%2Caps%2C93&sr=8-3
@@ -787,6 +797,7 @@ const Inspo = () => {
       <div style={{ visibility: "hidden" }}>h</div>
       <div style={{ visibility: "hidden" }}>h</div>
       <div style={{ visibility: "hidden" }}>h</div>
+      <div className='subtitle_items'> Skirts</div>
       <div>
         <a
           href="https://www.amazon.com/Womens-Elastic-Waisted-Pleated-Shirring/dp/B083Q2QDFH/ref=sr_1_22?crid=36UDUMULY9N6T&keywords=skirt&qid=1675030768&sprefix=skir%2Caps%2C98&sr=8-22"
@@ -897,7 +908,8 @@ const Inspo = () => {
       <div style={{ visibility: "hidden" }}>h</div>
       <div style={{ visibility: "hidden" }}>h</div>
       <div style={{ visibility: "hidden" }}>h</div>
-      <div>
+      <div className='subtitle_items'> Shoes </div>
+      <div className='inspo'>
         <a
           href="https://www.amazon.com/Soda-Pilot-Chelsea-Fashion-Numeric_8/dp/B08KHTLSMF/ref=sr_1_2?crid=3ELWIRD9VETUV&keywords=boots&qid=1675030941&sprefix=boot%2Caps%2C101&sr=8-2"
           target="_blank"
