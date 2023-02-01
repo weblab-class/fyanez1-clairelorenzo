@@ -5,7 +5,6 @@ import ImageRotator2 from "./ImageRot2.js";
 import ImageRotator3 from "./ImageRot3.js";
 import ImageRotator4 from "./ImageRot4.js";
 import ImageRotator5 from "./ImageRot5.js";
-import image1 from "../../public/logo.png";
 import image2 from "../pics/logo2.png";
 import "./biglogo.css";
 import "./home.css";
