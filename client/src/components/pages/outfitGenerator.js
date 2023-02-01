@@ -1,5 +1,7 @@
 import "./outfitGenerator.css";
 import React from "react";
+import "./suggest_outfit.css";
+import "./MyItems.css";
 import { useBoolean } from "@fluentui/react-hooks";
 import { get } from "../../utilities";
 import { useState, useEffect } from "react";
@@ -89,6 +91,13 @@ const OutfitGenerator = (props) => {
         </head>
 
         <body>
+        <div className="top" className='white_background'>
+        <div className='top'>
+        <br />
+      <div className="instructions">Generated Oufit Is:</div>
+      <br />
+      </div>
+      </div>
           <div className="everything">
             {/* {temp_outfit.map((image, i) => (
               <>
