@@ -1,5 +1,4 @@
 const mongoose = require("mongoose");
-const { internalIP } = require("webpack-dev-server");
 
 const clothingItemSchema = new mongoose.Schema({
   item_file: String,
