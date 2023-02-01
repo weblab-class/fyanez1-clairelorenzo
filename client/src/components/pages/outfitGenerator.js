@@ -14,11 +14,10 @@ const OutfitGenerator = (props) => {
 
   useEffect(() => {
     get("/api/pictures", { item_type: "all", user: props.userID }).then((response) => {
-      const generated_outfit = make_outfit(response, [71, "Formal"], {});
+      const generated_outfit = make_outfit(response, [props.temperature, props.style], {});
       if (typeof generated_outfit === "string") {
         setOutfit(generated_outfit);
-        console.log("data", response);
-        console.log("outfit", generated_outfit);
+        console.log("constraints", [props.temperature, props.style]);
       } else {
         let outfit_images = generated_outfit.map((image, i) => (
           <>
@@ -33,6 +32,27 @@ const OutfitGenerator = (props) => {
       }
     });
   }, []);
+
+  const generate = () => {
+    get("/api/pictures", { item_type: "all", user: props.userID }).then((response) => {
+      const generated_outfit = make_outfit(response, [props.temperature, props.style], {});
+      if (typeof generated_outfit === "string") {
+        setOutfit(generated_outfit);
+        console.log("constraints", [props.temperature, props.style]);
+      } else {
+        let outfit_images = generated_outfit.map((image, i) => (
+          <>
+            <div className="clothing-item">
+              <img className="image" key={i} src={image.item_file} />
+              <div className="name">{image.item_name}</div>
+            </div>
+          </>
+        ));
+
+        setOutfit(outfit_images);
+      }
+    });
+  };
 
   //function result example
   const temp_outfit = [
@@ -82,7 +102,9 @@ const OutfitGenerator = (props) => {
           </div>
         </body>
         <Link to="/outfitGenerator" className="link">
-          <button className="regenerate">Regenerate</button>
+          <button className="regenerate" onClick={generate}>
+            Regenerate
+          </button>
         </Link>
       </html>
     </>

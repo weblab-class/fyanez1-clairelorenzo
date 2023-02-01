@@ -35,7 +35,7 @@ const App = () => {
 
   //style and temperature
   const [temperature, setTemperature] = useState();
-  const [style, setStyle] = useState();
+  const [style, setStyle] = useState("Formal");
   const chooseTemp = (event) => {
     setTemperature(event.target.value);
   };
