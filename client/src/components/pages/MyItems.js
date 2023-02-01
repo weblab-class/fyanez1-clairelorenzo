@@ -4,6 +4,7 @@ import { Router } from "@reach/router";
 import { get, post } from "../../utilities";
 import "./MyItems.css";
 import Warmth_instructions from "../warmth_instructions";
+import "./suggest_outfit.css";
 
 const MyItems = (props) => {
   const [images, SetImages] = useState([]);
@@ -70,7 +71,16 @@ const MyItems = (props) => {
     // <button></button>
 
     <div className="main">
-      <div className="title">My Items</div>
+      <div className="top" className='white_background'>
+        <div className='top'>
+        <br />
+      <div className="instructions">My Items</div>
+      <br />
+      </div>
+      </div>
+      <div style={{ visibility: "hidden" }}>h</div>
+      <div style={{ visibility: "hidden" }}>h</div>
+      <div style={{ visibility: "hidden" }}>h</div>
       <div className="addBox-and-pics">
         <div className="addNewItemBox">
           <br />

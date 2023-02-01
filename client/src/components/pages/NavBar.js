@@ -34,9 +34,9 @@ const Navbar = (props) => {
           {/* <Link className="NavBar-link" to="/MyPastOutfits">
           My past Outfits
         </Link> */}
-          <Link className="NavBar-link" to="/weather">
+          {/* <Link className="NavBar-link" to="/weather">
             Weather
-          </Link>
+          </Link> */}
           {/* <Link className="NavBar-link" to="/RandomShuffler">
           Random Shuffler
         </Link> */}
@@ -47,7 +47,7 @@ const Navbar = (props) => {
 
           {/* delete later */}
           <Link className="NavBar-link" to="/outfitGenerator">
-            ***Temporary Page for outfits***
+            Generated Outfit
           </Link>
           {/* delete later */}
 
