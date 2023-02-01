@@ -13,7 +13,7 @@ const OutfitGenerator = (props) => {
   useEffect(() => {
     get("/api/pictures", { item_type: "all", user: props.userID }).then((response) => {
       //run algorithm
-      const generated_outfit = make_outfit(response, [props.temperature, props.style], {});
+      const generated_outfit = make_outfit(response, [70, ''], []);
       if (typeof generated_outfit === "string") {
         //no outfits generated
         SetOutfit(generated_outfit);
