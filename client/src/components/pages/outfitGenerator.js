@@ -9,6 +9,7 @@ import { Router } from "@reach/router";
 import { getRandomInt, make_outfit, do_colors_match, _pj_snippets } from "./outfit_algorithm.js";
 import Suggest_Outfits_Page from "./suggest_outfit";
 import { Link } from "@reach/router";
+const expect = require("chai").expect;
 
 const OutfitGenerator = (props) => {
   const [outfit, setOutfit] = useState("");
@@ -17,7 +18,6 @@ const OutfitGenerator = (props) => {
   const [newItems, setNewItems] = useState();
 
   useEffect(() => {
-    console.log("non empty", Object.values(props.itemsFilled));
     let non_empty = Object.values(props.itemsFilled).filter((object) => {
       typeof object === "string";
     });
@@ -32,8 +32,6 @@ const OutfitGenerator = (props) => {
     ));
 
     setOutfit2(outfit_mapped);
-
-    console.log("non empty2", non_empty);
 
     get("/api/pictures", { item_type: "all", user: props.userID }).then((response) => {
       // console.log("data", response);
@@ -57,24 +55,30 @@ const OutfitGenerator = (props) => {
         Dress: {},
         Jacket: {},
       });
-      // console.log("outfit", generated_outfit);
       if (typeof generated_outfit === "string") {
-        setOutfit(
-          <>
-            <div className="nothing-generated">{generated_outfit}</div>
-          </>
-        );
-        console.log("constraints", [props.temperature, props.style]);
+        setOutfit(<div className="nothing-generated">{generated_outfit}</div>);
       } else {
+        // let undefined_var = false;
+        // for (let item in generated_outfit) {
+        //   if (typeof item === "undefined") {
+        //     undefined_var = true;
+        //     console.log("found");
+        //   }
+        // }
+        // console.log("test", generated_outfit);
+        // if (undefined_var == true) {
+        //   setOutfit(<div className="nothing-generated">This is a test</div>);
+        //   console.log("found2");
+        // } else {
+        for (let item in generated_outfit) {
+          expect(item).to.not.be.undefined;
+        }
         let outfit_images = generated_outfit.map((image, i) => (
-          <>
-            <div className="clothing-item">
-              <img className="image" key={i} src={image.item_file} />
-              <div className="name">{image.item_name}</div>
-            </div>
-          </>
+          <div className="clothing-item">
+            <img className="image" key={i} src={image.item_file} />
+            <div className="name">{image.item_name}</div>
+          </div>
         ));
-
         setOutfit(outfit_images);
       }
     });
@@ -92,20 +96,14 @@ const OutfitGenerator = (props) => {
       console.log("items filled", props.itemsFilled);
       // console.log("outfit", generated_outfit);
       if (typeof generated_outfit === "string") {
-        setOutfit(
-          <>
-            <div className="nothing-generated">{generated_outfit}</div>
-          </>
-        );
+        setOutfit(<div className="nothing-generated">{generated_outfit}</div>);
         console.log("constraints", [props.temperature, props.style]);
       } else {
         let outfit_images = generated_outfit.map((image, i) => (
-          <>
-            <div className="clothing-item">
-              <img className="image" key={i} src={image.item_file} />
-              <div className="name">{image.item_name}</div>
-            </div>
-          </>
+          <div className="clothing-item">
+            <img className="image" key={i} src={image.item_file} />
+            <div className="name">{image.item_name}</div>
+          </div>
         ));
 
         setOutfit(outfit_images);
