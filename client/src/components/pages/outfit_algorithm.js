@@ -9,7 +9,7 @@ export function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min)) + min;
 }
 
-function do_colors_match(color, colors_to_match) {
+export function do_colors_match(color, colors_to_match) {
   color_map = {
     black: [
       "black",
@@ -49,16 +49,15 @@ function do_colors_match(color, colors_to_match) {
   };
 
   for (let i = 0; i < colors_to_match.length; i++) {
-    if (!(color_map[colors_to_match[i]].includes(color))) {
+    if (!color_map[colors_to_match[i]].includes(color)) {
       return false;
-    };
-  };
-     return true;
-    
+    }
   }
+  return true;
+}
 
-function make_outfit(items, constraints, items_filled) {
-let temp_category=0
+export function make_outfit(items, constraints, items_filled) {
+  let temp_category = 0;
   let options = { top: [], bottom: [], dress: [], shoes: [] };
   let outfit = {};
   let temperature = constraints[0];
@@ -83,7 +82,7 @@ let temp_category=0
     }
   }
 
-  if (("top" in items_filled) || ("bottom" in items_filled)) {
+  if ("top" in items_filled || "bottom" in items_filled) {
     let index = items_filled.indexOf("dress");
     to_style.splice(index, 1);
   }
@@ -108,15 +107,13 @@ let temp_category=0
     colors_to_match.push(color);
   }
 
-
   for (let i = 0; i < to_style.length; i++) {
     for (let j = 0; j < items.length; j++) {
-    
       if (
         items[j]["item_type"] == to_style[i] &&
         items[j]["item_warmth_score"] == temp_category &&
         items[j]["item_style"] == style &&
-        do_colors_match(items[j]["item_color"], colors_to_match)==true
+        do_colors_match(items[j]["item_color"], colors_to_match) == true
       ) {
         options[to_style[i]].push(items[j]);
       }
@@ -124,16 +121,15 @@ let temp_category=0
   }
 
   if (
-    options["shoes"].length==0 ||
-    (options["dress"].length==0 && options["top"].length==0) ||
-    (options["dress"].length==0 && options["bottom"].length==0)
+    options["shoes"].length == 0 ||
+    (options["dress"].length == 0 && options["top"].length == 0) ||
+    (options["dress"].length == 0 && options["bottom"].length == 0)
   ) {
     return "No Outfits to Match Temperature and Preferences";
   }
-  
 
-  if (options["dress"].length==0) {
-    console.log('no dresses')
+  if (options["dress"].length == 0) {
+    console.log("no dresses");
     let number_of_tops = options["top"].length;
     let number_of_bottoms = options["bottom"].length;
     let number_of_shoes = options["shoes"].length;
@@ -143,7 +139,7 @@ let temp_category=0
     outfit["top"] = options["top"][top_ind];
     outfit["bottom"] = options["bottom"][bottom_ind];
     outfit["shoes"] = options["shoes"][shoes_ind];
-  } else if (options["top"].length==0 || options["bottom"].length==0) {
+  } else if (options["top"].length == 0 || options["bottom"].length == 0) {
     let number_of_dresses = options["dress"].length;
     let number_of_shoes = options["shoes"].length;
     let dress_ind = getRandomInt(0, number_of_dresses.length);
@@ -177,4 +173,3 @@ let temp_category=0
   }
   return final;
 }
-
