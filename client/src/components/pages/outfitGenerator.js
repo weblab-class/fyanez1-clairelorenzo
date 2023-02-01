@@ -16,7 +16,16 @@ const OutfitGenerator = (props) => {
 
   useEffect(() => {
     get("/api/pictures", { item_type: "all", user: props.userID }).then((response) => {
-      const generated_outfit = make_outfit(response, [props.temperature, props.style], {});
+      const generated_outfit = make_outfit(response, [props.temperature, props.style], {
+        Top: {},
+        Bottom: {},
+        Shoes: {},
+        Dress: {},
+        Jacket: {},
+      });
+      console.log("outfit", generated_outfit);
+      console.log("top", props.top);
+      console.log("top2", props.selectedTop);
       if (typeof generated_outfit === "string") {
         setOutfit(generated_outfit);
         console.log("constraints", [props.temperature, props.style]);
