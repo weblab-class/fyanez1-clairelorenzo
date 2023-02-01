@@ -9,16 +9,16 @@ import Suggest_Outfits_Page from "./suggest_outfit";
 import { Link } from "@reach/router";
 
 const OutfitGenerator = (props) => {
-  const [outfit, SetOutfit] = useState();
+  const [outfit, setOutfit] = useState("");
+  const [dictionary, setDictionary] = useState();
 
   useEffect(() => {
     get("/api/pictures", { item_type: "all", user: props.userID }).then((response) => {
-      //run algorithm
-      const generated_outfit = make_outfit(response, [props.temperature, props.style], {});
-
-      //turn algorithm output into html
+      const generated_outfit = make_outfit(response, [70, "formal"], {});
       if (typeof generated_outfit === "string") {
-        SetOutfit(generated_outfit);
+        setOutfit(generated_outfit);
+        console.log("data", response);
+        console.log("outfit", generated_outfit);
       } else {
         outfit_images = generated_outfit.map((image, i) => (
           <>
@@ -29,17 +29,33 @@ const OutfitGenerator = (props) => {
           </>
         ));
 
-        SetOutfit(outfit_images);
-        console.log(outfit);
+        setOutfit(outfit_images);
       }
     });
   }, []);
 
+  //function result example
   const temp_outfit = [
     { item_file: "https://i.imgur.com/yMOFcnM.jpg", item_name: "asdf" },
     { item_file: "https://i.imgur.com/yMOFcnM.jpg", item_name: "asdf" },
     { item_file: "https://i.imgur.com/yMOFcnM.jpg", item_name: "asdf" },
   ];
+
+  //input example
+  //   let current_items = [
+  //     { item_style: "formal", item_type: "dress", item_color: "red", item_warmth_score: 2 },
+
+  //     { item_type: "shoes", item_style: "formal", item_color: "black", item_warmth_score: 2 },
+
+  //     { item_type: "shoes", item_style: "casual", item_color: "white", item_warmth_score: 1 },
+
+  //     { item_style: "casual", item_type: "top", item_color: "black", item_warmth_score: 1 },
+
+  //     { item_style: "casual", item_type: "top", item_color: "blue", item_warmth_score: 1 },
+
+  //     { item_style: "casual", item_type: "bottom", item_color: "green", item_warmth_score: 1 },
+  //   ];
+  //   make_outfit(current_items, [80, "casual"], {});
 
   return (
     <>

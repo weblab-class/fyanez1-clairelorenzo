@@ -129,7 +129,6 @@ export function make_outfit(items, constraints, items_filled) {
   }
 
   if (options["dress"].length == 0) {
-    console.log("no dresses");
     let number_of_tops = options["top"].length;
     let number_of_bottoms = options["bottom"].length;
     let number_of_shoes = options["shoes"].length;
