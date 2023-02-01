@@ -55,7 +55,6 @@ export function do_colors_match(color, colors_to_match) {
   }
   return true;
 }
-
 export function make_outfit(items, constraints, items_filled) {
   let temp_category = 0;
   let options = { Top: [], Bottom: [], Dress: [], Shoes: [] };
@@ -76,18 +75,22 @@ export function make_outfit(items, constraints, items_filled) {
   let item_categories = ["Top", "Bottom", "Shoes", "Dress"];
 
   for (let i = 0; i < item_categories.length; i++) {
-    if (item_categories[i] in items_filled) {
+    if (Object.keys(items_filled[item_categories[i]]).length != 0) {
       outfit[item_categories[i]] = items_filled[item_categories[i]];
+      options[item_categories[i]].push(items_filled[item_categories[i]]);
     } else {
       to_style.push(item_categories[i]);
     }
   }
 
-  if ("Top" in items_filled || "Bottom" in items_filled) {
+  if (
+    Object.keys(items_filled["Top"]).length != 0 ||
+    Object.keys(items_filled["Bottom"]).length != 0
+  ) {
     let index = to_style.indexOf("Dress");
     to_style.splice(index, 1);
   }
-  if ("Dress" in items_filled) {
+  if (Object.keys(items_filled["Dress"]).length != 0) {
     let index1 = to_style.indexOf("Top");
     to_style.splice(index1, 1);
     let index2 = to_style.indexOf("Bottom");
@@ -104,11 +107,12 @@ export function make_outfit(items, constraints, items_filled) {
 
   let colors_to_match = [];
 
-  for (let i = 0; i < items_filled.length; i++) {
-    let color = items_filled[color]["item_color"];
-    colors_to_match.push(color);
+  for (let item_filled in items_filled) {
+    if (items_filled[item_filled].length != undefined) {
+      let color = items_filled[item_filled]["item_color"];
+      colors_to_match.push(color);
+    }
   }
-
   for (let i = 0; i < to_style.length; i++) {
     for (let j = 0; j < items.length; j++) {
       if (
@@ -170,8 +174,9 @@ export function make_outfit(items, constraints, items_filled) {
   }
   let final = [];
   for (let i in outfit) {
-    final.push(outfit[i]);
+    if (Object.keys(items_filled[i]).length == 0) {
+      final.push(outfit[i]);
+    }
   }
-  console.log("output", final);
   return final;
 }

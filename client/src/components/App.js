@@ -68,45 +68,63 @@ const App = () => {
   const [selectedDress, setSelectedDress] = useState(dress_pic);
   const [selectedJacket, setSelectedJacket] = useState(jacket_pic);
 
+  const [itemsFilled, setItemsFilled] = useState({
+    Top: {},
+    Bottom: {},
+    Shoes: {},
+    Dress: {},
+    Jacket: {},
+  });
+
   const chooseTop = (event, option) => {
     SetTop(option.imageSrc);
+    itemsFilled.Top = option.imageSrc;
   };
 
   const chooseBottom = (event, option) => {
     SetBottom(option.imageSrc);
+    itemsFilled.Bottom = option.imageSrc;
   };
 
   const chooseShoes = (event, option) => {
     SetShoe(option.imageSrc);
+    itemsFilled.Shoes = option.imageSrc;
   };
 
   const chooseDress = (event, option) => {
     SetDress(option.imageSrc);
+    itemsFilled.Dress = option.imageSrc;
   };
 
   const chooseJacket = (event, option) => {
     SetJacket(option.imageSrc);
+    itemsFilled.Jacket = option.imageSrc;
   };
 
   const selectTop = () => {
     setSelectedTop(top);
     toggleHideDialog();
+    itemsFilled.Top = top;
   };
   const selectBottom = () => {
     setSelectedBottom(bottom);
     toggleHideDialog2();
+    itemsFilled.Bottom = bottom;
   };
   const selectShoes = () => {
     setSelectedShoes(shoe);
     toggleHideDialog3();
+    itemsFilled.Shoes = shoe;
   };
   const selectDress = () => {
     setSelectedDress(dress);
     toggleHideDialog4();
+    itemsFilled.Dress = dress;
   };
   const selectJacket = () => {
-    setSelectedJacket(dress);
+    setSelectedJacket(jacket);
     toggleHideDialog5();
+    itemsFilled.Jacket = jacket;
   };
 
   const resetItems = () => {
@@ -115,6 +133,13 @@ const App = () => {
     setSelectedShoes(shoe_pic);
     setSelectedDress(dress_pic);
     setSelectedJacket(jacket_pic);
+    setItemsFilled({
+      Top: {},
+      Bottom: {},
+      Shoes: {},
+      Dress: {},
+      Jacket: {},
+    });
   };
   ///////////////////////////////////////////////
 
@@ -194,6 +219,7 @@ const App = () => {
             toggleHideDialog4={toggleHideDialog4}
             toggleHideDialog5={toggleHideDialog5}
             resetItems={resetItems}
+            itemsFilled={itemsFilled}
           />
           <Suggest_Outfits_Page
             path="/suggest_outfit"
@@ -233,6 +259,7 @@ const App = () => {
             toggleHideDialog4={toggleHideDialog4}
             toggleHideDialog5={toggleHideDialog5}
             resetItems={resetItems}
+            itemsFilled={itemsFilled}
           />
         </Router>
       </div>

@@ -82,6 +82,10 @@ const Suggest_Outfits_Page = (props) => {
   //   setSelectedJacket(jacket_pic);
   // };
 
+  useEffect(() => {
+    props.resetItems();
+  }, []);
+
   return (
     <>
       <html>

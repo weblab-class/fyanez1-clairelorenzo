@@ -11,7 +11,7 @@
 
 .clothing-item {
   padding: 0px;
-  margin-top: 3%;
+  margin-top: 0%;
   margin-bottom: 3%;
 }
 
@@ -43,11 +43,11 @@
   box-shadow: 5px 5px white;
   border: none;
   border-radius: 50px;
-  margin-top: 5%;
 }
 
 .link {
   text-decoration: none;
+  margin-bottom: 50px;
 }
 
 .regenerate:hover {
@@ -55,6 +55,11 @@
   color: #8f7900;
   background-color: white;
   cursor: pointer;
+}
+
+.nothing-generated {
+  color: white;
+  font-size: 25px;
 }
 
 /* .animate::before {

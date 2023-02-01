@@ -28,6 +28,17 @@ const socketManager = require("./server-socket");
 const { response } = require("express");
 // const { ThemeConsumer } = require("styled-components");
 
+const general_data = [
+  {
+    item_file: "https://i.imgur.com/l8cE6W2",
+    item_name: "Jeans",
+    item_type: "Bottom",
+    item_style: "Casual",
+    item_color: "Black",
+    item_warmth_score: 4,
+  },
+];
+
 router.post("/login", auth.login);
 router.post("/logout", auth.logout);
 router.get("/whoami", (req, res) => {
